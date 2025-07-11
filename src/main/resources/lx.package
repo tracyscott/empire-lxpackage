@@ -1,0 +1,15 @@
+{
+  "name": "Empire LX",
+  "mediaDir": "Empire",
+  "author": "William Keller",
+  "url": "https://github.com/willivolt/empire-lxpackage",
+  
+  "build": {
+    "name": "@project.name@",
+    "version": "@project.version@",
+    "groupId": "@project.groupId@",
+    "artifactId": "@project.artifactId@",
+    "lxVersion": "@lx.version@",
+    "buildTimestamp": "@maven.build.timestamp@"
+  }
+}

@@ -1,0 +1,288 @@
+{
+  "MasterBrightness": [
+    {
+      "address": "/lx/output/brightness",
+      "arguments": [ ]
+    }
+  ],
+  "DrivingMode": [
+    {
+      "address": "/lx/snapshots/Cruising-Noise/recall",
+      "arguments": [ 1 ]
+    }
+  ],
+  "BodyPulse": [
+    {
+      "address": "/lx/snapshots/Body-Pulse/recall",
+      "arguments": [ 1 ]
+    }
+  ],
+  "FogOn": [
+    {
+      "address": "/lx/mixer/channel/8/enabled",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/8/fader",
+      "arguments": [ 100 ]
+    }
+  ],
+  "FogOff": [
+    {
+      "address": "/lx/mixer/channel/8/enabled",
+      "arguments": [ 0 ]
+    },
+    {
+      "address": "/lx/mixer/channel/8/fader",
+      "arguments": [ 0 ]
+    }
+  ],
+  "FogVolume": [
+    {
+      "address": "/lx/mixer/channel/8/enabled",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/8/fader",
+      "arguments": [ ]
+    }
+  ],
+  "FanOn": [
+    {
+      "address": "/lx/mixer/channel/9/enabled",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/9/fader",
+      "arguments": [ 1 ]
+    }
+  ],
+  "FanOff": [
+    {
+      "address": "/lx/mixer/channel/9/fader",
+      "arguments": [ 0 ]
+    },
+    {
+      "address": "/lx/mixer/channel/9/enabled",
+      "arguments": [ 0 ]
+    }
+  ],
+  "FloodBrightness": [
+    {
+      "address": "/lx/mixer/channel/4/pattern/2/recall",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/4/enabled",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/4/fader",
+      "arguments": [ ]
+    }
+  ],
+  "FloodFlash": [
+    {
+      "address": "/lx/mixer/channel/4/pattern/2/recall",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/4/enabled",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/4/fader",
+      "arguments": [ 0 ]
+    },
+    {
+      "address": "/lx/modulation/LFO/trigger",
+      "arguments": [ 1 ]
+    }
+  ],
+  "PuckFillGreen": [
+    {
+      "address": "/lx/mixer/channel/6/viewSelector",
+      "arguments": [ "puck" ]
+    },
+    {
+      "address": "/lx/mixer/channel/6/effect/1/enabled",
+      "arguments": [ 0 ]
+    },
+    {
+      "address": "/lx/mixer/channel/6/pattern/3/speed",
+      "arguments": [ 0.8 ]
+    },
+    {
+      "address": "/lx/mixer/channel/6/pattern/3/color/hue",
+      "arguments": [ 0.3343 ]
+    },
+    {
+      "address": "/lx/mixer/channel/6/enabled",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/6/fader",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/6/pattern/3/recall",
+      "arguments": [ 1 ]
+    }
+  ],
+  "FloodNoise": [
+    {
+      "address": "/lx/mixer/channel/4/pattern/1/recall",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/4/enabled",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/4/fader",
+      "arguments": [ 1 ]
+    }
+  ],
+  "NozzleSpin1": [
+    {
+      "address": "/lx/mixer/channel/3/effect/1/enabled",
+      "arguments": [ 0 ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/pattern/2/recall",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/viewSelector",
+      "arguments": [ "nozzle5" ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/enabled",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/fader",
+      "arguments": [ 1 ]
+    }
+  ],
+  "NozzleSpin2": [
+    {
+      "address": "/lx/mixer/channel/3/effect/1/enabled",
+      "arguments": [ 0 ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/pattern/2/recall",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/viewSelector",
+      "arguments": [ "nozzle4 nozzle5" ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/enabled",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/fader",
+      "arguments": [ 1 ]
+    }
+  ],
+  "NozzleSpin3": [
+    {
+      "address": "/lx/mixer/channel/3/effect/1/enabled",
+      "arguments": [ 0 ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/pattern/2/recall",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/viewSelector",
+      "arguments": [ "nozzle3 nozzle4 nozzle5" ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/enabled",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/fader",
+      "arguments": [ 1 ]
+    }
+  ],
+  "NozzleSpin4": [
+    {
+      "address": "/lx/mixer/channel/3/effect/1/enabled",
+      "arguments": [ 0 ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/pattern/2/recall",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/viewSelector",
+      "arguments": [ "nozzle2 nozzle3 nozzle4 nozzle5" ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/enabled",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/fader",
+      "arguments": [ 1 ]
+    }
+  ],
+  "NozzleSpin5": [
+    {
+      "address": "/lx/mixer/channel/3/effect/1/enabled",
+      "arguments": [ 0 ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/pattern/2/recall",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/viewSelector",
+      "arguments": [ "nozzle" ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/enabled",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/fader",
+      "arguments": [ 1 ]
+    }
+  ],
+  "NozzleSpin": [
+    {
+      "address": "/lx/mixer/channel/6/enabled",
+      "arguments": [ 0 ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/effect/1/enabled",
+      "arguments": [ 0 ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/pattern/2/recall",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/viewSelector",
+      "arguments": [ "nozzle puck" ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/enabled",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/fader",
+      "arguments": [ 1 ]
+    }
+  ],
+  "NozzleSpinSpeed" : [
+    {
+      "address": "/lx/mixer/channel/3/pattern/2/speed",
+      "arguments": [ ]
+    }
+  ]
+}
