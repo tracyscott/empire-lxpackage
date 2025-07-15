@@ -83,7 +83,7 @@ public class IndicatorPattern extends LXPattern {
         if (runtime >= 5000) {
             // Let's change something every 5 seconds
             runtime = 0;
-            for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < FIXTURES_TO_UPDATE_PER_CYCLE; i++) {
                 // Pick a random fixture and set its color
                 int fixtureIndex = (int) LXUtils.random(0, model.children.length);
                 if (fixtureIndex < colorList.size()) {
