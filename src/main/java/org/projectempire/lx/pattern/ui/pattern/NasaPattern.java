@@ -20,8 +20,8 @@ public class NasaPattern extends LXPattern {
 
     @Override
     protected void run(double deltaMs) {
-        for (LXModel model : model.children) {
-            for (int i = 0; i < model.points.length; i++) {
+        for (LXModel childModel : model.children) {
+            for (int i = 0; i < childModel.points.length; i++) {
                 int color = LXColor.BLACK;
                 int index = (i / 5) % 2;
                 switch (index) {
