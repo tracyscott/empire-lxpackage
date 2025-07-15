@@ -14,6 +14,7 @@ import java.util.ArrayList;
 @LXCategory("Empire")
 @LXComponent.Name("Indicator")
 public class IndicatorPattern extends LXPattern {
+    private static final int FIXTURES_TO_UPDATE_PER_CYCLE = 5;
     public final ColorParameter color1 = new ColorParameter("Color1").setDescription("Color of the pattern");
     public final ColorParameter color2 = new ColorParameter("Color2").setDescription("Color of the pattern");
     public final ColorParameter color3 = new ColorParameter("Color3").setDescription("Color of the pattern");
