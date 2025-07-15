@@ -4,7 +4,7 @@
 
     <groupId>org.projectempire.lx</groupId>
     <artifactId>empire-lxpackage</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -18,9 +18,9 @@
         <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
         <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
         <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
-        
+
     </properties>
-    
+
     <dependencies>
         <dependency>
             <groupId>com.heronarts</groupId>
@@ -33,7 +33,7 @@
             <artifactId>glx</artifactId>
             <version>${lx.version}</version>
             <scope>provided</scope>
-        </dependency>        
+        </dependency>
         <dependency>
             <groupId>com.heronarts</groupId>
             <artifactId>glxstudio</artifactId>
@@ -41,7 +41,7 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
-  	
+
     <build>
         <plugins>
             <plugin>

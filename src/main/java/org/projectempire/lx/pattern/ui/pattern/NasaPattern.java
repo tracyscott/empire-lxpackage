@@ -2,23 +2,26 @@ package org.projectempire.lx.pattern.ui.pattern;
 
 import heronarts.lx.LX;
 import heronarts.lx.LXCategory;
+import heronarts.lx.LXComponent;
 import heronarts.lx.color.LXColor;
 import heronarts.lx.model.LXModel;
 import heronarts.lx.pattern.LXPattern;
 
-import java.util.List;
-
+/**
+ * A pattern that alternates between blue and white colors.
+ */
 @LXCategory("Empire")
+@LXComponent.Name("NASA")
 public class NasaPattern extends LXPattern {
+    private static final int GRAY = LXColor.gray(75d);
     public NasaPattern(LX lx) {
         super(lx);
     }
 
     @Override
     protected void run(double deltaMs) {
-        List<LXModel> models = model.children("nasa");
-        for (LXModel model: models) {
-            for (int i = 0; i < model.points.length; i++) {
+        for (LXModel childModel : model.children) {
+            for (int i = 0; i < childModel.points.length; i++) {
                 int color = LXColor.BLACK;
                 int index = (i / 5) % 2;
                 switch (index) {
@@ -26,7 +29,7 @@ public class NasaPattern extends LXPattern {
                         color = LXColor.BLUE;
                         break;
                     case 1:
-                        color = LXColor.gray(75d);
+                        color = GRAY;
                         break;
                 }
                 colors[model.points[i].index] = color;
