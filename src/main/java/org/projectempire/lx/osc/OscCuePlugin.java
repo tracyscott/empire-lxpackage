@@ -52,7 +52,7 @@ public class OscCuePlugin implements LXPlugin, LXOscListener {
     @Override
     public void initialize(LX _lx) {
         this.lx = _lx;
-        // TODO: read Queues from JSON
+        
         loadCueJson();
         // Get the port the LX is listening on for OSC messages on
         final int oscPort = this.lx.engine.osc.receivePort.getValuei();
