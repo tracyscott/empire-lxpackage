@@ -64,6 +64,7 @@ public class IndicatorPattern extends LXPattern {
      * Initialize the color list with a random color for each fixture in the model.
      */
     private void init() {
+        colorList.clear();
         colorList.ensureCapacity(model.children.length);
         for (int i = 0; i < model.children.length; i++) {
             colorList.add(pickColor());
