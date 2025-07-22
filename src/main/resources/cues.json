@@ -101,8 +101,8 @@
   ],
   "PuckFillGreen": [
     {
-      "address": "/lx/mixer/channel/6/viewSelector",
-      "arguments": [ "puck" ]
+      "address": "/lx/mixer/channel/6/view",
+      "arguments": [ 6 ]
     },
     {
       "address": "/lx/mixer/channel/6/effect/1/enabled",

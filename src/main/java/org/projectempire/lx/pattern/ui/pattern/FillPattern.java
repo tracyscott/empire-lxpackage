@@ -1,5 +1,11 @@
 package org.projectempire.lx.pattern.ui.pattern;
 
+import heronarts.glx.ui.UI2dComponent;
+import heronarts.glx.ui.UI2dContainer;
+import heronarts.glx.ui.component.UIColorPicker;
+import heronarts.glx.ui.component.UIIntegerBox;
+import heronarts.glx.ui.component.UILabel;
+import heronarts.glx.ui.component.UISlider;
 import heronarts.lx.LX;
 import heronarts.lx.LXCategory;
 import heronarts.lx.color.ColorParameter;
@@ -16,12 +22,6 @@ import heronarts.lx.studio.LXStudio;
 import heronarts.lx.studio.ui.device.UIDevice;
 import heronarts.lx.studio.ui.device.UIDeviceControls;
 import heronarts.lx.utils.LXUtils;
-import heronarts.glx.ui.UI2dComponent;
-import heronarts.glx.ui.UI2dContainer;
-import heronarts.glx.ui.component.UIColorPicker;
-import heronarts.glx.ui.component.UIIntegerBox;
-import heronarts.glx.ui.component.UILabel;
-import heronarts.glx.ui.component.UISlider;
 
 @LXCategory("Empire")
 public class FillPattern extends LXPattern implements UIDeviceControls<FillPattern> {
@@ -31,7 +31,7 @@ public class FillPattern extends LXPattern implements UIDeviceControls<FillPatte
 
         public final String label;
 
-        private ColorMode(String label) {
+        ColorMode(String label) {
             this.label = label;
         }
 
@@ -43,7 +43,7 @@ public class FillPattern extends LXPattern implements UIDeviceControls<FillPatte
     }
 
     public final EnumParameter<ColorMode> colorMode =
-            new EnumParameter<ColorMode>("Color Mode", ColorMode.FIXED)
+            new EnumParameter<>("Color Mode", ColorMode.FIXED)
                     .setDescription("Which source the gradient selects colors from");
 
     public final ColorParameter color = new ColorParameter("Color").setDescription("Color of the pattern");
@@ -87,23 +87,23 @@ public class FillPattern extends LXPattern implements UIDeviceControls<FillPatte
 
     @Override
     protected void run(double deltaMs) {
-        if (totalTime > speed.getValue()) {
-            return;
-        }
-        totalTime += deltaMs;
+        totalTime = LXUtils.constrain(totalTime + deltaMs, 0, this.speed.getValue() + 1.0);
         int color;
-        switch (colorMode.getEnum()) {
-            case PALETTE:
-                color = getPaletteColor().getColor();
-                break;
-            default:
-                color = this.color.getColor();
-                break;
+        if (ColorMode.PALETTE == colorMode.getEnum()) {
+            color = getPaletteColor().getColor();
+        } else {
+            color = this.color.getColor();
         }
-        double fillPercent = LXUtils.constrain(totalTime / speed.getValue(), 0d, 1d);
+        double fillPercent = 1d;
+        if (totalTime < speed.getValue()) {
+            fillPercent = LXUtils.constrain(totalTime / speed.getValue(), 0d, 1d);
+        }
         int fillCount = (int) (fillPercent * this.model.points.length);
         for (int i = 0; i < fillCount; i++) {
             this.colors[this.model.points[i].index] = color;
+        }
+        for (int i = fillCount; i < this.model.points.length; i++) {
+            this.colors[this.model.points[i].index] = LXColor.BLACK;
         }
         //LX.log("FillPattern: fillPercent " + fillPercent + " fillCount " + fillCount + " totalTime " + totalTime);
     }
@@ -121,8 +121,7 @@ public class FillPattern extends LXPattern implements UIDeviceControls<FillPatte
         UISlider hueSlider;
         UISlider satSlider;
         UISlider brightSlider;
-        uiDevice.addChildren(new UI2dComponent[]{
-                this.newHorizontalSlider(fillPattern.speed),
+        uiDevice.addChildren(this.newHorizontalSlider(fillPattern.speed),
                 this.newDropMenu(fillPattern.colorMode),
                 paletteColor = new UIPaletteColor(ui, fillPattern, 52.0F, 14.0F),
                 paletteIndex = this.newIntegerBox(fillPattern.paletteIndex),
@@ -131,7 +130,7 @@ public class FillPattern extends LXPattern implements UIDeviceControls<FillPatte
                         .setCorner(UIColorPicker.Corner.TOP_RIGHT),
                 hueSlider = this.newHorizontalSlider(fillPattern.color.hue),
                 satSlider = this.newHorizontalSlider(fillPattern.color.saturation),
-                brightSlider = this.newHorizontalSlider(fillPattern.color.brightness)});
+                brightSlider = this.newHorizontalSlider(fillPattern.color.brightness));
         LXParameterListener update = (p) -> {
             boolean isFixed = fillPattern.colorMode.getEnum() == ColorMode.FIXED;
             colorPicker.setVisible(isFixed);
@@ -143,18 +142,16 @@ public class FillPattern extends LXPattern implements UIDeviceControls<FillPatte
             brightSlider.setVisible(isFixed);
         };
         fillPattern.colorMode.addListener(update);
-        update.onParameterChanged((LXParameter) null);
+        update.onParameterChanged(null);
 
     }
 
-    private class UIPaletteColor extends UI2dComponent {
+    private static class UIPaletteColor extends UI2dComponent {
         private UIPaletteColor(LXStudio.UI ui, FillPattern fillPattern, float w, float h) {
             super(0.0F, 0.0F, w, h);
             this.setBorderColor(ui.theme.controlDisabledColor);
             this.setBackgroundColor(fillPattern.getPaletteColor().getColor());
-            this.addLoopTask((deltaMs) -> {
-                this.setBackgroundColor(fillPattern.getPaletteColor().getColor());
-            });
+            this.addLoopTask((deltaMs) -> this.setBackgroundColor(fillPattern.getPaletteColor().getColor()));
         }
     }
 }
