@@ -13,6 +13,7 @@ import heronarts.lx.pattern.LXPattern;
 @LXCategory("Empire")
 @LXComponent.Name("NASA")
 public class NasaPattern extends LXPattern {
+    private static final int STRIP_WIDTH = 5;
     private static final int GRAY = LXColor.gray(75d);
 
     public NasaPattern(LX lx) {
@@ -23,7 +24,7 @@ public class NasaPattern extends LXPattern {
     protected void run(double deltaMs) {
         for (LXModel childModel : model.children) {
             for (int i = 0; i < childModel.points.length; i++) {
-                final int index = (i / 5) % 2;
+                final int index = (i / STRIP_WIDTH) % 2;
                 final int color = (0 == index) ? LXColor.BLUE : GRAY;
                 colors[childModel.points[i].index] = color;
             }
