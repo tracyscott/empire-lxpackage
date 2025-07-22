@@ -1,6 +1,6 @@
 {
   "version": "1.1.0",
-  "timestamp": 1752553989749,
+  "timestamp": 1753156836823,
   "model": {
     "id": 2,
     "class": "heronarts.lx.structure.LXStructure",
@@ -241,6 +241,132 @@
               "selector": "switch, phone, tempc, 2ball",
               "normalization": 0,
               "normalization/name": "RELATIVE",
+              "orientation": 0,
+              "orientation/name": "GLOBAL",
+              "priority": true,
+              "cueActive": false
+            },
+            "children": {}
+          },
+          {
+            "id": 57308,
+            "class": "heronarts.lx.structure.view.LXViewDefinition",
+            "internal": {
+              "modulationColor": 10,
+              "modulationControlsExpanded": true,
+              "modulationsExpanded": true
+            },
+            "parameters": {
+              "label": "NozzleSpin1",
+              "enabled": true,
+              "selector": "nozzle5",
+              "normalization": 1,
+              "normalization/name": "ABSOLUTE",
+              "orientation": 0,
+              "orientation/name": "GLOBAL",
+              "priority": true,
+              "cueActive": false
+            },
+            "children": {}
+          },
+          {
+            "id": 57309,
+            "class": "heronarts.lx.structure.view.LXViewDefinition",
+            "internal": {
+              "modulationColor": 11,
+              "modulationControlsExpanded": true,
+              "modulationsExpanded": true
+            },
+            "parameters": {
+              "label": "NozzleSpin2",
+              "enabled": true,
+              "selector": "nozzle4, nozzle5",
+              "normalization": 1,
+              "normalization/name": "ABSOLUTE",
+              "orientation": 0,
+              "orientation/name": "GLOBAL",
+              "priority": true,
+              "cueActive": false
+            },
+            "children": {}
+          },
+          {
+            "id": 57310,
+            "class": "heronarts.lx.structure.view.LXViewDefinition",
+            "internal": {
+              "modulationColor": 12,
+              "modulationControlsExpanded": true,
+              "modulationsExpanded": true
+            },
+            "parameters": {
+              "label": "NozzleSpin3",
+              "enabled": true,
+              "selector": "nozzle3, nozzle4, nozzle5",
+              "normalization": 1,
+              "normalization/name": "ABSOLUTE",
+              "orientation": 0,
+              "orientation/name": "GLOBAL",
+              "priority": true,
+              "cueActive": false
+            },
+            "children": {}
+          },
+          {
+            "id": 57311,
+            "class": "heronarts.lx.structure.view.LXViewDefinition",
+            "internal": {
+              "modulationColor": 13,
+              "modulationControlsExpanded": true,
+              "modulationsExpanded": true
+            },
+            "parameters": {
+              "label": "NozzleSpin4",
+              "enabled": true,
+              "selector": "nozzle2, nozzle3, nozzle4, nozzle5",
+              "normalization": 1,
+              "normalization/name": "ABSOLUTE",
+              "orientation": 0,
+              "orientation/name": "GLOBAL",
+              "priority": true,
+              "cueActive": false
+            },
+            "children": {}
+          },
+          {
+            "id": 57312,
+            "class": "heronarts.lx.structure.view.LXViewDefinition",
+            "internal": {
+              "modulationColor": 14,
+              "modulationControlsExpanded": true,
+              "modulationsExpanded": true
+            },
+            "parameters": {
+              "label": "NozzleSpin5",
+              "enabled": true,
+              "selector": "nozzle",
+              "normalization": 1,
+              "normalization/name": "ABSOLUTE",
+              "orientation": 0,
+              "orientation/name": "GLOBAL",
+              "priority": true,
+              "cueActive": false
+            },
+            "children": {}
+          },
+          {
+            "id": 57313,
+            "class": "heronarts.lx.structure.view.LXViewDefinition",
+            "internal": {
+              "modulationColor": 15,
+              "modulationControlsExpanded": true,
+              "modulationsExpanded": true
+            },
+            "parameters": {
+              "label": "NozzleSpin",
+              "enabled": true,
+              "selector": "nozzle, puck",
+              "normalization": 1,
+              "normalization/name": "ABSOLUTE",
               "orientation": 0,
               "orientation/name": "GLOBAL",
               "priority": true,
@@ -6914,7 +7040,7 @@
               "modulationsExpanded": true
             },
             "parameters": {
-              "label": "",
+              "label": "SoundStage",
               "mode": 0,
               "mode/name": "DEFAULT",
               "xAbsolute": 0.0,
@@ -9830,7 +9956,7 @@
               "exp": 0.0
             },
             "children": {},
-            "basis": 0.36665392660374957
+            "basis": 0.7318394332037451
           }
         ],
         "modulations": [
@@ -29225,7 +29351,7 @@
         "parameters": {
           "label": "OSC",
           "receiveHost": "0.0.0.0",
-          "receivePort": 3029,
+          "receivePort": 3030,
           "receiveActive": true,
           "transmitHost": "localhost",
           "transmitPort": 3131,

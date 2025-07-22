@@ -1,7 +1,7 @@
 {
   "MasterBrightness": [
     {
-      "address": "/lx/output/brightness",
+      "address": "/lx/mixer/master/fader",
       "arguments": [ ]
     }
   ],
@@ -101,8 +101,8 @@
   ],
   "PuckFillGreen": [
     {
-      "address": "/lx/mixer/channel/6/viewSelector",
-      "arguments": [ "puck" ]
+      "address": "/lx/mixer/channel/6/view",
+      "arguments": [ 6 ]
     },
     {
       "address": "/lx/mixer/channel/6/effect/1/enabled",
@@ -153,8 +153,8 @@
       "arguments": [ 1 ]
     },
     {
-      "address": "/lx/mixer/channel/3/viewSelector",
-      "arguments": [ "nozzle5" ]
+      "address": "/lx/mixer/channel/3/view",
+      "arguments": [ 11 ]
     },
     {
       "address": "/lx/mixer/channel/3/enabled",
@@ -175,8 +175,8 @@
       "arguments": [ 1 ]
     },
     {
-      "address": "/lx/mixer/channel/3/viewSelector",
-      "arguments": [ "nozzle4 nozzle5" ]
+      "address": "/lx/mixer/channel/3/view",
+      "arguments": [ 12 ]
     },
     {
       "address": "/lx/mixer/channel/3/enabled",
@@ -197,8 +197,8 @@
       "arguments": [ 1 ]
     },
     {
-      "address": "/lx/mixer/channel/3/viewSelector",
-      "arguments": [ "nozzle3 nozzle4 nozzle5" ]
+      "address": "/lx/mixer/channel/3/view",
+      "arguments": [ 13 ]
     },
     {
       "address": "/lx/mixer/channel/3/enabled",
@@ -219,8 +219,8 @@
       "arguments": [ 1 ]
     },
     {
-      "address": "/lx/mixer/channel/3/viewSelector",
-      "arguments": [ "nozzle2 nozzle3 nozzle4 nozzle5" ]
+      "address": "/lx/mixer/channel/3/view",
+      "arguments": [ 14 ]
     },
     {
       "address": "/lx/mixer/channel/3/enabled",
@@ -241,8 +241,8 @@
       "arguments": [ 1 ]
     },
     {
-      "address": "/lx/mixer/channel/3/viewSelector",
-      "arguments": [ "nozzle" ]
+      "address": "/lx/mixer/channel/3/view",
+      "arguments": [ 15 ]
     },
     {
       "address": "/lx/mixer/channel/3/enabled",
@@ -267,8 +267,8 @@
       "arguments": [ 1 ]
     },
     {
-      "address": "/lx/mixer/channel/3/viewSelector",
-      "arguments": [ "nozzle puck" ]
+      "address": "/lx/mixer/channel/3/view",
+      "arguments": [ 16 ]
     },
     {
       "address": "/lx/mixer/channel/3/enabled",
