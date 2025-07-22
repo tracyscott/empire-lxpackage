@@ -14,6 +14,8 @@ import heronarts.lx.osc.OscFloat;
 import heronarts.lx.osc.OscInt;
 import heronarts.lx.osc.OscLong;
 import heronarts.lx.osc.OscMessage;
+import heronarts.lx.parameter.LXParameter;
+import heronarts.lx.parameter.LXParameterListener;
 import org.projectempire.lx.log.LXLogWrapper;
 
 import java.io.IOException;
@@ -37,7 +39,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * and executes the corresponding cues defined in a JSON file.
  */
 @LXPlugin.Name("Empire OSC Listener")
-public class OscCuePlugin implements LXPlugin, LXOscListener {
+public class OscCuePlugin implements LXPlugin, LXOscListener, LXParameterListener {
     /** Prefix for log messages from this plugin */
     private static final String LOG_PREFIX = "[Empire OSC] ";
     private static final LXLogWrapper logger = new LXLogWrapper(LOG_PREFIX);
@@ -52,12 +54,15 @@ public class OscCuePlugin implements LXPlugin, LXOscListener {
     @Override
     public void initialize(LX _lx) {
         this.lx = _lx;
-        
+
         loadCueJson();
-        // Get the port the LX is listening on for OSC messages on
-        final int oscPort = this.lx.engine.osc.receivePort.getValuei();
-        // Create a transmitter to send OSC messages back to the LX engine
+        // Create a transmitter to send OSC messages back to the LX engine on localhost. Since this seems to be
+        // called before the receivePort is read from the project/config, we add a listener to properly set the
+        // transmitter port when the receivePort changes.
+        this.lx.engine.osc.receivePort.addListener(this);
         try {
+            // Get the port the LX is listening on for OSC messages on
+            final int oscPort = this.lx.engine.osc.receivePort.getValuei();
             transmitter = this.lx.engine.osc.transmitter(InetAddress.getByAddress(LOCALHOST_IP), oscPort);
         } catch (SocketException | UnknownHostException e) {
             logger.error(e, LOG_PREFIX + "Failed to create OSC transmitter");
@@ -68,6 +73,7 @@ public class OscCuePlugin implements LXPlugin, LXOscListener {
     @Override
     public void dispose() {
         this.lx.engine.osc.removeListener(this);
+        this.transmitter.dispose();
     }
 
     @Override
@@ -180,5 +186,16 @@ public class OscCuePlugin implements LXPlugin, LXOscListener {
         }
 
         this.cueMap = map;
+    }
+
+    @Override
+    public void onParameterChanged(LXParameter parameter) {
+        if (null != transmitter) {
+            if (parameter == lx.engine.osc.receivePort) {
+                final int newPort = lx.engine.osc.receivePort.getValuei();
+                logger.log("Changing OSC destination port to " + newPort);
+                transmitter.setPort(newPort);
+            }
+        }
     }
 }
