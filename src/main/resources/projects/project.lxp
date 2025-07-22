@@ -294,7 +294,7 @@
             "id": 57310,
             "class": "heronarts.lx.structure.view.LXViewDefinition",
             "internal": {
-              "modulationColor": 11,
+              "modulationColor": 12,
               "modulationControlsExpanded": true,
               "modulationsExpanded": true
             },
@@ -315,7 +315,7 @@
             "id": 57311,
             "class": "heronarts.lx.structure.view.LXViewDefinition",
             "internal": {
-              "modulationColor": 11,
+              "modulationColor": 13,
               "modulationControlsExpanded": true,
               "modulationsExpanded": true
             },
@@ -336,7 +336,7 @@
             "id": 57312,
             "class": "heronarts.lx.structure.view.LXViewDefinition",
             "internal": {
-              "modulationColor": 11,
+              "modulationColor": 14,
               "modulationControlsExpanded": true,
               "modulationsExpanded": true
             },
@@ -357,7 +357,7 @@
             "id": 57313,
             "class": "heronarts.lx.structure.view.LXViewDefinition",
             "internal": {
-              "modulationColor": 11,
+              "modulationColor": 15,
               "modulationControlsExpanded": true,
               "modulationsExpanded": true
             },
