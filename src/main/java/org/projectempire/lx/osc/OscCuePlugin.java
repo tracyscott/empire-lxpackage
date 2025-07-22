@@ -168,13 +168,14 @@ public class OscCuePlugin implements LXPlugin, LXOscListener, LXParameterListene
     }
 
     private void loadCueJson() {
-        logger.log(lx.getMediaPath(LX.Media.PROJECTS, Path.of("cues.json").toFile()));
-        Path jsonPath = Path.of(System.getProperty("user.home"), "Chromatik/Projects/Empire/cues.json").normalize();
+        // logger.log(lx.getMediaPath(LX.Media.PROJECTS, Path.of("cues.json").toFile()));
+        Path jsonPath = Path.of(System.getProperty("user.home"), "Chromatik/Projects/Empire/cues.lxp").normalize();
         //File f = lx.getMediaFile("cues.json"); // TODO: how to get project root?
         if (!Files.exists(jsonPath)) {
             logger.error("Cues file not found: " + jsonPath);
             return;
         }
+        logger.log("Loading cues from JSON file: " + jsonPath.toAbsolutePath().toString());
         Gson gson = new GsonBuilder().create();
         Map<String, List<EmpireOscCue>> map = Collections.emptyMap();
         final Type typeOf = new TypeToken<Map<String, List<EmpireOscCue>>>() {
