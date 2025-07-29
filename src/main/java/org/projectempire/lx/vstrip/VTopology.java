@@ -32,27 +32,27 @@ public class VTopology {
 
 
     public void buildJoints(JsonObject startJoints, JsonObject endJoints) {
-        LX.log("startJoints: " + startJoints);
-        LX.log("endJoints: " + endJoints);
+        //LX.log("startJoints: " + startJoints);
+        //LX.log("endJoints: " + endJoints);
         for (VStrip thisVStrip : strips) {
             for (VStrip otherVStrip : strips) {
                 if (startJoints.get(thisVStrip.id + "-" + otherVStrip.id) != null) {
                     int adjacentValue = startJoints.get(thisVStrip.id + "-" + otherVStrip.id).getAsInt();
                     if (adjacentValue == 1) {
-                        LX.log("Adding joint to start point: " + thisVStrip.id + " -> " + otherVStrip.id + " as adjacentValue: " + adjacentValue);
+                        //LX.log("Adding joint to start point: " + thisVStrip.id + " -> " + otherVStrip.id + " as adjacentValue: " + adjacentValue);
                         thisVStrip.myStartPointJoints.add(new VJoint(otherVStrip, true));
                     } else if (adjacentValue == 2) {
-                        LX.log("Adding joint to start point: " + thisVStrip.id + " -> " + otherVStrip.id + " as adjacentValue: " + adjacentValue);
+                        //LX.log("Adding joint to start point: " + thisVStrip.id + " -> " + otherVStrip.id + " as adjacentValue: " + adjacentValue);
                         thisVStrip.myStartPointJoints.add(new VJoint(otherVStrip, false));
                     }
                 }
                 if (endJoints.get(thisVStrip.id + "-" + otherVStrip.id) != null) {
                     int adjacentValue = endJoints.get(thisVStrip.id + "-" + otherVStrip.id).getAsInt();
                     if (adjacentValue == 1) {
-                        LX.log("Adding joint to end point: " + thisVStrip.id + " -> " + otherVStrip.id + " as adjacentValue: " + adjacentValue);
+                        //LX.log("Adding joint to end point: " + thisVStrip.id + " -> " + otherVStrip.id + " as adjacentValue: " + adjacentValue);
                         thisVStrip.myEndPointJoints.add(new VJoint(otherVStrip, true));
                     } else if (adjacentValue == 2) {
-                        LX.log("Adding joint to end point: " + thisVStrip.id + " -> " + otherVStrip.id + " as adjacentValue: " + adjacentValue);
+                        //LX.log("Adding joint to end point: " + thisVStrip.id + " -> " + otherVStrip.id + " as adjacentValue: " + adjacentValue);
                         thisVStrip.myEndPointJoints.add(new VJoint(otherVStrip, false));
                     }
                 }

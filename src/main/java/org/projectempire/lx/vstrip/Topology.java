@@ -104,33 +104,34 @@ public class Topology {
     LX.log("Number of topologies: " + topologies.size());
 
     // Output pCenterHornStripIds
-    LX.log("pCenterHornStripIds: " + pCenterHornStripIds);
+    // LX.log("pCenterHornStripIds: " + pCenterHornStripIds);
     // pRearHornStripIds
-    LX.log("pRearHornStripIds: " + pRearHornStripIds);
+    // LX.log("pRearHornStripIds: " + pRearHornStripIds);
     // dCenterHornStripIds
-    LX.log("dCenterHornStripIds: " + dCenterHornStripIds);
+    // LX.log("dCenterHornStripIds: " + dCenterHornStripIds);
     // dRearHornStripIds
-    LX.log("dRearHornStripIds: " + dRearHornStripIds);
+    // LX.log("dRearHornStripIds: " + dRearHornStripIds);
 
     // Butt strip ids
-    LX.log("Butt vStrip ids: " + buttStrips.stream()
-      .map(vStrip -> vStrip.id)
-      .toList());
+    // LX.log("Butt vStrip ids: " + buttStrips.stream()
+    //  .map(vStrip -> vStrip.id)
+    //  .toList());
 
     // Nozzle strip ids
-    LX.log("Nozzle vStrip ids: " + nozzleStrips.stream()
-      .map(vStrip -> vStrip.id)
-      .toList());
+    // LX.log("Nozzle vStrip ids: " + nozzleStrips.stream()
+    //  .map(vStrip -> vStrip.id)
+    //  .toList());
 
     // Bubble strip ids
-    LX.log("Bubble vStrip ids: " + bubbleStrips.stream()
-      .map(vStrip -> vStrip.id)
-      .toList());
+    // LX.log("Bubble vStrip ids: " + bubbleStrips.stream()
+    //  .map(vStrip -> vStrip.id)
+    //  .toList());
 
     // Grill strip id
-    LX.log("Grill vStrip id: " + grillStrips.stream()
-      .map(vStrip -> vStrip.id)
-      .toList());
+    // LX.log("Grill vStrip id: " + grillStrips.stream()
+    //  .map(vStrip -> vStrip.id)
+    //  .toList());
+
     return topologies;
   }
 
@@ -369,8 +370,8 @@ public class Topology {
     addStripToVStrip(newVStrip, stripToAdd, startIndex, endIndex, forward);
     newVStrip.normalize();
     vTop.addStrip(newVStrip);
-    LX.log("Added points to " + tag + " vStrip from index " +
-           startIndex + " to " + endIndex + " forward: " + forward + " stripId: " + stripId);
+    //LX.log("Added points to " + tag + " vStrip from index " +
+    //       startIndex + " to " + endIndex + " forward: " + forward + " stripId: " + stripId);
     return newVStrip;
   }
 
@@ -385,7 +386,7 @@ public class Topology {
     addStripToVStrip(newVStrip, stripToAdd);
     newVStrip.normalize();
     vTop.addStrip(newVStrip);
-    LX.log("Added " + stripToAdd.points.length + " points to " + tag + " vStrip stripId: " + stripId);
+    //LX.log("Added " + stripToAdd.points.length + " points to " + tag + " vStrip stripId: " + stripId);
     return newVStrip;
   }
 
@@ -399,7 +400,7 @@ public class Topology {
     addStripToVStripReverse(newVStrip, stripToAdd);
     newVStrip.normalize();
     vTop.addStrip(newVStrip);
-    LX.log("Added " + stripToAdd.points.length + " points to " + tag + " vStrip stripId: " + stripId);
+    //LX.log("Added " + stripToAdd.points.length + " points to " + tag + " vStrip stripId: " + stripId);
     return newVStrip;
   }
 
