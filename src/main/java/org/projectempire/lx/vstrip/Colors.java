@@ -15,6 +15,45 @@ public final class Colors {
   }
 
   /**
+   * Returns the red part of a 32-bit RGBA color.
+   */
+  public static int red(int color) {
+    return (color >> 16) & 0xff;
+  }
+
+  /**
+   * Returns the green part of a 32-bit RGBA color.
+   */
+  public static int green(int color) {
+    return (color >> 8) & 0xff;
+  }
+
+  /**
+   * Returns the blue part of a 32-bit RGBA color.
+   */
+  public static int blue(int color) {
+    return color & 0xff;
+  }
+
+  /**
+   * Returns the alpha part of a 32-bit RGBA color.
+   */
+  public static int alpha(int color) {
+    return (color >> 24) & 0xff;
+  }
+
+  /**
+   * Returns a color constructed from the three components. The alpha component is set to 255.
+   */
+  public static int rgb(int r, int g, int b) {
+    return 0xff000000 | ((r & 0xff) << 16) | ((g & 0xff) << 8) | (b & 0xff);
+  }
+
+  public static int rgba(int r, int g, int b, int a) {
+    return ((a & 0xff) << 24) | ((r & 0xff) << 16) | ((g & 0xff) << 8) | (b & 0xff);
+  }
+
+  /**
    * Given a range from 0 to one, extract a color out of a swatch.  0 is the left most color of
    * the palette and 1 is the rightmost.  A swatch returns a DynamicColor, which can already lerp
    * between the base color and the next color.  So here, we just need to remap 0 to 1 so that
