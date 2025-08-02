@@ -52,6 +52,7 @@ public class DStrip {
      * @param jointSelector Which joint to select the next bar from.  If -1, then choose a random joint.
      */
     public DStrip chooseStripFromJoints(List<VJoint> joints, int jointSelector) {
+        if (joints == null) return null;
         //if (joints.size() > 0)
         //    LX.log("choosing strip from joints: " + joints.size() + " with jointSelector: " + jointSelector + "stripId" + vStrip.id);
         int jointNum = jointSelector;
@@ -66,48 +67,8 @@ public class DStrip {
         //LX.log("Choosing strip from joints: " + joints.size() + " with jointSelector: " + jointSelector +
         //        " stripId: " + vStrip.id + " nextStripId: " + nextStrip.id + " forward: " + forward +
         //        " isAdjacentStripAStartPoint: " + joints.get(jointNum).isAdjacentStripAStartPoint);
-        // TODO(tracy): Should we just precreate all the DStrips and then just return the one we want?
-        DStrip ds = new DStrip(vTop, nextStrip.id, joints.get(jointNum).isAdjacentStripAStartPoint);
-        return ds;
+        return new DStrip(vTop, nextStrip.id, joints.get(jointNum).isAdjacentStripAStartPoint);
     }
-
-    /**
-     * Finds which joint to take on this directional strip so that the next strip will be our
-     * requested strip id.  Note: Tries start point joints first and then end point joints.  For the
-     * case where it is just two strips connected end to end, you will need to implement a function that
-     * takes into consideration whether you are checking the start point or end point of the current
-     * directional strip.
-     * @param stripId The ID of the next strip.
-     * @return Which joint number to choose to get to the requested next light bar.
-     */
-    public int findJointNum(int stripId) {
-        int whichJoint = findJointNumAtStart(stripId);
-        if (whichJoint != -1) return whichJoint;
-        return findJointNumAtEnd(stripId);
-    }
-
-    public int findJointNumAtStart(int stripId) {
-        for (int jointNum = 0; jointNum < vStrip.myStartPointJoints.size(); jointNum++) {
-            VJoint j = vStrip.myStartPointJoints.get(jointNum);
-            if (j != null && j.vStrip.id == stripId) {
-                return jointNum;
-            }
-        }
-        return -1;
-    }
-
-    public int findJointNumAtEnd(int stripId) {
-        for (int jointNum = 0; jointNum < vStrip.myStartPointJoints.size(); jointNum++) {
-            VJoint j = vStrip.myEndPointJoints.get(jointNum);
-            if (j != null && j.vStrip.id == stripId) {
-                return jointNum;
-            }
-        }
-        return -1;
-    }
-
-    // TODO(tracy): Implement the non-normalized version of these methods.  To do so, we will need to account for
-    // the strip length.
 
     /**
      * Given a position on this strip, compute the position on the next strip while accounting for the
@@ -116,7 +77,7 @@ public class DStrip {
      *            normalized position. pos should be positive when calling this method.
      * @param nextStrip The adjacent strip to compute the position on.  We account for the directionality of
      *                  the strip when computing the position on the next strip.
-     * @return
+     * @return Returns the position in the coordinate space of the next strip
      */
     public float computeNextStripPos(float pos, DStrip nextStrip) {
         float distanceToJoint = 1.0f - pos;
@@ -137,7 +98,7 @@ public class DStrip {
      *            normalized position.  pos should be negative when calling this method.
      * @param prevStrip The adjacent strip to compute the position on.  We account for the directionality of
      *                  the strip when computing the position on the previous strip.
-     * @return
+     * @return Returns the position in the coordinate space of the next strip
      */
     public float computePrevStripPos(float pos, DStrip prevStrip) {
         // For the previous strip, in the straightforward case, the distance to this joint will be the current

@@ -64,9 +64,9 @@ public class VStripRender {
                 val = 1.0f - val;
             }
             colors[pt.p.index] = LXColor.blend(colors[pt.p.index],
-                    LXColor.rgba((int)(((int)LXColor.red(clr))*val),
-                            (int)(((int)LXColor.green(clr))*val),
-                            (int)(((int)LXColor.blue(clr))*val), 255), blend);
+                    LXColor.rgba((int)(((int)Colors.red(clr))*val),
+                            (int)(((int)Colors.green(clr))*val),
+                            (int)(((int)Colors.blue(clr))*val), 255), blend);
         }
     }
 
@@ -82,7 +82,7 @@ public class VStripRender {
     static public void renderColor(int[] colors, VStrip vStrip, int color, float maxValue) {
         for (LVPoint point: vStrip.points) {
             colors[point.p.index] = LXColor.rgba(
-                    (int)(LXColor.red(color) * maxValue), (int)(LXColor.green(color) * maxValue), (int)(LXColor.blue(color) * maxValue), 255);
+                    (int)(Colors.red(color) * maxValue), (int)(Colors.green(color) * maxValue), (int)(Colors.blue(color) * maxValue), 255);
         }
     }
 }

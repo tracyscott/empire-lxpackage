@@ -613,26 +613,6 @@ public class Topology {
     endPointJoints.addAll(hornEndJoints);
     endPointJoints.addAll(grillEndJoints);
 
-    int[] combinedStartPointJoints = new int[buttStartJoints.size()  + nozzleStartJoints.size() + hornStartPointJoints.length];
-    int[] combinedEndPointJoints = new int[buttEndJoints.size() + nozzleEndJoints.size() + hornEndPointJoints.length];
-    for (int i = 0; i < buttStartJoints.size(); i++) {
-      combinedStartPointJoints[i] = buttStartJoints.get(i);
-    }
-    for (int i = 0; i < nozzleStartJoints.size(); i++) {
-      combinedStartPointJoints[i + buttStartJoints.size()] = nozzleStartJoints.get(i);
-    }
-    for (int i = 0; i < hornStartPointJoints.length; i++) {
-      combinedStartPointJoints[i + buttStartJoints.size() + nozzleStartJoints.size()] = hornStartPointJoints[i];
-    }
-    for (int i = 0; i < buttEndJoints.size(); i++) {
-      combinedEndPointJoints[i] = buttEndJoints.get(i);
-    }
-    for (int i = 0; i < nozzleEndJoints.size(); i++) {
-      combinedEndPointJoints[i + buttEndJoints.size()] = nozzleEndJoints.get(i);
-    }
-    for (int i = 0; i < hornEndPointJoints.length; i++) {
-      combinedEndPointJoints[i + buttEndJoints.size() + nozzleEndJoints.size()] = hornEndPointJoints[i];
-    }
     int[] startJointsArray = new int[startPointJoints.size()];
     for (int i = 0; i < startPointJoints.size(); i++) {
       startJointsArray[i] = startPointJoints.get(i);
