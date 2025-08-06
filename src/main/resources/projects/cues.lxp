@@ -102,7 +102,7 @@
   "PuckFillGreen": [
     {
       "address": "/lx/mixer/channel/6/view",
-      "arguments": [ 6 ]
+      "arguments": [ 5 ]
     },
     {
       "address": "/lx/mixer/channel/6/effect/1/enabled",
@@ -154,7 +154,7 @@
     },
     {
       "address": "/lx/mixer/channel/3/view",
-      "arguments": [ 11 ]
+      "arguments": [ 21 ]
     },
     {
       "address": "/lx/mixer/channel/3/enabled",
@@ -176,7 +176,7 @@
     },
     {
       "address": "/lx/mixer/channel/3/view",
-      "arguments": [ 12 ]
+      "arguments": [ 22 ]
     },
     {
       "address": "/lx/mixer/channel/3/enabled",
@@ -198,7 +198,7 @@
     },
     {
       "address": "/lx/mixer/channel/3/view",
-      "arguments": [ 13 ]
+      "arguments": [ 23 ]
     },
     {
       "address": "/lx/mixer/channel/3/enabled",
@@ -220,7 +220,7 @@
     },
     {
       "address": "/lx/mixer/channel/3/view",
-      "arguments": [ 14 ]
+      "arguments": [ 24 ]
     },
     {
       "address": "/lx/mixer/channel/3/enabled",
@@ -242,7 +242,7 @@
     },
     {
       "address": "/lx/mixer/channel/3/view",
-      "arguments": [ 15 ]
+      "arguments": [ 25 ]
     },
     {
       "address": "/lx/mixer/channel/3/enabled",
@@ -268,7 +268,7 @@
     },
     {
       "address": "/lx/mixer/channel/3/view",
-      "arguments": [ 16 ]
+      "arguments": [ 26 ]
     },
     {
       "address": "/lx/mixer/channel/3/enabled",
