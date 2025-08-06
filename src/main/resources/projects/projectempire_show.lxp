@@ -1,6 +1,6 @@
 {
   "version": "1.1.1-SNAPSHOT",
-  "timestamp": 1754517996571,
+  "timestamp": 1754523146185,
   "model": {
     "id": 2,
     "class": "heronarts.lx.structure.LXStructure",
@@ -6583,7 +6583,8 @@
         },
         "children": {}
       }
-    ]
+    ],
+    "file": "Empire/ProjectEmpireShow.lxm"
   },
   "engine": {
     "id": 1,
@@ -12209,7 +12210,7 @@
               "exp": 0.0
             },
             "children": {},
-            "basis": 0.766217885603759
+            "basis": 0.1235585322037583
           },
           {
             "id": 63300,
@@ -12321,7 +12322,7 @@
               "triggerOut": false
             },
             "children": {},
-            "basis": 0.4400008120000738
+            "basis": 0.013407278000076905
           },
           {
             "id": 63303,
@@ -12398,7 +12399,7 @@
               "activeStep-1": false,
               "activeStep-2": false,
               "activeStep-3": false,
-              "activeStep-4": false,
+              "activeStep-4": true,
               "activeStep-5": false,
               "activeStep-6": false,
               "activeStep-7": false,
@@ -12410,7 +12411,7 @@
               "activeStep-13": false,
               "activeStep-14": false,
               "activeStep-15": false,
-              "activeStep-16": true,
+              "activeStep-16": false,
               "step-1": false,
               "step-2": false,
               "step-3": false,
@@ -12429,7 +12430,7 @@
               "step-16": false
             },
             "children": {},
-            "basis": 0.3633903320000017
+            "basis": 0.14681293200000123
           }
         ],
         "modulations": [
@@ -34760,7 +34761,7 @@
   },
   "externals": {
     "ui": {
-      "leftPaneActiveSection": 2,
+      "leftPaneActiveSection": 1,
       "audioExpanded": false,
       "envelopExpanded": true,
       "reaperExpanded": true,
