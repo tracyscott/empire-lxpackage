@@ -34,7 +34,7 @@ public class ESpaceWaveD extends LXPattern {
     protected DiscreteParameter wave = new DiscreteParameter("wave", 0, 0, WavetableLib.countWavetables())
             .setDescription("Which wave to use");
 
-    protected CompoundParameter paletteDensity = new CompoundParameter("pald", 1, 0, 5)
+    protected CompoundParameter paletteDensity = new CompoundParameter("pald", 1, 0, 20)
             .setDescription("Density of the palette");
 
     protected CompoundParameter paletteOffset = new CompoundParameter("paloff", 0, 0, 1)
@@ -122,6 +122,7 @@ public class ESpaceWaveD extends LXPattern {
             //distance = Math.abs(distance);
             //distance = 1f - distance;
             float val = WavetableLib.getLibraryWavetable(wave.getValuei()).getSample((float)distance, width.getValuef());
+            float wavVal = val;
             float palInputVal = (val + paletteOffset.getValuef()) * paletteDensity.getValuef();
             CosPaletteModulator.paletteN(palInputVal, whichPal.getValuei(), tempRGB);
             val = 1f - val;
@@ -129,6 +130,11 @@ public class ESpaceWaveD extends LXPattern {
                 val = brt.getValuef()/val;
             } else {
                 val = 1000f;
+            }
+            // TODO(tracy): Just clamping for now, this needs to be a smoothstep blend to avoid
+            // discontinuities in the light fall off.
+            if (wavVal == 0f) {
+                val = 0f;
             }
             //val += 0.5f;
             //if (val > 1f) {
@@ -152,6 +158,8 @@ public class ESpaceWaveD extends LXPattern {
             if (alpha.isOn()) {
                 if (val > 1f)
                     val = 1f;
+                if (val < 0.1f)
+                    val = 0f;
                 int alpha = (int)(val * 255);
                 color = LXColor.rgba(LXColor.red(color), LXColor.green(color), LXColor.blue(color), alpha);
                 colors[p.index] = color;

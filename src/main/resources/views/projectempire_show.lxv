@@ -1,0 +1,594 @@
+{
+  "class": "heronarts.lx.structure.view.LXViewEngine",
+  "internal": {
+    "modulationColor": 0,
+    "modulationControlsExpanded": true,
+    "modulationsExpanded": true
+  },
+  "parameters": {
+    "label": "LX"
+  },
+  "children": {},
+  "views": [
+    {
+      "class": "heronarts.lx.structure.view.LXViewDefinition",
+      "internal": {
+        "modulationColor": 0,
+        "modulationControlsExpanded": true,
+        "modulationsExpanded": true
+      },
+      "parameters": {
+        "label": "Body",
+        "enabled": true,
+        "selector": "eye, grill, horn, bubble, butt",
+        "normalization": 0,
+        "normalization/name": "RELATIVE",
+        "orientation": 0,
+        "orientation/name": "GLOBAL",
+        "priority": true,
+        "cueActive": false
+      },
+      "children": {}
+    },
+    {
+      "class": "heronarts.lx.structure.view.LXViewDefinition",
+      "internal": {
+        "modulationColor": 1,
+        "modulationControlsExpanded": true,
+        "modulationsExpanded": true
+      },
+      "parameters": {
+        "label": "Nozzle",
+        "enabled": true,
+        "selector": "nozzle, puck",
+        "normalization": 1,
+        "normalization/name": "ABSOLUTE",
+        "orientation": 0,
+        "orientation/name": "GLOBAL",
+        "priority": true,
+        "cueActive": false
+      },
+      "children": {}
+    },
+    {
+      "class": "heronarts.lx.structure.view.LXViewDefinition",
+      "internal": {
+        "modulationColor": 2,
+        "modulationControlsExpanded": true,
+        "modulationsExpanded": true
+      },
+      "parameters": {
+        "label": "Floods",
+        "enabled": true,
+        "selector": "flood",
+        "normalization": 0,
+        "normalization/name": "RELATIVE",
+        "orientation": 0,
+        "orientation/name": "GLOBAL",
+        "priority": true,
+        "cueActive": false
+      },
+      "children": {}
+    },
+    {
+      "class": "heronarts.lx.structure.view.LXViewDefinition",
+      "internal": {
+        "modulationColor": 3,
+        "modulationControlsExpanded": true,
+        "modulationsExpanded": true
+      },
+      "parameters": {
+        "label": "Nasa",
+        "enabled": true,
+        "selector": "nasa",
+        "normalization": 1,
+        "normalization/name": "ABSOLUTE",
+        "orientation": 0,
+        "orientation/name": "GLOBAL",
+        "priority": true,
+        "cueActive": false
+      },
+      "children": {}
+    },
+    {
+      "class": "heronarts.lx.structure.view.LXViewDefinition",
+      "internal": {
+        "modulationColor": 4,
+        "modulationControlsExpanded": true,
+        "modulationsExpanded": true
+      },
+      "parameters": {
+        "label": "Pucks",
+        "enabled": true,
+        "selector": "puck",
+        "normalization": 1,
+        "normalization/name": "ABSOLUTE",
+        "orientation": 0,
+        "orientation/name": "GLOBAL",
+        "priority": true,
+        "cueActive": false
+      },
+      "children": {}
+    },
+    {
+      "class": "heronarts.lx.structure.view.LXViewDefinition",
+      "internal": {
+        "modulationColor": 5,
+        "modulationControlsExpanded": true,
+        "modulationsExpanded": true
+      },
+      "parameters": {
+        "label": "Spare",
+        "enabled": true,
+        "selector": "puckInner",
+        "normalization": 1,
+        "normalization/name": "ABSOLUTE",
+        "orientation": 0,
+        "orientation/name": "GLOBAL",
+        "priority": true,
+        "cueActive": false
+      },
+      "children": {}
+    },
+    {
+      "class": "heronarts.lx.structure.view.LXViewDefinition",
+      "internal": {
+        "modulationColor": 6,
+        "modulationControlsExpanded": true,
+        "modulationsExpanded": true
+      },
+      "parameters": {
+        "label": "Fog",
+        "enabled": true,
+        "selector": "fog",
+        "normalization": 0,
+        "normalization/name": "RELATIVE",
+        "orientation": 0,
+        "orientation/name": "GLOBAL",
+        "priority": true,
+        "cueActive": false
+      },
+      "children": {}
+    },
+    {
+      "class": "heronarts.lx.structure.view.LXViewDefinition",
+      "internal": {
+        "modulationColor": 7,
+        "modulationControlsExpanded": true,
+        "modulationsExpanded": true
+      },
+      "parameters": {
+        "label": "Fan",
+        "enabled": true,
+        "selector": "fan",
+        "normalization": 0,
+        "normalization/name": "RELATIVE",
+        "orientation": 0,
+        "orientation/name": "GLOBAL",
+        "priority": true,
+        "cueActive": false
+      },
+      "children": {}
+    },
+    {
+      "class": "heronarts.lx.structure.view.LXViewDefinition",
+      "internal": {
+        "modulationColor": 8,
+        "modulationControlsExpanded": true,
+        "modulationsExpanded": true
+      },
+      "parameters": {
+        "label": "Engine",
+        "enabled": true,
+        "selector": "engine",
+        "normalization": 0,
+        "normalization/name": "RELATIVE",
+        "orientation": 0,
+        "orientation/name": "GLOBAL",
+        "priority": true,
+        "cueActive": false
+      },
+      "children": {}
+    },
+    {
+      "class": "heronarts.lx.structure.view.LXViewDefinition",
+      "internal": {
+        "modulationColor": 9,
+        "modulationControlsExpanded": true,
+        "modulationsExpanded": true
+      },
+      "parameters": {
+        "label": "Switches",
+        "enabled": true,
+        "selector": "switch, phone, tempc, 2ball",
+        "normalization": 0,
+        "normalization/name": "RELATIVE",
+        "orientation": 0,
+        "orientation/name": "GLOBAL",
+        "priority": true,
+        "cueActive": false
+      },
+      "children": {}
+    },
+    {
+      "class": "heronarts.lx.structure.view.LXViewDefinition",
+      "internal": {
+        "modulationColor": 0,
+        "modulationControlsExpanded": true,
+        "modulationsExpanded": true
+      },
+      "parameters": {
+        "label": "Body",
+        "enabled": true,
+        "selector": "eye, grill, horn, bubble, butt",
+        "normalization": 1,
+        "normalization/name": "ABSOLUTE",
+        "orientation": 0,
+        "orientation/name": "GLOBAL",
+        "priority": true,
+        "cueActive": false
+      },
+      "children": {}
+    },
+    {
+      "class": "heronarts.lx.structure.view.LXViewDefinition",
+      "internal": {
+        "modulationColor": 1,
+        "modulationControlsExpanded": true,
+        "modulationsExpanded": true
+      },
+      "parameters": {
+        "label": "Nozzle",
+        "enabled": true,
+        "selector": "nozzle, puck",
+        "normalization": 1,
+        "normalization/name": "ABSOLUTE",
+        "orientation": 0,
+        "orientation/name": "GLOBAL",
+        "priority": true,
+        "cueActive": false
+      },
+      "children": {}
+    },
+    {
+      "class": "heronarts.lx.structure.view.LXViewDefinition",
+      "internal": {
+        "modulationColor": 2,
+        "modulationControlsExpanded": true,
+        "modulationsExpanded": true
+      },
+      "parameters": {
+        "label": "Floods",
+        "enabled": true,
+        "selector": "flood",
+        "normalization": 0,
+        "normalization/name": "RELATIVE",
+        "orientation": 0,
+        "orientation/name": "GLOBAL",
+        "priority": true,
+        "cueActive": false
+      },
+      "children": {}
+    },
+    {
+      "class": "heronarts.lx.structure.view.LXViewDefinition",
+      "internal": {
+        "modulationColor": 3,
+        "modulationControlsExpanded": true,
+        "modulationsExpanded": true
+      },
+      "parameters": {
+        "label": "Nasa",
+        "enabled": true,
+        "selector": "nasa",
+        "normalization": 1,
+        "normalization/name": "ABSOLUTE",
+        "orientation": 0,
+        "orientation/name": "GLOBAL",
+        "priority": true,
+        "cueActive": false
+      },
+      "children": {}
+    },
+    {
+      "class": "heronarts.lx.structure.view.LXViewDefinition",
+      "internal": {
+        "modulationColor": 4,
+        "modulationControlsExpanded": true,
+        "modulationsExpanded": true
+      },
+      "parameters": {
+        "label": "Pucks",
+        "enabled": true,
+        "selector": "puck",
+        "normalization": 1,
+        "normalization/name": "ABSOLUTE",
+        "orientation": 0,
+        "orientation/name": "GLOBAL",
+        "priority": true,
+        "cueActive": false
+      },
+      "children": {}
+    },
+    {
+      "class": "heronarts.lx.structure.view.LXViewDefinition",
+      "internal": {
+        "modulationColor": 5,
+        "modulationControlsExpanded": true,
+        "modulationsExpanded": true
+      },
+      "parameters": {
+        "label": "Spare",
+        "enabled": true,
+        "selector": "puckInner",
+        "normalization": 1,
+        "normalization/name": "ABSOLUTE",
+        "orientation": 0,
+        "orientation/name": "GLOBAL",
+        "priority": true,
+        "cueActive": false
+      },
+      "children": {}
+    },
+    {
+      "class": "heronarts.lx.structure.view.LXViewDefinition",
+      "internal": {
+        "modulationColor": 6,
+        "modulationControlsExpanded": true,
+        "modulationsExpanded": true
+      },
+      "parameters": {
+        "label": "Fog",
+        "enabled": true,
+        "selector": "fog",
+        "normalization": 0,
+        "normalization/name": "RELATIVE",
+        "orientation": 0,
+        "orientation/name": "GLOBAL",
+        "priority": true,
+        "cueActive": false
+      },
+      "children": {}
+    },
+    {
+      "class": "heronarts.lx.structure.view.LXViewDefinition",
+      "internal": {
+        "modulationColor": 7,
+        "modulationControlsExpanded": true,
+        "modulationsExpanded": true
+      },
+      "parameters": {
+        "label": "Fan",
+        "enabled": true,
+        "selector": "fan",
+        "normalization": 0,
+        "normalization/name": "RELATIVE",
+        "orientation": 0,
+        "orientation/name": "GLOBAL",
+        "priority": true,
+        "cueActive": false
+      },
+      "children": {}
+    },
+    {
+      "class": "heronarts.lx.structure.view.LXViewDefinition",
+      "internal": {
+        "modulationColor": 8,
+        "modulationControlsExpanded": true,
+        "modulationsExpanded": true
+      },
+      "parameters": {
+        "label": "Engine",
+        "enabled": true,
+        "selector": "engine",
+        "normalization": 0,
+        "normalization/name": "RELATIVE",
+        "orientation": 0,
+        "orientation/name": "GLOBAL",
+        "priority": true,
+        "cueActive": false
+      },
+      "children": {}
+    },
+    {
+      "class": "heronarts.lx.structure.view.LXViewDefinition",
+      "internal": {
+        "modulationColor": 9,
+        "modulationControlsExpanded": true,
+        "modulationsExpanded": true
+      },
+      "parameters": {
+        "label": "Switches",
+        "enabled": true,
+        "selector": "switch, phone, tempc, 2ball",
+        "normalization": 0,
+        "normalization/name": "RELATIVE",
+        "orientation": 0,
+        "orientation/name": "GLOBAL",
+        "priority": true,
+        "cueActive": false
+      },
+      "children": {}
+    },
+    {
+      "class": "heronarts.lx.structure.view.LXViewDefinition",
+      "internal": {
+        "modulationColor": 10,
+        "modulationControlsExpanded": true,
+        "modulationsExpanded": true
+      },
+      "parameters": {
+        "label": "NozzleSpin1",
+        "enabled": true,
+        "selector": "nozzle5",
+        "normalization": 1,
+        "normalization/name": "ABSOLUTE",
+        "orientation": 0,
+        "orientation/name": "GLOBAL",
+        "priority": true,
+        "cueActive": false
+      },
+      "children": {}
+    },
+    {
+      "class": "heronarts.lx.structure.view.LXViewDefinition",
+      "internal": {
+        "modulationColor": 11,
+        "modulationControlsExpanded": true,
+        "modulationsExpanded": true
+      },
+      "parameters": {
+        "label": "NozzleSpin2",
+        "enabled": true,
+        "selector": "nozzle4, nozzle5",
+        "normalization": 1,
+        "normalization/name": "ABSOLUTE",
+        "orientation": 0,
+        "orientation/name": "GLOBAL",
+        "priority": true,
+        "cueActive": false
+      },
+      "children": {}
+    },
+    {
+      "class": "heronarts.lx.structure.view.LXViewDefinition",
+      "internal": {
+        "modulationColor": 11,
+        "modulationControlsExpanded": true,
+        "modulationsExpanded": true
+      },
+      "parameters": {
+        "label": "NozzleSpin3",
+        "enabled": true,
+        "selector": "nozzle3, nozzle4, nozzle5",
+        "normalization": 1,
+        "normalization/name": "ABSOLUTE",
+        "orientation": 0,
+        "orientation/name": "GLOBAL",
+        "priority": true,
+        "cueActive": false
+      },
+      "children": {}
+    },
+    {
+      "class": "heronarts.lx.structure.view.LXViewDefinition",
+      "internal": {
+        "modulationColor": 11,
+        "modulationControlsExpanded": true,
+        "modulationsExpanded": true
+      },
+      "parameters": {
+        "label": "NozzleSpin4",
+        "enabled": true,
+        "selector": "nozzle2, nozzle3, nozzle4, nozzle5",
+        "normalization": 1,
+        "normalization/name": "ABSOLUTE",
+        "orientation": 0,
+        "orientation/name": "GLOBAL",
+        "priority": true,
+        "cueActive": false
+      },
+      "children": {}
+    },
+    {
+      "class": "heronarts.lx.structure.view.LXViewDefinition",
+      "internal": {
+        "modulationColor": 11,
+        "modulationControlsExpanded": true,
+        "modulationsExpanded": true
+      },
+      "parameters": {
+        "label": "NozzleSpin5",
+        "enabled": true,
+        "selector": "nozzle",
+        "normalization": 1,
+        "normalization/name": "ABSOLUTE",
+        "orientation": 0,
+        "orientation/name": "GLOBAL",
+        "priority": true,
+        "cueActive": false
+      },
+      "children": {}
+    },
+    {
+      "class": "heronarts.lx.structure.view.LXViewDefinition",
+      "internal": {
+        "modulationColor": 11,
+        "modulationControlsExpanded": true,
+        "modulationsExpanded": true
+      },
+      "parameters": {
+        "label": "NozzleSpin",
+        "enabled": true,
+        "selector": "nozzle, puck",
+        "normalization": 1,
+        "normalization/name": "ABSOLUTE",
+        "orientation": 0,
+        "orientation/name": "GLOBAL",
+        "priority": true,
+        "cueActive": false
+      },
+      "children": {}
+    },
+    {
+      "class": "heronarts.lx.structure.view.LXViewDefinition",
+      "internal": {
+        "modulationColor": 2,
+        "modulationControlsExpanded": true,
+        "modulationsExpanded": true
+      },
+      "parameters": {
+        "label": "Bubble",
+        "enabled": true,
+        "selector": "bubble",
+        "normalization": 0,
+        "normalization/name": "RELATIVE",
+        "orientation": 0,
+        "orientation/name": "GLOBAL",
+        "priority": true,
+        "cueActive": false
+      },
+      "children": {}
+    },
+    {
+      "class": "heronarts.lx.structure.view.LXViewDefinition",
+      "internal": {
+        "modulationColor": 3,
+        "modulationControlsExpanded": true,
+        "modulationsExpanded": true
+      },
+      "parameters": {
+        "label": "Grill",
+        "enabled": true,
+        "selector": "grill",
+        "normalization": 0,
+        "normalization/name": "RELATIVE",
+        "orientation": 0,
+        "orientation/name": "GLOBAL",
+        "priority": true,
+        "cueActive": false
+      },
+      "children": {}
+    },
+    {
+      "class": "heronarts.lx.structure.view.LXViewDefinition",
+      "internal": {
+        "modulationColor": 4,
+        "modulationControlsExpanded": true,
+        "modulationsExpanded": true
+      },
+      "parameters": {
+        "label": "BodyTop",
+        "enabled": true,
+        "selector": "eye, horn, butt",
+        "normalization": 0,
+        "normalization/name": "RELATIVE",
+        "orientation": 0,
+        "orientation/name": "GLOBAL",
+        "priority": true,
+        "cueActive": false
+      },
+      "children": {}
+    }
+  ]
+}
