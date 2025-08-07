@@ -4,7 +4,7 @@
 
     <groupId>org.projectempire.lx</groupId>
     <artifactId>empire-lxpackage</artifactId>
-    <version>0.0.7</version>
+    <version>0.0.8</version>
     <packaging>jar</packaging>
 
     <properties>
