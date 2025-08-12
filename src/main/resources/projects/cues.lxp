@@ -154,7 +154,7 @@
     },
     {
       "address": "/lx/mixer/channel/3/view",
-      "arguments": [ 21 ]
+      "arguments": [ 11 ]
     },
     {
       "address": "/lx/mixer/channel/3/enabled",
@@ -176,7 +176,7 @@
     },
     {
       "address": "/lx/mixer/channel/3/view",
-      "arguments": [ 22 ]
+      "arguments": [ 12 ]
     },
     {
       "address": "/lx/mixer/channel/3/enabled",
@@ -198,7 +198,7 @@
     },
     {
       "address": "/lx/mixer/channel/3/view",
-      "arguments": [ 23 ]
+      "arguments": [ 13 ]
     },
     {
       "address": "/lx/mixer/channel/3/enabled",
@@ -220,7 +220,7 @@
     },
     {
       "address": "/lx/mixer/channel/3/view",
-      "arguments": [ 24 ]
+      "arguments": [ 14 ]
     },
     {
       "address": "/lx/mixer/channel/3/enabled",
@@ -242,7 +242,7 @@
     },
     {
       "address": "/lx/mixer/channel/3/view",
-      "arguments": [ 25 ]
+      "arguments": [ 15 ]
     },
     {
       "address": "/lx/mixer/channel/3/enabled",
@@ -268,7 +268,7 @@
     },
     {
       "address": "/lx/mixer/channel/3/view",
-      "arguments": [ 26 ]
+      "arguments": [ 16 ]
     },
     {
       "address": "/lx/mixer/channel/3/enabled",

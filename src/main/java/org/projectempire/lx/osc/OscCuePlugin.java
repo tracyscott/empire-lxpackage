@@ -3,8 +3,12 @@ package org.projectempire.lx.osc;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+
+import heronarts.glx.ui.component.UIButton.Trigger;
 import heronarts.lx.LX;
+import heronarts.lx.LXComponent;
 import heronarts.lx.LXPlugin;
+import heronarts.lx.effect.midi.GateEffect.TriggerMode;
 import heronarts.lx.osc.LXOscEngine;
 import heronarts.lx.osc.LXOscListener;
 import heronarts.lx.osc.OscArgument;
@@ -31,6 +35,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
+import heronarts.lx.studio.LXStudio;
+import heronarts.lx.studio.LXStudio.UI;
 
 /**
  * Empire OSC Plugin for handling OSC messages and executing cues.
@@ -39,12 +45,14 @@ import java.util.concurrent.atomic.AtomicInteger;
  * and executes the corresponding cues defined in a JSON file.
  */
 @LXPlugin.Name("Empire OSC Listener")
-public class OscCuePlugin implements LXPlugin, LXOscListener, LXParameterListener {
+public class OscCuePlugin extends LXComponent implements LXStudio.Plugin, LXOscListener, LXParameterListener {
     /** Prefix for log messages from this plugin */
     private static final String LOG_PREFIX = "[Empire OSC] ";
     private static final LXLogWrapper logger = new LXLogWrapper(LOG_PREFIX);
     private static final byte[] LOCALHOST_IP = {127, 0, 0, 1};
     private LX lx;
+    private LXStudio.UI ui;
+
     /** Transmitter for sending OSC messages to localhost (127.0.0.1) */
     private LXOscEngine.Transmitter transmitter;
     private AtomicInteger cueCounter = new AtomicInteger(0);
@@ -68,12 +76,14 @@ public class OscCuePlugin implements LXPlugin, LXOscListener, LXParameterListene
             logger.error(e, LOG_PREFIX + "Failed to create OSC transmitter");
         }
         this.lx.engine.osc.addListener(this);
+        lx.engine.registerComponent("empirecues", this);
     }
 
     @Override
     public void dispose() {
         this.lx.engine.osc.removeListener(this);
         this.transmitter.dispose();
+        super.dispose();
     }
 
     @Override
@@ -95,7 +105,15 @@ public class OscCuePlugin implements LXPlugin, LXOscListener, LXParameterListene
                         if (cues != null && !cues.isEmpty()) {
                             runCues(cues);
                         } else {
-                            logger.error("Cue not found: '" + cueName + "'");
+                            lx.engine.modulation.triggers.forEach(trigger -> {
+                                if (trigger.source.getCanonicalLabel().contains("EMPCUE")) {
+                                    if (cueName.equals(trigger.source.getLabel())) {
+                                        // Trigger found, execute it
+                                        trigger.source.setValue(true);
+                                        logger.log("Triggered modulation: " + cueName + " at path " + trigger.getCanonicalPath());
+                                    }
+                                }
+                            });
                         }
                     } else {
                         logger.error("Cue name not specified");
@@ -198,5 +216,15 @@ public class OscCuePlugin implements LXPlugin, LXOscListener, LXParameterListene
                 transmitter.setPort(newPort);
             }
         }
+    }
+
+    @Override
+    public void initializeUI(LXStudio lx, UI ui) {
+    }
+
+    @Override
+    public void onUIReady(LXStudio lx, UI ui) {
+        // Store a reference to UI so we can use it to access the UIModulatorControls
+        this.ui = ui;
     }
 }
