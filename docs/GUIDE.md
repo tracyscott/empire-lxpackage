@@ -41,3 +41,8 @@ The QLab cues for the Mission 1 soundtrack come into Chromatik as OSC messages o
 Above is an example of the INTRO cue.  It will trigger clips on the MULTIPLY channel and the Master channel.  Shown above is the clip for the MULTIPLY channel.  It enables the channel and brings up the fader and then brings down the fader and then disables the channel.  When triggering clips you typically will want to return some previous state.  For this example, the multipy is faded down and then the channel is disabled.
 
 In order to map the trigger so that it will trigger clips, click on the trigger modulation mapping icon (1), then click on the trigger you want to map (2), and finally click on destination (3).  To map a trigger to multiple destinations, repeat steps (1) and (2) and then choose another target (3).
+
+## General Chromatik
+Here is a link to the official generic guide.  I would advise reading it for a general introduction to Chromatik.
+
+https://chromatik.co/guide/
