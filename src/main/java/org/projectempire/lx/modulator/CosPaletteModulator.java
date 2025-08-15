@@ -5,6 +5,7 @@ import heronarts.lx.color.LXColor;
 import heronarts.lx.color.LinkedColorParameter;
 import heronarts.lx.modulator.LXModulator;
 import heronarts.lx.osc.LXOscComponent;
+import heronarts.lx.parameter.BooleanParameter;
 import heronarts.lx.parameter.CompoundParameter;
 import heronarts.lx.parameter.DiscreteParameter;
 import heronarts.lx.parameter.LXNormalizedParameter;
@@ -25,8 +26,8 @@ public class CosPaletteModulator extends LXModulator implements LXOscComponent, 
                     .setDescription("Input value to the palette");
 
     public final DiscreteParameter which =
-            new DiscreteParameter("Palette", 0, 0, paletteStrings.length)
-                    .setDescription("Which palette to use");
+            new DiscreteParameter("Palette", 0, -1, paletteStrings.length)
+                    .setDescription("Which palette to use (-1 for custom)");
 
     public final CompoundParameter red =
             new CompoundParameter("Red", 0.0, 0.0, 1.0)
@@ -44,6 +45,55 @@ public class CosPaletteModulator extends LXModulator implements LXOscComponent, 
             new LinkedColorParameter("Color", 0xff000000)
                     .setDescription("Color of the palette");
 
+    // Custom palette mode toggle
+    public final BooleanParameter customMode =
+            new BooleanParameter("Custom", false)
+                    .setDescription("Use custom palette parameters instead of presets");
+
+    // Vector A parameters (DC offset)
+    public final CompoundParameter aR =
+            new CompoundParameter("A.R", 0.5, 0.0, 1.0)
+                    .setDescription("A vector Red component (DC offset)");
+    public final CompoundParameter aG =
+            new CompoundParameter("A.G", 0.5, 0.0, 1.0)
+                    .setDescription("A vector Green component (DC offset)");
+    public final CompoundParameter aB =
+            new CompoundParameter("A.B", 0.5, 0.0, 1.0)
+                    .setDescription("A vector Blue component (DC offset)");
+
+    // Vector B parameters (amplitude)
+    public final CompoundParameter bR =
+            new CompoundParameter("B.R", 0.5, -1.0, 1.0)
+                    .setDescription("B vector Red component (amplitude)");
+    public final CompoundParameter bG =
+            new CompoundParameter("B.G", 0.5, -1.0, 1.0)
+                    .setDescription("B vector Green component (amplitude)");
+    public final CompoundParameter bB =
+            new CompoundParameter("B.B", 0.5, -1.0, 1.0)
+                    .setDescription("B vector Blue component (amplitude)");
+
+    // Vector C parameters (frequency)
+    public final CompoundParameter cR =
+            new CompoundParameter("C.R", 1.0, 0.0, 4.0)
+                    .setDescription("C vector Red component (frequency)");
+    public final CompoundParameter cG =
+            new CompoundParameter("C.G", 1.0, 0.0, 4.0)
+                    .setDescription("C vector Green component (frequency)");
+    public final CompoundParameter cB =
+            new CompoundParameter("C.B", 1.0, 0.0, 4.0)
+                    .setDescription("C vector Blue component (frequency)");
+
+    // Vector D parameters (phase)
+    public final CompoundParameter dR =
+            new CompoundParameter("D.R", 0.0, 0.0, 2.0)
+                    .setDescription("D vector Red component (phase)");
+    public final CompoundParameter dG =
+            new CompoundParameter("D.G", 0.0, 0.0, 2.0)
+                    .setDescription("D vector Green component (phase)");
+    public final CompoundParameter dB =
+            new CompoundParameter("D.B", 0.0, 0.0, 2.0)
+                    .setDescription("D vector Blue component (phase)");
+
     protected int[] rgb;
 
     public CosPaletteModulator() {
@@ -53,10 +103,32 @@ public class CosPaletteModulator extends LXModulator implements LXOscComponent, 
     public CosPaletteModulator(String label) {
         super(label);
         addParameter("input", this.input);
+        addParameter("which", this.which);
         addParameter("red", red);
         addParameter("green", green);
         addParameter("blue", blue);
         addParameter("color", color);
+        addParameter("customMode", customMode);
+        
+        // Add vector A parameters
+        addParameter("aR", aR);
+        addParameter("aG", aG);
+        addParameter("aB", aB);
+        
+        // Add vector B parameters
+        addParameter("bR", bR);
+        addParameter("bG", bG);
+        addParameter("bB", bB);
+        
+        // Add vector C parameters
+        addParameter("cR", cR);
+        addParameter("cG", cG);
+        addParameter("cB", cB);
+        
+        // Add vector D parameters
+        addParameter("dR", dR);
+        addParameter("dG", dG);
+        addParameter("dB", dB);
     }
 
     protected double[] tempRGB = new double[3];
@@ -70,7 +142,21 @@ public class CosPaletteModulator extends LXModulator implements LXOscComponent, 
      */
     @Override
     protected double computeValue(double deltaMs) {
-        paletteN(input.getValuef(), which.getValuei(), tempRGB);
+        if (customMode.getValueb() || which.getValuei() == -1) {
+            // Use custom parameters
+            double[] a = {aR.getValuef(), aG.getValuef(), aB.getValuef()};
+            double[] b = {bR.getValuef(), bG.getValuef(), bB.getValuef()};
+            double[] c = {cR.getValuef(), cG.getValuef(), cB.getValuef()};
+            double[] d = {dR.getValuef(), dG.getValuef(), dB.getValuef()};
+            double[] result = palette(input.getValuef(), a, b, c, d);
+            tempRGB[0] = result[0];
+            tempRGB[1] = result[1];
+            tempRGB[2] = result[2];
+        } else {
+            // Use preset palettes
+            paletteN(input.getValuef(), which.getValuei(), tempRGB, this);
+        }
+        
         red.setValue(tempRGB[0]);
         green.setValue(tempRGB[1]);
         blue.setValue(tempRGB[2]);
@@ -100,16 +186,32 @@ public class CosPaletteModulator extends LXModulator implements LXOscComponent, 
     }
 
     public static void paletteN(double t, int whichPalette, double[] result) {
-        initialize();
-        Double[][] palette = palettes.get(whichPalette);
-        double[] a = {palette[0][0], palette[0][1], palette[0][2]};
-        double[] b = {palette[1][0], palette[1][1], palette[1][2]};
-        double[] c = {palette[2][0], palette[2][1], palette[2][2]};
-        double[] d = {palette[3][0], palette[3][1], palette[3][2]};
-        for (int i = 0; i < 3; i++) {
-            result[i] = Math.max(0, Math.min(1, a[i] + b[i] * Math.cos(6.28318 * (c[i] * t + d[i]))));
+        paletteN(t, whichPalette, result, null);
+    }
+
+    public static void paletteN(double t, int whichPalette, double[] result, CosPaletteModulator customSource) {
+        if (whichPalette == -1 && customSource != null) {
+            // Use custom palette from the provided modulator instance
+            double[] a = {customSource.aR.getValuef(), customSource.aG.getValuef(), customSource.aB.getValuef()};
+            double[] b = {customSource.bR.getValuef(), customSource.bG.getValuef(), customSource.bB.getValuef()};
+            double[] c = {customSource.cR.getValuef(), customSource.cG.getValuef(), customSource.cB.getValuef()};
+            double[] d = {customSource.dR.getValuef(), customSource.dG.getValuef(), customSource.dB.getValuef()};
+            double[] paletteResult = palette(t, a, b, c, d);
+            result[0] = paletteResult[0];
+            result[1] = paletteResult[1];
+            result[2] = paletteResult[2];
+        } else {
+            // Use preset palette
+            initialize();
+            Double[][] palette = palettes.get(whichPalette);
+            double[] a = {palette[0][0], palette[0][1], palette[0][2]};
+            double[] b = {palette[1][0], palette[1][1], palette[1][2]};
+            double[] c = {palette[2][0], palette[2][1], palette[2][2]};
+            double[] d = {palette[3][0], palette[3][1], palette[3][2]};
+            for (int i = 0; i < 3; i++) {
+                result[i] = Math.max(0, Math.min(1, a[i] + b[i] * Math.cos(6.28318 * (c[i] * t + d[i]))));
+            }
         }
-        //return palette(t, a, b, c, d);
     }
 
 
@@ -136,6 +238,14 @@ public class CosPaletteModulator extends LXModulator implements LXOscComponent, 
             "[[0.638 0.148 0.153] [0.285 0.693 0.338] [0.678 1.808 2.028] [4.993 3.681 5.919]]",
             "[[0.410 -0.141 0.317] [0.834 0.877 0.244] [1.366 0.947 1.530] [0.150 4.830 5.551]]",
             "[[0.335 0.297 0.094] [0.924 0.647 0.219] [1.295 0.859 0.341] [4.705 5.682 2.882]]"
+    };
+
+    public static String[] paletteNames = {
+            "Palette 1", "Palette 2", "Palette 3", "Palette 4", "Palette 5",
+            "Palette 6", "Palette 7", "Palette 8", "Palette 9", "Palette 10",
+            "Palette 11", "Palette 12", "Palette 13", "Palette 14", "Palette 15",
+            "Palette 16", "Palette 17", "Palette 18", "Palette 19", "Palette 20",
+            "Palette 21"
     };
 
     /**
@@ -171,4 +281,5 @@ public class CosPaletteModulator extends LXModulator implements LXOscComponent, 
 
         return (index == 4) ? result : null;
     }
+
 }
