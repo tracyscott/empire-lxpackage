@@ -13,6 +13,7 @@ import heronarts.glx.ui.vg.VGraphics;
 import heronarts.lx.color.LXColor;
 import heronarts.lx.studio.LXStudio;
 import heronarts.lx.studio.ui.device.UIControls;
+import heronarts.lx.parameter.LXParameterListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +36,15 @@ public class UICosPalette extends UICollapsibleSection implements UIControls {
     private UI2dContainer controlsSection;
     private boolean editMode = true; // Start in edit mode for testing
     private int selectedSwatchIndex = -1; // -1 means no swatch selected
+    
+    // Dynamic knob management
+    private List<UIKnob> currentKnobs = new ArrayList<>();
+    private UI2dContainer vectorGrid;
+    private CosPalette.CosPaletteSwatch currentListeningSwatch = null;
+    private final LXParameterListener swatchPreviewUpdater = (parameter) -> updateSelectedSwatchPreview();
+    
+    // Fixed knob references for reuse
+    private UIKnob[] fixedKnobs = new UIKnob[12]; // 12 knobs total (3 colors x 4 parameters)
 
     public UICosPalette(LXStudio lx, UI ui, CosPalette palette, float w) {
         super(ui, 0, 0, w, 0);
@@ -97,37 +107,11 @@ public class UICosPalette extends UICollapsibleSection implements UIControls {
         controlsSection.setLayout(Layout.VERTICAL, 2);
         
         // Vector controls in 4 separate rows with better spacing
-        UI2dContainer vectorGrid = new UI2dContainer(0, 0, getContentWidth(), 0);
+        vectorGrid = new UI2dContainer(0, 0, getContentWidth(), 0);
         vectorGrid.setLayout(Layout.VERTICAL, 4);
         
-        // Row 1: R (Red component) - reduced spacing from 8 to 4
-        UI2dContainer rRow = UI2dContainer.newHorizontalContainer(ROW_HEIGHT + 18, 4);
-        rRow.addChildren(
-                new UIKnob(palette.aR).setLabel("Amp"),
-                new UIKnob(palette.bR).setLabel("DC"),
-                new UIKnob(palette.cR).setLabel("Freq"),
-                new UIKnob(palette.dR).setLabel("Phase")
-        );
-        
-        // Row 2: G (Green component) - reduced spacing from 8 to 4
-        UI2dContainer gRow = UI2dContainer.newHorizontalContainer(ROW_HEIGHT + 18, 4);
-        gRow.addChildren(
-                new UIKnob(palette.aG).setLabel("Amp"),
-                new UIKnob(palette.bG).setLabel("DC"),
-                new UIKnob(palette.cG).setLabel("Freq"),
-                new UIKnob(palette.dG).setLabel("Phase")
-        );
-        
-        // Row 3: B (Blue component) - reduced spacing from 8 to 4
-        UI2dContainer bRow = UI2dContainer.newHorizontalContainer(ROW_HEIGHT + 18, 4);
-        bRow.addChildren(
-                new UIKnob(palette.aB).setLabel("Amp"),
-                new UIKnob(palette.bB).setLabel("DC"),
-                new UIKnob(palette.cB).setLabel("Freq"),
-                new UIKnob(palette.dB).setLabel("Phase")
-        );
-        
-        vectorGrid.addChildren(rRow, gRow, bRow);
+        // Initialize with global palette knobs
+        createKnobsForGlobalPalette();
         
         controlsSection.addChildren(vectorGrid);
         controlsSection.setVisible(true); // Start visible for testing
@@ -211,6 +195,119 @@ public class UICosPalette extends UICollapsibleSection implements UIControls {
         
     }
     
+    private void disposeCurrentKnobs() {
+        // Remove parameter listeners from current swatch if any
+        if (currentListeningSwatch != null) {
+            currentListeningSwatch.aR.removeListener(swatchPreviewUpdater);
+            currentListeningSwatch.aG.removeListener(swatchPreviewUpdater);
+            currentListeningSwatch.aB.removeListener(swatchPreviewUpdater);
+            currentListeningSwatch.bR.removeListener(swatchPreviewUpdater);
+            currentListeningSwatch.bG.removeListener(swatchPreviewUpdater);
+            currentListeningSwatch.bB.removeListener(swatchPreviewUpdater);
+            currentListeningSwatch.cR.removeListener(swatchPreviewUpdater);
+            currentListeningSwatch.cG.removeListener(swatchPreviewUpdater);
+            currentListeningSwatch.cB.removeListener(swatchPreviewUpdater);
+            currentListeningSwatch.dR.removeListener(swatchPreviewUpdater);
+            currentListeningSwatch.dG.removeListener(swatchPreviewUpdater);
+            currentListeningSwatch.dB.removeListener(swatchPreviewUpdater);
+            currentListeningSwatch = null;
+        }
+        
+        // Remove all current knobs from the vector grid
+        vectorGrid.removeAllChildren();
+        // Clear the knobs list
+        currentKnobs.clear();
+    }
+    
+    private void createKnobsForGlobalPalette() {
+        disposeCurrentKnobs();
+        
+        // Row 1: R (Red component)
+        UI2dContainer rRow = UI2dContainer.newHorizontalContainer(ROW_HEIGHT + 18, 4);
+        UIKnob aRKnob = (UIKnob) new UIKnob(palette.aR).setLabel("Amp");
+        UIKnob bRKnob = (UIKnob) new UIKnob(palette.bR).setLabel("DC");
+        UIKnob cRKnob = (UIKnob) new UIKnob(palette.cR).setLabel("Freq");
+        UIKnob dRKnob = (UIKnob) new UIKnob(palette.dR).setLabel("Phase");
+        rRow.addChildren(aRKnob, bRKnob, cRKnob, dRKnob);
+        currentKnobs.addAll(List.of(aRKnob, bRKnob, cRKnob, dRKnob));
+        
+        // Row 2: G (Green component)
+        UI2dContainer gRow = UI2dContainer.newHorizontalContainer(ROW_HEIGHT + 18, 4);
+        UIKnob aGKnob = (UIKnob) new UIKnob(palette.aG).setLabel("Amp");
+        UIKnob bGKnob = (UIKnob) new UIKnob(palette.bG).setLabel("DC");
+        UIKnob cGKnob = (UIKnob) new UIKnob(palette.cG).setLabel("Freq");
+        UIKnob dGKnob = (UIKnob) new UIKnob(palette.dG).setLabel("Phase");
+        gRow.addChildren(aGKnob, bGKnob, cGKnob, dGKnob);
+        currentKnobs.addAll(List.of(aGKnob, bGKnob, cGKnob, dGKnob));
+        
+        // Row 3: B (Blue component)
+        UI2dContainer bRow = UI2dContainer.newHorizontalContainer(ROW_HEIGHT + 18, 4);
+        UIKnob aBKnob = (UIKnob) new UIKnob(palette.aB).setLabel("Amp");
+        UIKnob bBKnob = (UIKnob) new UIKnob(palette.bB).setLabel("DC");
+        UIKnob cBKnob = (UIKnob) new UIKnob(palette.cB).setLabel("Freq");
+        UIKnob dBKnob = (UIKnob) new UIKnob(palette.dB).setLabel("Phase");
+        bRow.addChildren(aBKnob, bBKnob, cBKnob, dBKnob);
+        currentKnobs.addAll(List.of(aBKnob, bBKnob, cBKnob, dBKnob));
+        
+        vectorGrid.addChildren(rRow, gRow, bRow);
+    }
+    
+    private void createKnobsForSwatch(CosPalette.CosPaletteSwatch swatch) {
+        disposeCurrentKnobs();
+        
+        // Row 1: R (Red component)
+        UI2dContainer rRow = UI2dContainer.newHorizontalContainer(ROW_HEIGHT + 18, 4);
+        UIKnob aRKnob = (UIKnob) new UIKnob(swatch.aR).setLabel("Amp");
+        UIKnob bRKnob = (UIKnob) new UIKnob(swatch.bR).setLabel("DC");
+        UIKnob cRKnob = (UIKnob) new UIKnob(swatch.cR).setLabel("Freq");
+        UIKnob dRKnob = (UIKnob) new UIKnob(swatch.dR).setLabel("Phase");
+        rRow.addChildren(aRKnob, bRKnob, cRKnob, dRKnob);
+        currentKnobs.addAll(List.of(aRKnob, bRKnob, cRKnob, dRKnob));
+        
+        // Row 2: G (Green component)
+        UI2dContainer gRow = UI2dContainer.newHorizontalContainer(ROW_HEIGHT + 18, 4);
+        UIKnob aGKnob = (UIKnob) new UIKnob(swatch.aG).setLabel("Amp");
+        UIKnob bGKnob = (UIKnob) new UIKnob(swatch.bG).setLabel("DC");
+        UIKnob cGKnob = (UIKnob) new UIKnob(swatch.cG).setLabel("Freq");
+        UIKnob dGKnob = (UIKnob) new UIKnob(swatch.dG).setLabel("Phase");
+        gRow.addChildren(aGKnob, bGKnob, cGKnob, dGKnob);
+        currentKnobs.addAll(List.of(aGKnob, bGKnob, cGKnob, dGKnob));
+        
+        // Row 3: B (Blue component)
+        UI2dContainer bRow = UI2dContainer.newHorizontalContainer(ROW_HEIGHT + 18, 4);
+        UIKnob aBKnob = (UIKnob) new UIKnob(swatch.aB).setLabel("Amp");
+        UIKnob bBKnob = (UIKnob) new UIKnob(swatch.bB).setLabel("DC");
+        UIKnob cBKnob = (UIKnob) new UIKnob(swatch.cB).setLabel("Freq");
+        UIKnob dBKnob = (UIKnob) new UIKnob(swatch.dB).setLabel("Phase");
+        bRow.addChildren(aBKnob, bBKnob, cBKnob, dBKnob);
+        currentKnobs.addAll(List.of(aBKnob, bBKnob, cBKnob, dBKnob));
+        
+        vectorGrid.addChildren(rRow, gRow, bRow);
+        
+        // Add parameter listeners to update swatch preview when knobs are adjusted
+        currentListeningSwatch = swatch;
+        swatch.aR.addListener(swatchPreviewUpdater);
+        swatch.aG.addListener(swatchPreviewUpdater);
+        swatch.aB.addListener(swatchPreviewUpdater);
+        swatch.bR.addListener(swatchPreviewUpdater);
+        swatch.bG.addListener(swatchPreviewUpdater);
+        swatch.bB.addListener(swatchPreviewUpdater);
+        swatch.cR.addListener(swatchPreviewUpdater);
+        swatch.cG.addListener(swatchPreviewUpdater);
+        swatch.cB.addListener(swatchPreviewUpdater);
+        swatch.dR.addListener(swatchPreviewUpdater);
+        swatch.dG.addListener(swatchPreviewUpdater);
+        swatch.dB.addListener(swatchPreviewUpdater);
+    }
+    
+    private void updateSelectedSwatchPreview() {
+        if (selectedSwatchIndex >= 0 && selectedSwatchIndex < swatchControlsList.size()) {
+            swatchControlsList.get(selectedSwatchIndex).updatePreview();
+        }
+        // Also update the main preview bar
+        previewBar.redraw();
+    }
+    
     // Individual swatch control UI - compact style like reference
     private class UISwatchControls extends UI2dContainer {
         private final int swatchIndex;
@@ -282,8 +379,12 @@ public class UICosPalette extends UICollapsibleSection implements UIControls {
             // Otherwise, select this swatch
             if (selectedSwatchIndex == swatchIndex) {
                 selectedSwatchIndex = -1; // Unselect
+                // Switch back to global palette knobs
+                createKnobsForGlobalPalette();
             } else {
                 selectedSwatchIndex = swatchIndex; // Select this swatch
+                // Switch to swatch-specific knobs
+                createKnobsForSwatch(swatch);
             }
             // Force complete redraw of all swatch previews to update selection outlines
             for (UISwatchControls swatchControls : swatchControlsList) {
