@@ -192,15 +192,15 @@ public class CosPalettePolar extends LXPattern {
             
             // Apply seamless mapping if enabled
             if (this.seamless.isOn()) {
-                // Remap 0-1 to 0-0.5-0 for seamless animation
-                // 0 to 0.5 maps to 0 to 0.5
-                // 0.5 to 1 maps to 0.5 to 0 (reverse)
+                // Remap 0-1 to 0-1-0 for seamless animation
+                // 0 to 0.5 maps to 0 to 1
+                // 0.5 to 1 maps to 1 to 0 (reverse)
                 if (t <= 0.5) {
-                    // First half: linear mapping from 0 to 0.5
-                    t = t;
+                    // First half: map 0-0.5 to 0-1
+                    t = t * 2.0;
                 } else {
-                    // Second half: reverse mapping from 0.5 to 0
-                    t = 1.0 - t;
+                    // Second half: map 0.5-1 to 1-0
+                    t = 2.0 - (t * 2.0);
                 }
             }
             
@@ -208,7 +208,7 @@ public class CosPalettePolar extends LXPattern {
             double paletteT;
             if (this.seamless.isOn()) {
                 // For seamless mode: scale the range and apply offset
-                // t is now 0-0.5, so we scale it to the desired range
+                // t is now 0-1, so we scale it to the desired range
                 paletteT = this.paletteOffset.getValue() + (t * this.paletteScale.getValue());
             } else {
                 // For normal mode: full range scaling with offset
