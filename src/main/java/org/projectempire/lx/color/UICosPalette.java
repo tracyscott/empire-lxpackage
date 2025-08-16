@@ -111,7 +111,8 @@ public class UICosPalette extends UICollapsibleSection implements UIControls {
         vectorGrid.setLayout(Layout.VERTICAL, 4);
         
         // Initialize with global palette knobs
-        createKnobsForGlobalPalette();
+        createFixedKnobs();
+        bindKnobsToGlobalPalette();
         
         controlsSection.addChildren(vectorGrid);
         controlsSection.setVisible(true); // Start visible for testing
@@ -195,7 +196,36 @@ public class UICosPalette extends UICollapsibleSection implements UIControls {
         
     }
     
-    private void disposeCurrentKnobs() {
+    private void createFixedKnobs() {
+        // Create the knobs once and store references
+        // Row 1: R (Red component)
+        UI2dContainer rRow = UI2dContainer.newHorizontalContainer(ROW_HEIGHT + 18, 4);
+        fixedKnobs[0] = (UIKnob) new UIKnob(palette.aR).setLabel("Amp");  // aR
+        fixedKnobs[1] = (UIKnob) new UIKnob(palette.bR).setLabel("DC");   // bR
+        fixedKnobs[2] = (UIKnob) new UIKnob(palette.cR).setLabel("Freq"); // cR
+        fixedKnobs[3] = (UIKnob) new UIKnob(palette.dR).setLabel("Phase"); // dR
+        rRow.addChildren(fixedKnobs[0], fixedKnobs[1], fixedKnobs[2], fixedKnobs[3]);
+        
+        // Row 2: G (Green component)
+        UI2dContainer gRow = UI2dContainer.newHorizontalContainer(ROW_HEIGHT + 18, 4);
+        fixedKnobs[4] = (UIKnob) new UIKnob(palette.aG).setLabel("Amp");  // aG
+        fixedKnobs[5] = (UIKnob) new UIKnob(palette.bG).setLabel("DC");   // bG
+        fixedKnobs[6] = (UIKnob) new UIKnob(palette.cG).setLabel("Freq"); // cG
+        fixedKnobs[7] = (UIKnob) new UIKnob(palette.dG).setLabel("Phase"); // dG
+        gRow.addChildren(fixedKnobs[4], fixedKnobs[5], fixedKnobs[6], fixedKnobs[7]);
+        
+        // Row 3: B (Blue component)
+        UI2dContainer bRow = UI2dContainer.newHorizontalContainer(ROW_HEIGHT + 18, 4);
+        fixedKnobs[8] = (UIKnob) new UIKnob(palette.aB).setLabel("Amp");   // aB
+        fixedKnobs[9] = (UIKnob) new UIKnob(palette.bB).setLabel("DC");    // bB
+        fixedKnobs[10] = (UIKnob) new UIKnob(palette.cB).setLabel("Freq"); // cB
+        fixedKnobs[11] = (UIKnob) new UIKnob(palette.dB).setLabel("Phase"); // dB
+        bRow.addChildren(fixedKnobs[8], fixedKnobs[9], fixedKnobs[10], fixedKnobs[11]);
+        
+        vectorGrid.addChildren(rRow, gRow, bRow);
+    }
+    
+    private void removeSwatchListeners() {
         // Remove parameter listeners from current swatch if any
         if (currentListeningSwatch != null) {
             currentListeningSwatch.aR.removeListener(swatchPreviewUpdater);
@@ -212,77 +242,42 @@ public class UICosPalette extends UICollapsibleSection implements UIControls {
             currentListeningSwatch.dB.removeListener(swatchPreviewUpdater);
             currentListeningSwatch = null;
         }
-        
-        // Remove all current knobs from the vector grid
-        vectorGrid.removeAllChildren();
-        // Clear the knobs list
-        currentKnobs.clear();
     }
     
-    private void createKnobsForGlobalPalette() {
-        disposeCurrentKnobs();
+    private void bindKnobsToGlobalPalette() {
+        removeSwatchListeners();
         
-        // Row 1: R (Red component)
-        UI2dContainer rRow = UI2dContainer.newHorizontalContainer(ROW_HEIGHT + 18, 4);
-        UIKnob aRKnob = (UIKnob) new UIKnob(palette.aR).setLabel("Amp");
-        UIKnob bRKnob = (UIKnob) new UIKnob(palette.bR).setLabel("DC");
-        UIKnob cRKnob = (UIKnob) new UIKnob(palette.cR).setLabel("Freq");
-        UIKnob dRKnob = (UIKnob) new UIKnob(palette.dR).setLabel("Phase");
-        rRow.addChildren(aRKnob, bRKnob, cRKnob, dRKnob);
-        currentKnobs.addAll(List.of(aRKnob, bRKnob, cRKnob, dRKnob));
-        
-        // Row 2: G (Green component)
-        UI2dContainer gRow = UI2dContainer.newHorizontalContainer(ROW_HEIGHT + 18, 4);
-        UIKnob aGKnob = (UIKnob) new UIKnob(palette.aG).setLabel("Amp");
-        UIKnob bGKnob = (UIKnob) new UIKnob(palette.bG).setLabel("DC");
-        UIKnob cGKnob = (UIKnob) new UIKnob(palette.cG).setLabel("Freq");
-        UIKnob dGKnob = (UIKnob) new UIKnob(palette.dG).setLabel("Phase");
-        gRow.addChildren(aGKnob, bGKnob, cGKnob, dGKnob);
-        currentKnobs.addAll(List.of(aGKnob, bGKnob, cGKnob, dGKnob));
-        
-        // Row 3: B (Blue component)
-        UI2dContainer bRow = UI2dContainer.newHorizontalContainer(ROW_HEIGHT + 18, 4);
-        UIKnob aBKnob = (UIKnob) new UIKnob(palette.aB).setLabel("Amp");
-        UIKnob bBKnob = (UIKnob) new UIKnob(palette.bB).setLabel("DC");
-        UIKnob cBKnob = (UIKnob) new UIKnob(palette.cB).setLabel("Freq");
-        UIKnob dBKnob = (UIKnob) new UIKnob(palette.dB).setLabel("Phase");
-        bRow.addChildren(aBKnob, bBKnob, cBKnob, dBKnob);
-        currentKnobs.addAll(List.of(aBKnob, bBKnob, cBKnob, dBKnob));
-        
-        vectorGrid.addChildren(rRow, gRow, bRow);
+        // Rebind knobs to global palette parameters
+        fixedKnobs[0].setParameter(palette.aR);  // aR
+        fixedKnobs[1].setParameter(palette.bR);  // bR
+        fixedKnobs[2].setParameter(palette.cR);  // cR
+        fixedKnobs[3].setParameter(palette.dR);  // dR
+        fixedKnobs[4].setParameter(palette.aG);  // aG
+        fixedKnobs[5].setParameter(palette.bG);  // bG
+        fixedKnobs[6].setParameter(palette.cG);  // cG
+        fixedKnobs[7].setParameter(palette.dG);  // dG
+        fixedKnobs[8].setParameter(palette.aB);  // aB
+        fixedKnobs[9].setParameter(palette.bB);  // bB
+        fixedKnobs[10].setParameter(palette.cB); // cB
+        fixedKnobs[11].setParameter(palette.dB); // dB
     }
     
-    private void createKnobsForSwatch(CosPalette.CosPaletteSwatch swatch) {
-        disposeCurrentKnobs();
+    private void bindKnobsToSwatch(CosPalette.CosPaletteSwatch swatch) {
+        removeSwatchListeners();
         
-        // Row 1: R (Red component)
-        UI2dContainer rRow = UI2dContainer.newHorizontalContainer(ROW_HEIGHT + 18, 4);
-        UIKnob aRKnob = (UIKnob) new UIKnob(swatch.aR).setLabel("Amp");
-        UIKnob bRKnob = (UIKnob) new UIKnob(swatch.bR).setLabel("DC");
-        UIKnob cRKnob = (UIKnob) new UIKnob(swatch.cR).setLabel("Freq");
-        UIKnob dRKnob = (UIKnob) new UIKnob(swatch.dR).setLabel("Phase");
-        rRow.addChildren(aRKnob, bRKnob, cRKnob, dRKnob);
-        currentKnobs.addAll(List.of(aRKnob, bRKnob, cRKnob, dRKnob));
-        
-        // Row 2: G (Green component)
-        UI2dContainer gRow = UI2dContainer.newHorizontalContainer(ROW_HEIGHT + 18, 4);
-        UIKnob aGKnob = (UIKnob) new UIKnob(swatch.aG).setLabel("Amp");
-        UIKnob bGKnob = (UIKnob) new UIKnob(swatch.bG).setLabel("DC");
-        UIKnob cGKnob = (UIKnob) new UIKnob(swatch.cG).setLabel("Freq");
-        UIKnob dGKnob = (UIKnob) new UIKnob(swatch.dG).setLabel("Phase");
-        gRow.addChildren(aGKnob, bGKnob, cGKnob, dGKnob);
-        currentKnobs.addAll(List.of(aGKnob, bGKnob, cGKnob, dGKnob));
-        
-        // Row 3: B (Blue component)
-        UI2dContainer bRow = UI2dContainer.newHorizontalContainer(ROW_HEIGHT + 18, 4);
-        UIKnob aBKnob = (UIKnob) new UIKnob(swatch.aB).setLabel("Amp");
-        UIKnob bBKnob = (UIKnob) new UIKnob(swatch.bB).setLabel("DC");
-        UIKnob cBKnob = (UIKnob) new UIKnob(swatch.cB).setLabel("Freq");
-        UIKnob dBKnob = (UIKnob) new UIKnob(swatch.dB).setLabel("Phase");
-        bRow.addChildren(aBKnob, bBKnob, cBKnob, dBKnob);
-        currentKnobs.addAll(List.of(aBKnob, bBKnob, cBKnob, dBKnob));
-        
-        vectorGrid.addChildren(rRow, gRow, bRow);
+        // Rebind knobs to swatch parameters
+        fixedKnobs[0].setParameter(swatch.aR);  // aR
+        fixedKnobs[1].setParameter(swatch.bR);  // bR
+        fixedKnobs[2].setParameter(swatch.cR);  // cR
+        fixedKnobs[3].setParameter(swatch.dR);  // dR
+        fixedKnobs[4].setParameter(swatch.aG);  // aG
+        fixedKnobs[5].setParameter(swatch.bG);  // bG
+        fixedKnobs[6].setParameter(swatch.cG);  // cG
+        fixedKnobs[7].setParameter(swatch.dG);  // dG
+        fixedKnobs[8].setParameter(swatch.aB);  // aB
+        fixedKnobs[9].setParameter(swatch.bB);  // bB
+        fixedKnobs[10].setParameter(swatch.cB); // cB
+        fixedKnobs[11].setParameter(swatch.dB); // dB
         
         // Add parameter listeners to update swatch preview when knobs are adjusted
         currentListeningSwatch = swatch;
@@ -380,11 +375,11 @@ public class UICosPalette extends UICollapsibleSection implements UIControls {
             if (selectedSwatchIndex == swatchIndex) {
                 selectedSwatchIndex = -1; // Unselect
                 // Switch back to global palette knobs
-                createKnobsForGlobalPalette();
+                bindKnobsToGlobalPalette();
             } else {
                 selectedSwatchIndex = swatchIndex; // Select this swatch
                 // Switch to swatch-specific knobs
-                createKnobsForSwatch(swatch);
+                bindKnobsToSwatch(swatch);
             }
             // Force complete redraw of all swatch previews to update selection outlines
             for (UISwatchControls swatchControls : swatchControlsList) {
