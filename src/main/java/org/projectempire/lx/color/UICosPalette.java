@@ -34,6 +34,7 @@ public class UICosPalette extends UICollapsibleSection implements UIControls {
     private List<UISwatchControls> swatchControlsList = new ArrayList<>();
     private UI2dContainer controlsSection;
     private boolean editMode = true; // Start in edit mode for testing
+    private int selectedSwatchIndex = -1; // -1 means no swatch selected
 
     public UICosPalette(LXStudio lx, UI ui, CosPalette palette, float w) {
         super(ui, 0, 0, w, 0);
@@ -99,8 +100,8 @@ public class UICosPalette extends UICollapsibleSection implements UIControls {
         UI2dContainer vectorGrid = new UI2dContainer(0, 0, getContentWidth(), 0);
         vectorGrid.setLayout(Layout.VERTICAL, 4);
         
-        // Row 1: R (Red component)
-        UI2dContainer rRow = UI2dContainer.newHorizontalContainer(ROW_HEIGHT + 18, 8);
+        // Row 1: R (Red component) - reduced spacing from 8 to 4
+        UI2dContainer rRow = UI2dContainer.newHorizontalContainer(ROW_HEIGHT + 18, 4);
         rRow.addChildren(
                 new UIKnob(palette.aR).setLabel("Amp"),
                 new UIKnob(palette.bR).setLabel("DC"),
@@ -108,8 +109,8 @@ public class UICosPalette extends UICollapsibleSection implements UIControls {
                 new UIKnob(palette.dR).setLabel("Phase")
         );
         
-        // Row 2: G (Green component)
-        UI2dContainer gRow = UI2dContainer.newHorizontalContainer(ROW_HEIGHT + 18, 8);
+        // Row 2: G (Green component) - reduced spacing from 8 to 4
+        UI2dContainer gRow = UI2dContainer.newHorizontalContainer(ROW_HEIGHT + 18, 4);
         gRow.addChildren(
                 new UIKnob(palette.aG).setLabel("Amp"),
                 new UIKnob(palette.bG).setLabel("DC"),
@@ -117,8 +118,8 @@ public class UICosPalette extends UICollapsibleSection implements UIControls {
                 new UIKnob(palette.dG).setLabel("Phase")
         );
         
-        // Row 3: B (Blue component)
-        UI2dContainer bRow = UI2dContainer.newHorizontalContainer(ROW_HEIGHT + 18, 8);
+        // Row 3: B (Blue component) - reduced spacing from 8 to 4
+        UI2dContainer bRow = UI2dContainer.newHorizontalContainer(ROW_HEIGHT + 18, 4);
         bRow.addChildren(
                 new UIKnob(palette.aB).setLabel("Amp"),
                 new UIKnob(palette.bB).setLabel("DC"),
@@ -223,8 +224,8 @@ public class UICosPalette extends UICollapsibleSection implements UIControls {
             
             setLayout(Layout.HORIZONTAL, 4);
             
-            // Swatch label - click to select swatch (40% smaller: 120 * 0.6 = 72)
-            UITextBox labelBox = new UITextBox(0, 0, 72, SWATCH_ROW_HEIGHT, swatch.label) {
+            // Swatch label - click to select swatch (10% smaller than 65: 65 * 0.9 = 58)
+            UITextBox labelBox = new UITextBox(0, 0, 58, SWATCH_ROW_HEIGHT, swatch.label) {
                 @Override
                 protected void onMousePressed(MouseEvent mouseEvent, float mx, float my) {
                     super.onMousePressed(mouseEvent, mx, my);
@@ -232,8 +233,8 @@ public class UICosPalette extends UICollapsibleSection implements UIControls {
                 }
             };
             
-            // Mini palette preview
-            miniPreview = new UIMiniPalettePreview(swatch, 100, SWATCH_ROW_HEIGHT - 4);
+            // Mini palette preview (15% smaller: 100 * 0.85 = 85)
+            miniPreview = new UIMiniPalettePreview(swatch, swatchIndex, 85, SWATCH_ROW_HEIGHT - 4);
             
             // Remove button (only visible in edit mode or on hover)
             UIButton removeButton = new UIButton(0, 0, 16, SWATCH_ROW_HEIGHT) {
@@ -248,7 +249,9 @@ public class UICosPalette extends UICollapsibleSection implements UIControls {
             
             addChildren(labelBox, miniPreview);
             if (editMode) {
-                addChildren(removeButton);
+                // Add 3px spacer before remove button (moved left 1px from previous 4px)
+                UI2dComponent spacer = new UI2dComponent(0, 0, 3, SWATCH_ROW_HEIGHT) {};
+                addChildren(spacer, removeButton);
             }
         }
         
@@ -260,26 +263,37 @@ public class UICosPalette extends UICollapsibleSection implements UIControls {
     }
     
     // Mini palette preview showing the full gradient for a swatch
-    private static class UIMiniPalettePreview extends UI2dComponent {
+    private class UIMiniPalettePreview extends UI2dComponent {
         private final CosPalette.CosPaletteSwatch swatch;
+        private final int swatchIndex;
         private final int samples = 32; // Fewer samples for smaller preview
         
-        public UIMiniPalettePreview(CosPalette.CosPaletteSwatch swatch, float w, float h) {
+        public UIMiniPalettePreview(CosPalette.CosPaletteSwatch swatch, int swatchIndex, float w, float h) {
             super(0, 0, w, h);
             this.swatch = swatch;
+            this.swatchIndex = swatchIndex;
             setBorderColor(0xFF666666);
         }
         
         @Override
+        protected void onMousePressed(MouseEvent mouseEvent, float mx, float my) {
+            super.onMousePressed(mouseEvent, mx, my);
+            // Toggle selection: if this swatch is already selected, unselect it
+            // Otherwise, select this swatch
+            if (selectedSwatchIndex == swatchIndex) {
+                selectedSwatchIndex = -1; // Unselect
+            } else {
+                selectedSwatchIndex = swatchIndex; // Select this swatch
+            }
+            // Force complete redraw of all swatch previews to update selection outlines
+            for (UISwatchControls swatchControls : swatchControlsList) {
+                swatchControls.miniPreview.redraw();
+            }
+        }
+        
+        @Override
         public void onDraw(UI ui, VGraphics vg) {
-            // Draw border
-            vg.beginPath();
-            vg.rect(0, 0, this.width, this.height);
-            vg.strokeColor(0xFF666666);
-            vg.strokeWidth(1);
-            vg.stroke();
-            
-            // Draw gradient samples using THIS swatch's parameters
+            // Draw gradient samples first (before border to avoid lines through gradient)
             float sampleWidth = this.width / samples;
             
             // Get swatch parameters
@@ -299,10 +313,22 @@ public class UICosPalette extends UICollapsibleSection implements UIControls {
                 );
                 
                 vg.beginPath();
-                vg.rect(i * sampleWidth, 1, sampleWidth + 1, this.height - 2);
+                vg.rect(i * sampleWidth, 0, sampleWidth + 1, this.height);
                 vg.fillColor(color);
                 vg.fill();
             }
+            
+            // Draw border on top of gradient to ensure it covers the full area
+            vg.beginPath();
+            vg.rect(0, 0, this.width, this.height);
+            if (selectedSwatchIndex == swatchIndex) {
+                vg.strokeColor(0xFF00FF00); // Green outline when selected
+                vg.strokeWidth(2);
+            } else {
+                vg.strokeColor(0xFF666666); // Gray outline when not selected  
+                vg.strokeWidth(2); // Use same width to ensure complete coverage
+            }
+            vg.stroke();
         }
     }
     
