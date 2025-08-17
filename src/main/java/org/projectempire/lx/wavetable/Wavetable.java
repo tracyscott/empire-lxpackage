@@ -34,4 +34,14 @@ public abstract class Wavetable {
             samples[i] *= other.samples[i];
         }
     }
+
+    public void mirror() {
+        int halfSamples = numSamples / 2;
+        for (int i = halfSamples; i < numSamples; i++) {
+            int mirrorIndex = numSamples - 1 - i;
+            samples[i] = samples[mirrorIndex];
+        }
+        // Update the wraparound sample
+        samples[numSamples] = samples[0];
+    }
 }
