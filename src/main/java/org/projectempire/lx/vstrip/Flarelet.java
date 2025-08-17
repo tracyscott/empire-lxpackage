@@ -80,7 +80,7 @@ public class Flarelet {
         f.lx = this.lx;
         f.cloneAtJoints = this.cloneAtJoints;
         f.enabled = this.enabled;
-        f.startTime = System.currentTimeMillis();
+        f.startTime = this.startTime;
 
         f.isClone = true;
         return f;

@@ -1,0 +1,205 @@
+package org.projectempire.lx.vstrip;
+
+import org.projectempire.lx.wavetable.*;
+import heronarts.lx.LX;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+/**
+ * Class for generating and managing flarelets.  This class is topology aware.  The various flarelet parameters 
+ * should be set on the FlareGen instance and then flarelets can be generated using 
+ * the startFlarelet methods.
+ *
+ * TODO(tracy): We should recycle Flarelet instances to reduce excessive garbage collection.
+ */
+public class FlareletGen {
+
+  protected VTopology vTop;
+
+  // Parameters for controlling the appearance of the flarelets.
+  public float fadeTime = 1000.0f;  // milliseconds
+  public float speed  = 100.0f;
+  public float intensity = 1.0f;
+  public int fx = 0;
+  public float fxDepth = 0.1f;
+  public float fxFreq = 0.1f;
+  public int wave = -1;
+  public float waveWidth = 12f;
+  public boolean cloneAtJoints = false;
+
+  public int color = 0xffffffff;
+  public int swatch = -1;
+  public boolean bright = false;
+  public float pow = 1f;
+  public float brt = 0.1f;
+  public float position = 0f;
+
+  public int currentStrip = 0;
+
+  public List<Flarelet> runningFlarelets = new ArrayList<>();
+
+
+  public Wavetable wavetable;
+  public List<Integer> hornStartStripIds = new ArrayList<>();
+
+
+
+  public LX lx;
+
+  public FlareletGen(LX lx, VTopology vTop) {
+    this.vTop = vTop;
+    this.lx = lx;
+  }
+
+  /**
+   * Sets which stripIds to use as start points for the flarelets.
+   */
+  public void setHornStartStripIds(List<Integer> stripIds) {
+    this.hornStartStripIds = stripIds;
+  }
+ 
+  // Starts flarelets on all 4 strips in a horn.
+  public void startFlareletAll() {
+    for (int stripId : hornStartStripIds) {
+      Flarelet flarelet = startFlarelet(stripId);
+      runningFlarelets.add(flarelet);
+    }
+  }
+
+  /**
+   * Starts a flarelet on the current strip and increments the strip number for the next flarelet.
+   * @return
+   */
+  public Flarelet startFlareletIncrement() {
+    if (currentStrip >= hornStartStripIds.size()) {
+        return null;
+    }
+    Flarelet flarelet = startFlarelet(hornStartStripIds.get(currentStrip));
+    currentStrip = (currentStrip + 1) % hornStartStripIds.size();
+    runningFlarelets.add(flarelet);
+    return flarelet;
+  }
+
+  /**
+   * Starts a flarelet on the current strip and decrements the strip number for the next flarelet.
+   * @return
+   */
+  public Flarelet startFlareletDecrement() {
+    Flarelet flarelet = startFlarelet(currentStrip);
+    currentStrip = (currentStrip - 1) % vTop.strips.size();
+    if (currentStrip < 0) {
+      currentStrip = vTop.strips.size() - 1;
+    }
+    runningFlarelets.add(flarelet);
+    return flarelet;
+  }
+
+  /**
+   * Starts the flarelet on a random horn start strip.
+   * @return
+   */
+  public Flarelet startFlareletRandom() {
+    int stripNum = (int) Math.floor(Math.random() * hornStartStripIds.size());
+    Flarelet flarelet = startFlarelet(hornStartStripIds.get(stripNum));
+    runningFlarelets.add(flarelet);
+    return flarelet;
+  }
+
+  /**
+   * Starts a flarelet on the specified strip.  The various flarelet parameters should be set on this
+   * object before calling this method.
+   * @param stripNum
+   * @return
+   */
+  public Flarelet startFlarelet(int stripNum) {
+    Flarelet flarelet = new Flarelet();
+    flarelet.vTop = this.vTop;
+    flarelet.startTime = System.currentTimeMillis();
+    flarelet.fadeTime = fadeTime;
+    flarelet.intensity = intensity;
+    flarelet.fx = fx;
+    flarelet.fxDepth = fxDepth;
+    flarelet.fxFreq = fxFreq;
+    flarelet.color = color;
+    flarelet.swatch = swatch;
+    flarelet.cloneAtJoints = cloneAtJoints;
+    //flarelet.bright = bright;
+    //flarelet.pow = pow;
+    //flarelet.brt = brt;
+    flarelet.pos = position;
+    flarelet.initPos = position;
+    if (wave == -1) {
+      //lx.log("wave==-1, using default wavetable. waveWidth="  + waveWidth + " stripNum=" + stripNum);
+      //setWavetable(1, 128, 0, true, 1.0f);
+      setWavetable(1);
+    } else {
+      //lx.log("wave=" + wave + " waveWidth=" + waveWidth);
+      //setWavetable(wave, 128, 64, true, 1.0f);
+      setWavetable(wave);
+    }
+    flarelet.wavetable = wavetable;
+    flarelet.waveWidth = waveWidth;
+    flarelet.reset(vTop, stripNum, position, 0f, true);
+    flarelet.speed = speed;
+    flarelet.lx = lx;
+    flarelet.enabled = true;
+    return flarelet;
+  }
+
+  /**
+   * Processes the list of running flarelets and removes any that are no longer renderable.
+   * TODO(tracy): These should be recycled instead of being garbage collected.
+   */
+  public void disposeExpiredFlarelets() {
+    Iterator<Flarelet> it = runningFlarelets.iterator();
+    while (it.hasNext()) {
+      Flarelet flarelet = it.next();
+      if (!flarelet.isRenderable()) {
+        it.remove();
+      }
+    }
+  }
+
+  /**
+   * Sets the current wavetable based on the wave parameter and selects from the pre-built wavetables.  This is
+   * much more efficient for many flarelets.
+   * @param wave
+   */
+  public void setWavetable(int wave) {
+    wavetable = WavetableLib.getLibraryWavetable(wave);
+    this.wave = wave;
+  }
+
+  /**
+   * Builds the wavetable that we will use for rendering the flarelet.  For now, all parameters for all types of
+   * wavetables need to be passed in each time even if they are not used for a particular wavetable.  This is mostly
+   * just to keep the api smaller for now and those values should always be available via knobs in the pattern even
+   * if they are not used for a particular wavetable.
+   */
+  public void setWavetable(int wave, int samples, int width, boolean forward, float scale) {
+    // 0 = sine, 1 = triangle, 2 = step, 3 = step decay, 4 = random, 5 = perlin
+    switch (wave) {
+      case 0:
+        wavetable = new SineWavetable(samples);
+        break;
+      case 1:
+        wavetable = new TriangleWavetable(samples);
+        break;
+      case 2:
+        wavetable = new StepWavetable(samples);
+        break;
+      case 3:
+        wavetable = new StepDecayWavetable(samples, width, samples - width, forward);
+        break;
+      case 4:
+        wavetable = new RandomWavetable(samples);
+        break;
+      case 5:
+        wavetable = new PerlinWavetable(samples, 1, 1f);
+        break;
+    }
+    wavetable.generateWavetable(1f, 0f);
+  }
+}
