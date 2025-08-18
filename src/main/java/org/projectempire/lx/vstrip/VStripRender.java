@@ -63,10 +63,14 @@ public class VStripRender {
             if (invert) {
                 val = 1.0f - val;
             }
+            int alpha = 255;
+            if (blend == LXColor.Blend.SCREEN) {
+                alpha = (int)(255f * val);
+            }
             colors[pt.p.index] = LXColor.blend(colors[pt.p.index],
                     LXColor.rgba((int)(((int)Colors.red(clr))*val),
                             (int)(((int)Colors.green(clr))*val),
-                            (int)(((int)Colors.blue(clr))*val), 255), blend);
+                            (int)(((int)Colors.blue(clr))*val), alpha), blend);
         }
     }
 
