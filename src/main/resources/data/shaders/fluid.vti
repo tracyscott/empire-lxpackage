@@ -1,0 +1,223 @@
+// Fluid simulation utility functions for Navier-Stokes implementation
+// Core mathematical primitives for GPU-based fluid dynamics
+
+// Fluid simulation constants
+const float FLUID_TIMESTEP = 0.016;  // ~60fps simulation timestep
+const float FLUID_VISCOSITY = 0.0001; // Default viscosity coefficient
+const float FLUID_DENSITY = 1.0;      // Fluid density
+const float PRESSURE_ITERATIONS = 20.0; // Gauss-Seidel pressure solver iterations
+
+// Texture sampling helper - bilinear interpolation for continuous field access
+vec2 sampleVelocityField(sampler2D velocityTex, vec2 coord) {
+    return texture(velocityTex, coord).xy;
+}
+
+float samplePressureField(sampler2D pressureTex, vec2 coord) {
+    return texture(pressureTex, coord).r;
+}
+
+float sampleDensityField(sampler2D densityTex, vec2 coord) {
+    return texture(densityTex, coord).r;
+}
+
+// Gradient computation using finite differences
+vec2 gradientPressure(sampler2D pressureTex, vec2 coord, vec2 texelSize) {
+    float pLeft = samplePressureField(pressureTex, coord - vec2(texelSize.x, 0.0));
+    float pRight = samplePressureField(pressureTex, coord + vec2(texelSize.x, 0.0));
+    float pDown = samplePressureField(pressureTex, coord - vec2(0.0, texelSize.y));
+    float pUp = samplePressureField(pressureTex, coord + vec2(0.0, texelSize.y));
+    
+    return vec2((pRight - pLeft) * 0.5, (pUp - pDown) * 0.5);
+}
+
+// Divergence computation for velocity field
+float divergenceVelocity(sampler2D velocityTex, vec2 coord, vec2 texelSize) {
+    vec2 vLeft = sampleVelocityField(velocityTex, coord - vec2(texelSize.x, 0.0));
+    vec2 vRight = sampleVelocityField(velocityTex, coord + vec2(texelSize.x, 0.0));
+    vec2 vDown = sampleVelocityField(velocityTex, coord - vec2(0.0, texelSize.y));
+    vec2 vUp = sampleVelocityField(velocityTex, coord + vec2(0.0, texelSize.y));
+    
+    return ((vRight.x - vLeft.x) + (vUp.y - vDown.y)) * 0.5;
+}
+
+// Laplacian operator for diffusion (viscosity) calculation
+vec2 laplacianVelocity(sampler2D velocityTex, vec2 coord, vec2 texelSize) {
+    vec2 vCenter = sampleVelocityField(velocityTex, coord);
+    vec2 vLeft = sampleVelocityField(velocityTex, coord - vec2(texelSize.x, 0.0));
+    vec2 vRight = sampleVelocityField(velocityTex, coord + vec2(texelSize.x, 0.0));
+    vec2 vDown = sampleVelocityField(velocityTex, coord - vec2(0.0, texelSize.y));
+    vec2 vUp = sampleVelocityField(velocityTex, coord + vec2(0.0, texelSize.y));
+    
+    return (vLeft + vRight + vDown + vUp - 4.0 * vCenter);
+}
+
+float laplacianPressure(sampler2D pressureTex, vec2 coord, vec2 texelSize) {
+    float pCenter = samplePressureField(pressureTex, coord);
+    float pLeft = samplePressureField(pressureTex, coord - vec2(texelSize.x, 0.0));
+    float pRight = samplePressureField(pressureTex, coord + vec2(texelSize.x, 0.0));
+    float pDown = samplePressureField(pressureTex, coord - vec2(0.0, texelSize.y));
+    float pUp = samplePressureField(pressureTex, coord + vec2(0.0, texelSize.y));
+    
+    return (pLeft + pRight + pDown + pUp - 4.0 * pCenter);
+}
+
+// Semi-Lagrangian advection - traces particle backwards through velocity field
+vec2 advectVelocity(sampler2D velocityTex, vec2 coord, float dt, vec2 texelSize) {
+    // Trace particle backward through velocity field
+    vec2 velocity = sampleVelocityField(velocityTex, coord);
+    vec2 backTrace = coord - dt * velocity * texelSize;
+    
+    // Clamp to texture bounds
+    backTrace = clamp(backTrace, texelSize, 1.0 - texelSize);
+    
+    // Sample velocity at back-traced position
+    return sampleVelocityField(velocityTex, backTrace);
+}
+
+float advectDensity(sampler2D densityTex, sampler2D velocityTex, vec2 coord, float dt, vec2 texelSize) {
+    // Trace particle backward through velocity field
+    vec2 velocity = sampleVelocityField(velocityTex, coord);
+    vec2 backTrace = coord - dt * velocity * texelSize;
+    
+    // Clamp to texture bounds
+    backTrace = clamp(backTrace, texelSize, 1.0 - texelSize);
+    
+    // Sample density at back-traced position
+    return sampleDensityField(densityTex, backTrace);
+}
+
+// Jacobi iteration for pressure solving (Poisson equation)
+float jacobiPressure(sampler2D pressureTex, sampler2D divergenceTex, vec2 coord, vec2 texelSize, float alpha, float inverseBeta) {
+    float pLeft = samplePressureField(pressureTex, coord - vec2(texelSize.x, 0.0));
+    float pRight = samplePressureField(pressureTex, coord + vec2(texelSize.x, 0.0));
+    float pDown = samplePressureField(pressureTex, coord - vec2(0.0, texelSize.y));
+    float pUp = samplePressureField(pressureTex, coord + vec2(0.0, texelSize.y));
+    float bCenter = texture(divergenceTex, coord).r;
+    
+    return (pLeft + pRight + pDown + pUp + alpha * bCenter) * inverseBeta;
+}
+
+// Jacobi iteration for viscosity diffusion
+vec2 jacobiVelocity(sampler2D velocityTex, sampler2D originalVelocityTex, vec2 coord, vec2 texelSize, float alpha, float inverseBeta) {
+    vec2 vLeft = sampleVelocityField(velocityTex, coord - vec2(texelSize.x, 0.0));
+    vec2 vRight = sampleVelocityField(velocityTex, coord + vec2(texelSize.x, 0.0));
+    vec2 vDown = sampleVelocityField(velocityTex, coord - vec2(0.0, texelSize.y));
+    vec2 vUp = sampleVelocityField(velocityTex, coord + vec2(0.0, texelSize.y));
+    vec2 bCenter = sampleVelocityField(originalVelocityTex, coord);
+    
+    return (vLeft + vRight + vDown + vUp + alpha * bCenter) * inverseBeta;
+}
+
+// Boundary conditions - enforce no-slip at walls
+vec2 applyVelocityBoundary(vec2 velocity, vec2 coord, vec2 texelSize) {
+    vec2 result = velocity;
+    
+    // Left and right boundaries - zero velocity at walls
+    if (coord.x < texelSize.x || coord.x > 1.0 - texelSize.x) {
+        result.x = 0.0;
+    }
+    
+    // Top and bottom boundaries - zero velocity at walls  
+    if (coord.y < texelSize.y || coord.y > 1.0 - texelSize.y) {
+        result.y = 0.0;
+    }
+    
+    return result;
+}
+
+// Optional boundary conditions with boolean control
+vec2 applyVelocityBoundaryOptional(vec2 velocity, vec2 coord, vec2 texelSize, bool enableBoundaries) {
+    if (enableBoundaries) {
+        return applyVelocityBoundary(velocity, coord, texelSize);
+    }
+    return velocity;
+}
+
+float applyPressureBoundary(float pressure, vec2 coord, vec2 texelSize) {
+    // Neumann boundary conditions for pressure (zero gradient)
+    return pressure;
+}
+
+// Vorticity confinement for enhanced visual appeal
+vec2 vorticityConfinement(sampler2D velocityTex, vec2 coord, vec2 texelSize, float vorticityScale) {
+    // Calculate vorticity (curl of velocity field)
+    vec2 vLeft = sampleVelocityField(velocityTex, coord - vec2(texelSize.x, 0.0));
+    vec2 vRight = sampleVelocityField(velocityTex, coord + vec2(texelSize.x, 0.0));
+    vec2 vDown = sampleVelocityField(velocityTex, coord - vec2(0.0, texelSize.y));
+    vec2 vUp = sampleVelocityField(velocityTex, coord + vec2(0.0, texelSize.y));
+    
+    float vorticity = ((vRight.y - vLeft.y) - (vUp.x - vDown.x)) * 0.5;
+    
+    // Calculate vorticity gradient magnitude
+    float omegaLeft = ((sampleVelocityField(velocityTex, coord - vec2(2.0*texelSize.x, 0.0)).y - vLeft.y) - 
+                       (sampleVelocityField(velocityTex, coord - vec2(texelSize.x, texelSize.y)).x - 
+                        sampleVelocityField(velocityTex, coord - vec2(texelSize.x, -texelSize.y)).x)) * 0.5;
+    float omegaRight = ((vRight.y - sampleVelocityField(velocityTex, coord + vec2(2.0*texelSize.x, 0.0)).y) - 
+                        (sampleVelocityField(velocityTex, coord + vec2(texelSize.x, texelSize.y)).x - 
+                         sampleVelocityField(velocityTex, coord + vec2(texelSize.x, -texelSize.y)).x)) * 0.5;
+    float omegaDown = ((sampleVelocityField(velocityTex, coord - vec2(texelSize.x, 2.0*texelSize.y)).y - 
+                        sampleVelocityField(velocityTex, coord + vec2(texelSize.x, 2.0*texelSize.y)).y) - 
+                       (vDown.x - sampleVelocityField(velocityTex, coord - vec2(0.0, 2.0*texelSize.y)).x)) * 0.5;
+    float omegaUp = ((sampleVelocityField(velocityTex, coord - vec2(texelSize.x, texelSize.y)).y - 
+                      sampleVelocityField(velocityTex, coord + vec2(texelSize.x, texelSize.y)).y) - 
+                     (sampleVelocityField(velocityTex, coord + vec2(0.0, 2.0*texelSize.y)).x - vUp.x)) * 0.5;
+    
+    vec2 vorticityGrad = vec2((omegaRight - omegaLeft) * 0.5, (omegaUp - omegaDown) * 0.5);
+    float gradMag = length(vorticityGrad);
+    
+    if (gradMag > 0.0) {
+        vec2 N = normalize(vorticityGrad);
+        return vorticityScale * vorticity * vec2(N.y, -N.x) * texelSize;
+    }
+    
+    return vec2(0.0);
+}
+
+// Force injection helper - adds external forces to velocity field
+vec2 addForce(vec2 currentVelocity, vec2 forcePosition, vec2 coord, vec2 forceVector, float forceRadius, float forceMagnitude) {
+    float distance = length(coord - forcePosition);
+    if (distance < forceRadius) {
+        float falloff = 1.0 - (distance / forceRadius);
+        falloff = falloff * falloff; // Quadratic falloff
+        return currentVelocity + forceVector * forceMagnitude * falloff;
+    }
+    return currentVelocity;
+}
+
+// Density injection helper - adds dye/markers to visualize flow
+float addDensity(float currentDensity, vec2 sourcePosition, vec2 coord, float sourceRadius, float densityAmount) {
+    float distance = length(coord - sourcePosition);
+    if (distance < sourceRadius) {
+        float falloff = 1.0 - (distance / sourceRadius);
+        return currentDensity + densityAmount * falloff;
+    }
+    return currentDensity;
+}
+
+// Velocity to color mapping for visualization
+vec3 velocityToColor(vec2 velocity, float scale) {
+    float speed = length(velocity) * scale;
+    float angle = atan(velocity.y, velocity.x) / (2.0 * M_PI) + 0.5;
+    
+    // HSV to RGB conversion for velocity direction
+    vec3 hsv = vec3(angle, 1.0, speed);
+    vec3 rgb;
+    float c = hsv.z * hsv.y;
+    float x = c * (1.0 - abs(mod(hsv.x * 6.0, 2.0) - 1.0));
+    float m = hsv.z - c;
+    
+    if (hsv.x < 1.0/6.0) rgb = vec3(c, x, 0.0);
+    else if (hsv.x < 2.0/6.0) rgb = vec3(x, c, 0.0);
+    else if (hsv.x < 3.0/6.0) rgb = vec3(0.0, c, x);
+    else if (hsv.x < 4.0/6.0) rgb = vec3(0.0, x, c);
+    else if (hsv.x < 5.0/6.0) rgb = vec3(x, 0.0, c);
+    else rgb = vec3(c, 0.0, x);
+    
+    return rgb + m;
+}
+
+// Pressure to color mapping (for debugging)
+vec3 pressureToColor(float pressure, float scale) {
+    float p = pressure * scale;
+    return vec3(max(p, 0.0), 0.0, max(-p, 0.0));
+}

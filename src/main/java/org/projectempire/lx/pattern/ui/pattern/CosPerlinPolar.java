@@ -50,7 +50,7 @@ public class CosPerlinPolar extends LXPattern {
     }
     
     public final DiscreteParameter swatchIndex =
-            new DiscreteParameter("Swatch", 0, 0, 1)
+            new DiscreteParameter("Swatch", 0, 0, 30)
                     .setDescription("Which swatch to use for color mapping");
     
     public final EnumParameter<Plane> plane =
@@ -123,10 +123,10 @@ public class CosPerlinPolar extends LXPattern {
         }
         
         // Update swatch range when palette changes
-        if (this.cosPalette != null) {
-            this.cosPalette.swatchesChanged.addListener((p) -> updateSwatchRange());
-            updateSwatchRange();
-        }
+        //if (this.cosPalette != null) {
+        //    this.cosPalette.swatchesChanged.addListener((p) -> updateSwatchRange());
+        //    updateSwatchRange();
+        //}
         
         // Initialize Perlin wavetable
         this.perlinWavetable = new PerlinWavetable(1024, 1, (float) this.perlinFreq.getValue());
