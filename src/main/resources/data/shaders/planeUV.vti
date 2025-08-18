@@ -1,0 +1,46 @@
+// Plane-based UV coordinate mapping
+// Returns vec2 UV coordinates based on selected plane:
+// 0.0-1.0: XY plane (position.xy)
+// 1.0-2.0: YZ plane (position.yz) 
+// 2.0-3.0: XZ plane (position.xz)
+// Values between planes smoothly interpolate between projections
+
+vec2 getPlaneUV(vec3 position, float plane) {
+    // Clamp plane to valid range
+    float p = clamp(plane, 0.0, 3.0);
+    
+    // Get UV coordinates for each plane
+    vec2 uvXY = position.xy;  // XY plane (0-1)
+    vec2 uvYZ = position.yz;  // YZ plane (1-2)
+    vec2 uvXZ = position.xz;  // XZ plane (2-3)
+    
+    vec2 result;
+    
+    if (p < 1.0) {
+        // Interpolate between XY (0) and YZ (1)
+        result = mix(uvXY, uvYZ, p);
+    } else if (p < 2.0) {
+        // Interpolate between YZ (1) and XZ (2)
+        result = mix(uvYZ, uvXZ, p - 1.0);
+    } else {
+        // Interpolate between XZ (2) and back to XY (3)
+        result = mix(uvXZ, uvXY, p - 2.0);
+    }
+    
+    return result;
+}
+
+// Alternative discrete version without interpolation
+vec2 getPlaneUVDiscrete(vec3 position, float plane) {
+    int p = int(floor(plane));
+    
+    switch (p) {
+        case 0:
+        default:
+            return position.xy;  // XY plane
+        case 1:
+            return position.yz;  // YZ plane
+        case 2:
+            return position.xz;  // XZ plane
+    }
+}
