@@ -1,6 +1,6 @@
 {
   "version": "1.1.1-SNAPSHOT",
-  "timestamp": 1755590874467,
+  "timestamp": 1755514389997,
   "model": {
     "id": 2,
     "class": "heronarts.lx.structure.LXStructure",
@@ -505,132 +505,6 @@
               "label": "Eye",
               "enabled": true,
               "selector": "eye",
-              "normalization": 0,
-              "normalization/name": "RELATIVE",
-              "orientation": 0,
-              "orientation/name": "GLOBAL",
-              "priority": true,
-              "cueActive": false
-            },
-            "children": {}
-          },
-          {
-            "id": 196517,
-            "class": "heronarts.lx.structure.view.LXViewDefinition",
-            "internal": {
-              "modulationColor": 22,
-              "modulationControlsExpanded": true,
-              "modulationsExpanded": true
-            },
-            "parameters": {
-              "label": "Ceiling_static",
-              "enabled": true,
-              "selector": "static",
-              "normalization": 0,
-              "normalization/name": "RELATIVE",
-              "orientation": 0,
-              "orientation/name": "GLOBAL",
-              "priority": true,
-              "cueActive": false
-            },
-            "children": {}
-          },
-          {
-            "id": 196518,
-            "class": "heronarts.lx.structure.view.LXViewDefinition",
-            "internal": {
-              "modulationColor": 23,
-              "modulationControlsExpanded": true,
-              "modulationsExpanded": true
-            },
-            "parameters": {
-              "label": "Ceiling_alien",
-              "enabled": true,
-              "selector": "alien",
-              "normalization": 0,
-              "normalization/name": "RELATIVE",
-              "orientation": 0,
-              "orientation/name": "GLOBAL",
-              "priority": true,
-              "cueActive": false
-            },
-            "children": {}
-          },
-          {
-            "id": 196519,
-            "class": "heronarts.lx.structure.view.LXViewDefinition",
-            "internal": {
-              "modulationColor": 0,
-              "modulationControlsExpanded": true,
-              "modulationsExpanded": true
-            },
-            "parameters": {
-              "label": "Ceiling_controls",
-              "enabled": true,
-              "selector": "switch",
-              "normalization": 0,
-              "normalization/name": "RELATIVE",
-              "orientation": 0,
-              "orientation/name": "GLOBAL",
-              "priority": true,
-              "cueActive": false
-            },
-            "children": {}
-          },
-          {
-            "id": 196520,
-            "class": "heronarts.lx.structure.view.LXViewDefinition",
-            "internal": {
-              "modulationColor": 1,
-              "modulationControlsExpanded": true,
-              "modulationsExpanded": true
-            },
-            "parameters": {
-              "label": "Ceiling_mars",
-              "enabled": true,
-              "selector": "mars",
-              "normalization": 0,
-              "normalization/name": "RELATIVE",
-              "orientation": 0,
-              "orientation/name": "GLOBAL",
-              "priority": true,
-              "cueActive": false
-            },
-            "children": {}
-          },
-          {
-            "id": 196521,
-            "class": "heronarts.lx.structure.view.LXViewDefinition",
-            "internal": {
-              "modulationColor": 2,
-              "modulationControlsExpanded": true,
-              "modulationsExpanded": true
-            },
-            "parameters": {
-              "label": "Ceiling_phone",
-              "enabled": true,
-              "selector": "phone",
-              "normalization": 0,
-              "normalization/name": "RELATIVE",
-              "orientation": 0,
-              "orientation/name": "GLOBAL",
-              "priority": true,
-              "cueActive": false
-            },
-            "children": {}
-          },
-          {
-            "id": 196522,
-            "class": "heronarts.lx.structure.view.LXViewDefinition",
-            "internal": {
-              "modulationColor": 3,
-              "modulationControlsExpanded": true,
-              "modulationsExpanded": true
-            },
-            "parameters": {
-              "label": "Ceiling_failure",
-              "enabled": true,
-              "selector": "failure",
               "normalization": 0,
               "normalization/name": "RELATIVE",
               "orientation": 0,
@@ -5295,7 +5169,7 @@
           "scale": 1.0,
           "hasCustomPointSize": false,
           "pointSize": 5.0,
-          "selected": true,
+          "selected": false,
           "deactivate": false,
           "enabled": true,
           "brightness": 1.0,
@@ -6527,7 +6401,7 @@
           "scale": 1.0,
           "hasCustomPointSize": false,
           "pointSize": 5.0,
-          "selected": false,
+          "selected": true,
           "deactivate": false,
           "enabled": true,
           "brightness": 1.0,
@@ -7825,8 +7699,8 @@
           "label": "Mixer",
           "crossfader": 0.5,
           "crossfaderBlendMode": 0,
-          "focusedChannel": 2,
-          "focusedChannelAux": 18,
+          "focusedChannel": 15,
+          "focusedChannelAux": 19,
           "cueA": false,
           "cueB": false,
           "auxA": false,
@@ -9247,7 +9121,7 @@
               "label": "Nozzle",
               "fader": 1.0,
               "arm": false,
-              "selected": true,
+              "selected": false,
               "stopClips": false,
               "enabled": true,
               "cue": false,
@@ -9276,7 +9150,7 @@
               "transitionEnabled": true,
               "transitionTimeSecs": 1.0,
               "transitionBlendMode": 0,
-              "focusedPattern": 1,
+              "focusedPattern": 3,
               "triggerPatternCycle": false,
               "launchPatternCycle": false
             },
@@ -15541,7 +15415,7 @@
                 "index": 0,
                 "parameterLanes": [
                   {
-                    "id": 204824,
+                    "id": 157423,
                     "class": "heronarts.lx.clip.MidiNoteClipLane",
                     "internal": {
                       "modulationColor": 0,
@@ -15726,7 +15600,7 @@
                 "index": 1,
                 "parameterLanes": [
                   {
-                    "id": 204829,
+                    "id": 157428,
                     "class": "heronarts.lx.clip.MidiNoteClipLane",
                     "internal": {
                       "modulationColor": 0,
@@ -16808,7 +16682,7 @@
               "label": "Horns",
               "fader": 0.0,
               "arm": false,
-              "selected": false,
+              "selected": true,
               "stopClips": false,
               "enabled": false,
               "cue": false,
@@ -16884,19 +16758,19 @@
                   "launch": false,
                   "stop": false,
                   "loop": false,
-                  "length/millis": 21418.789,
+                  "length/millis": 21418.788999999873,
                   "length/beatCount": 42,
                   "length/beatBasis": 0.8375780000000007,
                   "loopStart/millis": 0.0,
                   "loopStart/beatCount": 0,
                   "loopStart/beatBasis": 0.0,
-                  "loopLength/millis": 21418.789,
+                  "loopLength/millis": 21418.788999999873,
                   "loopLength/beatCount": 42,
                   "loopLength/beatBasis": 0.8375780000000007,
                   "playStart/millis": 0.0,
                   "playStart/beatCount": 0,
                   "playStart/beatBasis": 0.0,
-                  "playEnd/millis": 21418.789,
+                  "playEnd/millis": 21418.788999999873,
                   "playEnd/beatCount": 42,
                   "playEnd/beatBasis": 0.8375780000000007,
                   "snapshotEnabled": false,
@@ -19410,1949 +19284,6 @@
             "group": 84858
           },
           {
-            "id": 162786,
-            "class": "heronarts.lx.mixer.LXGroup",
-            "internal": {
-              "modulationColor": 0,
-              "modulationControlsExpanded": true,
-              "modulationsExpanded": true,
-              "presetFile": "conor_interior.lxd",
-              "controlsExpandedCue": true,
-              "controlsExpandedAux": true,
-              "modulationExpanded": false
-            },
-            "parameters": {
-              "label": "Interior",
-              "fader": 0.0,
-              "arm": false,
-              "selected": false,
-              "stopClips": false,
-              "enabled": false,
-              "cue": false,
-              "aux": false,
-              "crossfadeGroup": 0,
-              "crossfadeGroup/name": "BYPASS",
-              "blendMode": 0,
-              "autoMute": false,
-              "midiSource/index": 0,
-              "midiFilter/enabled": false,
-              "midiFilter/channel": 16,
-              "midiFilter/channel/name": "OMNI",
-              "midiFilter/minNote": 0,
-              "midiFilter/noteRange": 128,
-              "midiFilter/minVelocity": 1,
-              "midiFilter/velocityRange": 127,
-              "view": 0
-            },
-            "children": {
-              "modulation": {
-                "id": 162787,
-                "class": "heronarts.lx.modulation.LXModulationEngine",
-                "internal": {
-                  "modulationColor": 0,
-                  "modulationControlsExpanded": true,
-                  "modulationsExpanded": true
-                },
-                "parameters": {
-                  "label": "Modulation"
-                },
-                "children": {},
-                "modulators": [],
-                "modulations": [],
-                "triggers": []
-              }
-            },
-            "effects": [],
-            "clips": []
-          },
-          {
-            "id": 66896,
-            "class": "heronarts.lx.mixer.LXChannel",
-            "internal": {
-              "modulationColor": 0,
-              "modulationControlsExpanded": true,
-              "modulationsExpanded": true,
-              "presetFile": "ConorRoofStatic.lxd",
-              "controlsExpandedCue": true,
-              "controlsExpandedAux": true,
-              "modulationExpanded": false,
-              "controlsExpanded": true,
-              "viewPatternLabel": false
-            },
-            "parameters": {
-              "label": "Roof-static",
-              "fader": 0.0,
-              "arm": false,
-              "selected": false,
-              "stopClips": false,
-              "enabled": false,
-              "cue": false,
-              "aux": false,
-              "crossfadeGroup": 0,
-              "crossfadeGroup/name": "BYPASS",
-              "blendMode": 0,
-              "autoMute": false,
-              "midiSource/index": 0,
-              "midiFilter/enabled": false,
-              "midiFilter/channel": 16,
-              "midiFilter/channel/name": "OMNI",
-              "midiFilter/minNote": 0,
-              "midiFilter/noteRange": 128,
-              "midiFilter/minVelocity": 1,
-              "midiFilter/velocityRange": 127,
-              "view": 23,
-              "compositeMode": 0,
-              "compositeMode/name": "PLAYLIST",
-              "compositeDampingEnabled": true,
-              "compositeDampingTimeSecs": 0.1,
-              "autoCycleEnabled": false,
-              "autoCycleMode": 0,
-              "autoCycleMode/name": "NEXT",
-              "autoCycleTimeSecs": 60.0,
-              "transitionEnabled": false,
-              "transitionTimeSecs": 5.0,
-              "transitionBlendMode": 0,
-              "focusedPattern": 0,
-              "triggerPatternCycle": false,
-              "launchPatternCycle": false
-            },
-            "children": {
-              "modulation": {
-                "id": 66897,
-                "class": "heronarts.lx.modulation.LXModulationEngine",
-                "internal": {
-                  "modulationColor": 0,
-                  "modulationControlsExpanded": true,
-                  "modulationsExpanded": true
-                },
-                "parameters": {
-                  "label": "Modulation"
-                },
-                "children": {},
-                "modulators": [],
-                "modulations": [],
-                "triggers": []
-              }
-            },
-            "effects": [],
-            "clips": [],
-            "patternIndex": 0,
-            "patterns": [
-              {
-                "id": 67997,
-                "class": "heronarts.lx.pattern.color.SolidPattern",
-                "internal": {
-                  "modulationColor": 0,
-                  "modulationControlsExpanded": true,
-                  "modulationsExpanded": true,
-                  "expanded": true,
-                  "expandedCue": true,
-                  "expandedAux": true,
-                  "modulationExpanded": false
-                },
-                "parameters": {
-                  "label": "Solid",
-                  "midiFilter/enabled": true,
-                  "midiFilter/channel": 16,
-                  "midiFilter/channel/name": "OMNI",
-                  "midiFilter/minNote": 0,
-                  "midiFilter/noteRange": 128,
-                  "midiFilter/minVelocity": 1,
-                  "midiFilter/velocityRange": 127,
-                  "view": 0,
-                  "viewPriority": 0,
-                  "enabled": false,
-                  "recall": false,
-                  "launch": false,
-                  "compositeBlend": 0,
-                  "compositeLevel": 1.0,
-                  "hasCustomCycleTime": false,
-                  "customCycleTimeSecs": 60.0,
-                  "autoMute": true,
-                  "cueActive": false,
-                  "auxActive": false,
-                  "color/brightness": 100.0,
-                  "color/saturation": 86.19049072265625,
-                  "color/hue": 301.29246385395527,
-                  "color/mode": 0,
-                  "color/mode/name": "STATIC",
-                  "color/index": 1,
-                  "compositeMode": 0
-                },
-                "children": {
-                  "modulation": {
-                    "id": 67998,
-                    "class": "heronarts.lx.modulation.LXModulationEngine",
-                    "internal": {
-                      "modulationColor": 0,
-                      "modulationControlsExpanded": true,
-                      "modulationsExpanded": true
-                    },
-                    "parameters": {
-                      "label": "Modulation"
-                    },
-                    "children": {},
-                    "modulators": [],
-                    "modulations": [],
-                    "triggers": []
-                  }
-                },
-                "deviceVersion": -1,
-                "effects": [
-                  {
-                    "id": 163412,
-                    "class": "org.projectempire.lx.effect.BreatheEffect",
-                    "internal": {
-                      "modulationColor": 0,
-                      "modulationControlsExpanded": true,
-                      "modulationsExpanded": true,
-                      "expanded": true,
-                      "expandedCue": true,
-                      "expandedAux": true,
-                      "modulationExpanded": false
-                    },
-                    "parameters": {
-                      "label": "Breathe",
-                      "midiFilter/enabled": true,
-                      "midiFilter/channel": 16,
-                      "midiFilter/channel/name": "OMNI",
-                      "midiFilter/minNote": 0,
-                      "midiFilter/noteRange": 128,
-                      "midiFilter/minVelocity": 1,
-                      "midiFilter/velocityRange": 127,
-                      "view": 0,
-                      "viewPriority": 0,
-                      "enabled": true,
-                      "locked": false,
-                      "Speed": 4714.285719674081,
-                      "Depth": 31.428572125732902
-                    },
-                    "children": {
-                      "modulation": {
-                        "id": 163413,
-                        "class": "heronarts.lx.modulation.LXModulationEngine",
-                        "internal": {
-                          "modulationColor": 0,
-                          "modulationControlsExpanded": true,
-                          "modulationsExpanded": true
-                        },
-                        "parameters": {
-                          "label": "Modulation"
-                        },
-                        "children": {},
-                        "modulators": [],
-                        "modulations": [],
-                        "triggers": []
-                      }
-                    },
-                    "deviceVersion": -1
-                  }
-                ]
-              }
-            ],
-            "group": 162786
-          },
-          {
-            "id": 66919,
-            "class": "heronarts.lx.mixer.LXChannel",
-            "internal": {
-              "modulationColor": 0,
-              "modulationControlsExpanded": true,
-              "modulationsExpanded": true,
-              "presetFile": "ConorRoofAlien.lxd",
-              "controlsExpandedCue": true,
-              "controlsExpandedAux": true,
-              "modulationExpanded": false,
-              "controlsExpanded": true,
-              "viewPatternLabel": false
-            },
-            "parameters": {
-              "label": "Roof_Alien",
-              "fader": 0.0,
-              "arm": false,
-              "selected": false,
-              "stopClips": false,
-              "enabled": false,
-              "cue": false,
-              "aux": false,
-              "crossfadeGroup": 0,
-              "crossfadeGroup/name": "BYPASS",
-              "blendMode": 0,
-              "autoMute": false,
-              "midiSource/index": 0,
-              "midiFilter/enabled": false,
-              "midiFilter/channel": 16,
-              "midiFilter/channel/name": "OMNI",
-              "midiFilter/minNote": 0,
-              "midiFilter/noteRange": 128,
-              "midiFilter/minVelocity": 1,
-              "midiFilter/velocityRange": 127,
-              "view": 24,
-              "compositeMode": 0,
-              "compositeMode/name": "PLAYLIST",
-              "compositeDampingEnabled": true,
-              "compositeDampingTimeSecs": 0.1,
-              "autoCycleEnabled": false,
-              "autoCycleMode": 0,
-              "autoCycleMode/name": "NEXT",
-              "autoCycleTimeSecs": 60.0,
-              "transitionEnabled": false,
-              "transitionTimeSecs": 5.0,
-              "transitionBlendMode": 0,
-              "focusedPattern": 0,
-              "triggerPatternCycle": false,
-              "launchPatternCycle": false
-            },
-            "children": {
-              "modulation": {
-                "id": 66920,
-                "class": "heronarts.lx.modulation.LXModulationEngine",
-                "internal": {
-                  "modulationColor": 0,
-                  "modulationControlsExpanded": true,
-                  "modulationsExpanded": true
-                },
-                "parameters": {
-                  "label": "Modulation"
-                },
-                "children": {},
-                "modulators": [],
-                "modulations": [],
-                "triggers": []
-              }
-            },
-            "effects": [],
-            "clips": [],
-            "patternIndex": 0,
-            "patterns": [
-              {
-                "id": 68128,
-                "class": "heronarts.lx.pattern.texture.NoisePattern",
-                "internal": {
-                  "modulationColor": 0,
-                  "modulationControlsExpanded": true,
-                  "modulationsExpanded": true,
-                  "expanded": true,
-                  "expandedCue": true,
-                  "expandedAux": true,
-                  "modulationExpanded": false
-                },
-                "parameters": {
-                  "label": "Noise",
-                  "midiFilter/enabled": true,
-                  "midiFilter/channel": 16,
-                  "midiFilter/channel/name": "OMNI",
-                  "midiFilter/minNote": 0,
-                  "midiFilter/noteRange": 128,
-                  "midiFilter/minVelocity": 1,
-                  "midiFilter/velocityRange": 127,
-                  "view": 0,
-                  "viewPriority": 0,
-                  "enabled": true,
-                  "recall": false,
-                  "launch": false,
-                  "compositeBlend": 0,
-                  "compositeLevel": 1.0,
-                  "hasCustomCycleTime": false,
-                  "customCycleTimeSecs": 60.0,
-                  "autoMute": false,
-                  "cueActive": false,
-                  "auxActive": false,
-                  "midpoint": 50.0,
-                  "contrast": 84.66583974520395,
-                  "minLevel": 0.0,
-                  "maxLevel": 100.0,
-                  "invert": 0.0,
-                  "xOffset": 0.0,
-                  "yOffset": 0.0,
-                  "zOffset": 0.0,
-                  "scale": 0.5,
-                  "minScale": 1.0,
-                  "maxScale": 10.0,
-                  "xScale": 1.0,
-                  "yScale": 1.0,
-                  "zScale": 1.0,
-                  "motion": true,
-                  "motionSpeed": 0.36388139612972736,
-                  "motionSpeedRange": 128.0,
-                  "xMotion": 0.0,
-                  "yMotion": 0.0,
-                  "zMotion": 1.0,
-                  "algorithm": 0,
-                  "algorithm/name": "PERLIN",
-                  "seed": 0,
-                  "octaves": 3,
-                  "lacunarity": 2.0,
-                  "gain": 0.5,
-                  "ridgeOffset": 0.9,
-                  "xMode": 0,
-                  "xMode/name": "NORMAL",
-                  "yMode": 0,
-                  "yMode/name": "NORMAL",
-                  "zMode": 0,
-                  "zMode/name": "NORMAL",
-                  "compositeMode": 0
-                },
-                "children": {
-                  "modulation": {
-                    "id": 68129,
-                    "class": "heronarts.lx.modulation.LXModulationEngine",
-                    "internal": {
-                      "modulationColor": 0,
-                      "modulationControlsExpanded": true,
-                      "modulationsExpanded": true
-                    },
-                    "parameters": {
-                      "label": "Modulation"
-                    },
-                    "children": {},
-                    "modulators": [],
-                    "modulations": [],
-                    "triggers": []
-                  }
-                },
-                "deviceVersion": -1,
-                "effects": [
-                  {
-                    "id": 68145,
-                    "class": "heronarts.lx.effect.color.ColorizeEffect",
-                    "internal": {
-                      "modulationColor": 0,
-                      "modulationControlsExpanded": true,
-                      "modulationsExpanded": true,
-                      "expanded": true,
-                      "expandedCue": true,
-                      "expandedAux": true,
-                      "modulationExpanded": false
-                    },
-                    "parameters": {
-                      "label": "Colorize",
-                      "midiFilter/enabled": true,
-                      "midiFilter/channel": 16,
-                      "midiFilter/channel/name": "OMNI",
-                      "midiFilter/minNote": 0,
-                      "midiFilter/noteRange": 128,
-                      "midiFilter/minVelocity": 1,
-                      "midiFilter/velocityRange": 127,
-                      "view": 0,
-                      "viewPriority": 0,
-                      "enabled": true,
-                      "locked": false,
-                      "source": 0,
-                      "source/name": "BRIGHTNESS",
-                      "gradientHue": 0.0,
-                      "gradientSaturation": 0.0,
-                      "gradientBrightness": 0.0,
-                      "colorMode": 3,
-                      "colorMode/name": "PALETTE",
-                      "blendMode": 0,
-                      "blendMode/name": "RGB",
-                      "color1/brightness": 0.0,
-                      "color1/saturation": 0.0,
-                      "color1/hue": 0.0,
-                      "color2/brightness": 100.0,
-                      "color2/saturation": 0.0,
-                      "color2/hue": 0.0,
-                      "paletteIndex": 1,
-                      "paletteStops": 5,
-                      "paletteInvert": false,
-                      "paletteDepth": 1.0,
-                      "primaryHue": 0.0,
-                      "primarySaturation": 0.0,
-                      "primaryBrightness": 0.0,
-                      "amount": 1.0,
-                      "filterThreshold": 0.0,
-                      "filterMode": 0,
-                      "filterMode/name": "LEAVE"
-                    },
-                    "children": {
-                      "modulation": {
-                        "id": 68146,
-                        "class": "heronarts.lx.modulation.LXModulationEngine",
-                        "internal": {
-                          "modulationColor": 0,
-                          "modulationControlsExpanded": true,
-                          "modulationsExpanded": true
-                        },
-                        "parameters": {
-                          "label": "Modulation"
-                        },
-                        "children": {},
-                        "modulators": [],
-                        "modulations": [],
-                        "triggers": []
-                      }
-                    },
-                    "deviceVersion": -1
-                  },
-                  {
-                    "id": 70441,
-                    "class": "heronarts.lx.effect.SparkleEffect",
-                    "internal": {
-                      "modulationColor": 0,
-                      "modulationControlsExpanded": true,
-                      "modulationsExpanded": true,
-                      "expanded": true,
-                      "expandedCue": true,
-                      "expandedAux": true,
-                      "modulationExpanded": false
-                    },
-                    "parameters": {
-                      "label": "Sparkle",
-                      "midiFilter/enabled": true,
-                      "midiFilter/channel": 16,
-                      "midiFilter/channel/name": "OMNI",
-                      "midiFilter/minNote": 0,
-                      "midiFilter/noteRange": 128,
-                      "midiFilter/minVelocity": 1,
-                      "midiFilter/velocityRange": 127,
-                      "view": 0,
-                      "viewPriority": 0,
-                      "enabled": true,
-                      "locked": false,
-                      "amount": 0.7785714194178581,
-                      "density": 72.2438692530935,
-                      "speed": 0.5,
-                      "variation": 25.0,
-                      "duration": 100.0,
-                      "sharp": 0.0,
-                      "waveshape": 0,
-                      "minInterval": 1.0,
-                      "maxInterval": 1.0,
-                      "minLevel": 75.0,
-                      "maxLevel": 100.0,
-                      "maskMode": 0,
-                      "maskMode/name": "MULTIPLY"
-                    },
-                    "children": {
-                      "modulation": {
-                        "id": 70442,
-                        "class": "heronarts.lx.modulation.LXModulationEngine",
-                        "internal": {
-                          "modulationColor": 0,
-                          "modulationControlsExpanded": true,
-                          "modulationsExpanded": true
-                        },
-                        "parameters": {
-                          "label": "Modulation"
-                        },
-                        "children": {},
-                        "modulators": [],
-                        "modulations": [],
-                        "triggers": []
-                      }
-                    },
-                    "deviceVersion": -1
-                  }
-                ]
-              }
-            ],
-            "group": 162786
-          },
-          {
-            "id": 66938,
-            "class": "heronarts.lx.mixer.LXChannel",
-            "internal": {
-              "modulationColor": 0,
-              "modulationControlsExpanded": true,
-              "modulationsExpanded": true,
-              "presetFile": "ConorRoofControl.lxd",
-              "controlsExpandedCue": true,
-              "controlsExpandedAux": true,
-              "modulationExpanded": false,
-              "controlsExpanded": true,
-              "viewPatternLabel": false
-            },
-            "parameters": {
-              "label": "Roof_Controls",
-              "fader": 0.0,
-              "arm": false,
-              "selected": false,
-              "stopClips": false,
-              "enabled": false,
-              "cue": false,
-              "aux": false,
-              "crossfadeGroup": 0,
-              "crossfadeGroup/name": "BYPASS",
-              "blendMode": 0,
-              "autoMute": false,
-              "midiSource/index": 0,
-              "midiFilter/enabled": false,
-              "midiFilter/channel": 16,
-              "midiFilter/channel/name": "OMNI",
-              "midiFilter/minNote": 0,
-              "midiFilter/noteRange": 128,
-              "midiFilter/minVelocity": 1,
-              "midiFilter/velocityRange": 127,
-              "view": 25,
-              "compositeMode": 0,
-              "compositeMode/name": "PLAYLIST",
-              "compositeDampingEnabled": true,
-              "compositeDampingTimeSecs": 0.1,
-              "autoCycleEnabled": false,
-              "autoCycleMode": 0,
-              "autoCycleMode/name": "NEXT",
-              "autoCycleTimeSecs": 60.0,
-              "transitionEnabled": false,
-              "transitionTimeSecs": 2.0,
-              "transitionBlendMode": 0,
-              "focusedPattern": 2,
-              "triggerPatternCycle": false,
-              "launchPatternCycle": false
-            },
-            "children": {
-              "modulation": {
-                "id": 66939,
-                "class": "heronarts.lx.modulation.LXModulationEngine",
-                "internal": {
-                  "modulationColor": 0,
-                  "modulationControlsExpanded": true,
-                  "modulationsExpanded": true
-                },
-                "parameters": {
-                  "label": "Modulation"
-                },
-                "children": {},
-                "modulators": [],
-                "modulations": [],
-                "triggers": []
-              }
-            },
-            "effects": [],
-            "clips": [],
-            "patternIndex": 1,
-            "patterns": [
-              {
-                "id": 68013,
-                "class": "heronarts.lx.pattern.strip.ChasePattern",
-                "internal": {
-                  "modulationColor": 0,
-                  "modulationControlsExpanded": true,
-                  "modulationsExpanded": true,
-                  "expanded": true,
-                  "expandedCue": true,
-                  "expandedAux": true,
-                  "modulationExpanded": false
-                },
-                "parameters": {
-                  "label": "Chase",
-                  "midiFilter/enabled": true,
-                  "midiFilter/channel": 16,
-                  "midiFilter/channel/name": "OMNI",
-                  "midiFilter/minNote": 0,
-                  "midiFilter/noteRange": 128,
-                  "midiFilter/minVelocity": 1,
-                  "midiFilter/velocityRange": 127,
-                  "view": 0,
-                  "viewPriority": 0,
-                  "enabled": false,
-                  "recall": false,
-                  "launch": false,
-                  "compositeBlend": 0,
-                  "compositeLevel": 1.0,
-                  "hasCustomCycleTime": false,
-                  "customCycleTimeSecs": 60.0,
-                  "autoMute": false,
-                  "cueActive": false,
-                  "auxActive": false,
-                  "minChunk": 2,
-                  "maxChunk": 99,
-                  "chunkSize": 8.571428852155805,
-                  "shift": 0.0,
-                  "shiftRange": 100.0,
-                  "interlace": false,
-                  "alternateChunk": false,
-                  "waveshape": 0,
-                  "skew": -0.1285714302212,
-                  "exp": 0.0,
-                  "speed": 50.0,
-                  "speedRange": 1.0,
-                  "tempoSync": false,
-                  "tempoDivision": 4,
-                  "tempoDivision/name": "QUARTER",
-                  "reverse": false,
-                  "wrap": 0,
-                  "wrap/name": "ABS",
-                  "size": 50.0,
-                  "fade": 28.571429383009672,
-                  "level": 1.0,
-                  "invert": 0.0,
-                  "swarmOn": false,
-                  "swarmX": 0.5,
-                  "swarmY": 0.5,
-                  "swarmSize": 0.5,
-                  "swarmFade": 42.857142351567745,
-                  "swarmBrightness": 19.999999832361937,
-                  "compositeMode": 0
-                },
-                "children": {
-                  "modulation": {
-                    "id": 68014,
-                    "class": "heronarts.lx.modulation.LXModulationEngine",
-                    "internal": {
-                      "modulationColor": 0,
-                      "modulationControlsExpanded": true,
-                      "modulationsExpanded": true
-                    },
-                    "parameters": {
-                      "label": "Modulation"
-                    },
-                    "children": {},
-                    "modulators": [],
-                    "modulations": [],
-                    "triggers": []
-                  }
-                },
-                "deviceVersion": -1,
-                "effects": []
-              },
-              {
-                "id": 68089,
-                "class": "heronarts.lx.pattern.texture.SparklePattern",
-                "internal": {
-                  "modulationColor": 0,
-                  "modulationControlsExpanded": true,
-                  "modulationsExpanded": true,
-                  "expanded": true,
-                  "expandedCue": true,
-                  "expandedAux": true,
-                  "modulationExpanded": false
-                },
-                "parameters": {
-                  "label": "Sparkle",
-                  "midiFilter/enabled": true,
-                  "midiFilter/channel": 16,
-                  "midiFilter/channel/name": "OMNI",
-                  "midiFilter/minNote": 0,
-                  "midiFilter/noteRange": 128,
-                  "midiFilter/minVelocity": 1,
-                  "midiFilter/velocityRange": 127,
-                  "view": 0,
-                  "viewPriority": 0,
-                  "enabled": false,
-                  "recall": false,
-                  "launch": false,
-                  "compositeBlend": 0,
-                  "compositeLevel": 1.0,
-                  "hasCustomCycleTime": false,
-                  "customCycleTimeSecs": 60.0,
-                  "autoMute": false,
-                  "cueActive": false,
-                  "auxActive": false,
-                  "density": 108.75510461598029,
-                  "speed": 0.7959183678030968,
-                  "variation": 32.14285476133227,
-                  "duration": 92.14285700581968,
-                  "sharp": 1.0,
-                  "waveshape": 4,
-                  "minInterval": 6.566754844376781,
-                  "maxInterval": 1.0,
-                  "minLevel": 26.42857297323644,
-                  "maxLevel": 74.2857142817229,
-                  "baseLevel": 0.0,
-                  "compositeMode": 0
-                },
-                "children": {
-                  "modulation": {
-                    "id": 68090,
-                    "class": "heronarts.lx.modulation.LXModulationEngine",
-                    "internal": {
-                      "modulationColor": 0,
-                      "modulationControlsExpanded": true,
-                      "modulationsExpanded": true
-                    },
-                    "parameters": {
-                      "label": "Modulation"
-                    },
-                    "children": {},
-                    "modulators": [],
-                    "modulations": [],
-                    "triggers": []
-                  }
-                },
-                "deviceVersion": -1,
-                "effects": [
-                  {
-                    "id": 70180,
-                    "class": "heronarts.lx.effect.color.ColorizeEffect",
-                    "internal": {
-                      "modulationColor": 0,
-                      "modulationControlsExpanded": true,
-                      "modulationsExpanded": true,
-                      "expanded": true,
-                      "expandedCue": true,
-                      "expandedAux": true,
-                      "modulationExpanded": false
-                    },
-                    "parameters": {
-                      "label": "Colorize",
-                      "midiFilter/enabled": true,
-                      "midiFilter/channel": 16,
-                      "midiFilter/channel/name": "OMNI",
-                      "midiFilter/minNote": 0,
-                      "midiFilter/noteRange": 128,
-                      "midiFilter/minVelocity": 1,
-                      "midiFilter/velocityRange": 127,
-                      "view": 0,
-                      "viewPriority": 0,
-                      "enabled": true,
-                      "locked": false,
-                      "source": 5,
-                      "source/name": "MIN",
-                      "gradientHue": 0.0,
-                      "gradientSaturation": 0.0,
-                      "gradientBrightness": 0.0,
-                      "colorMode": 0,
-                      "colorMode/name": "FIXED",
-                      "blendMode": 0,
-                      "blendMode/name": "RGB",
-                      "color1/brightness": 92.43195962905884,
-                      "color1/saturation": 100.0,
-                      "color1/hue": 4.2857666015625,
-                      "color2/brightness": 86.39455735683441,
-                      "color2/saturation": 100.0,
-                      "color2/hue": 121.285400390625,
-                      "paletteIndex": 1,
-                      "paletteStops": 5,
-                      "paletteInvert": false,
-                      "paletteDepth": 1.0,
-                      "primaryHue": 0.0,
-                      "primarySaturation": 0.0,
-                      "primaryBrightness": 0.0,
-                      "amount": 0.5046082790941,
-                      "filterThreshold": 0.0,
-                      "filterMode": 0,
-                      "filterMode/name": "LEAVE"
-                    },
-                    "children": {
-                      "modulation": {
-                        "id": 70181,
-                        "class": "heronarts.lx.modulation.LXModulationEngine",
-                        "internal": {
-                          "modulationColor": 0,
-                          "modulationControlsExpanded": true,
-                          "modulationsExpanded": true
-                        },
-                        "parameters": {
-                          "label": "Modulation"
-                        },
-                        "children": {},
-                        "modulators": [],
-                        "modulations": [],
-                        "triggers": []
-                      }
-                    },
-                    "deviceVersion": -1
-                  }
-                ]
-              },
-              {
-                "id": 69160,
-                "class": "org.projectempire.lx.pattern.ui.pattern.IndicatorPattern",
-                "internal": {
-                  "modulationColor": 0,
-                  "modulationControlsExpanded": true,
-                  "modulationsExpanded": true,
-                  "expanded": true,
-                  "expandedCue": true,
-                  "expandedAux": true,
-                  "modulationExpanded": false
-                },
-                "parameters": {
-                  "label": "Indicator",
-                  "midiFilter/enabled": true,
-                  "midiFilter/channel": 16,
-                  "midiFilter/channel/name": "OMNI",
-                  "midiFilter/minNote": 0,
-                  "midiFilter/noteRange": 128,
-                  "midiFilter/minVelocity": 1,
-                  "midiFilter/velocityRange": 127,
-                  "view": 0,
-                  "viewPriority": 0,
-                  "enabled": true,
-                  "recall": false,
-                  "launch": false,
-                  "compositeBlend": 0,
-                  "compositeLevel": 1.0,
-                  "hasCustomCycleTime": false,
-                  "customCycleTimeSecs": 60.0,
-                  "autoMute": false,
-                  "cueActive": false,
-                  "auxActive": false,
-                  "color1/brightness": 74.40477752685547,
-                  "color1/saturation": 82.6190414428711,
-                  "color1/hue": 1.71441650390625,
-                  "color2/brightness": 92.26190948486328,
-                  "color2/saturation": 77.5,
-                  "color2/hue": 23.14288330078125,
-                  "color3/brightness": 60.11907196044922,
-                  "color3/saturation": 89.6428451538086,
-                  "color3/hue": 98.14288330078125,
-                  "compositeMode": 0
-                },
-                "children": {
-                  "modulation": {
-                    "id": 69161,
-                    "class": "heronarts.lx.modulation.LXModulationEngine",
-                    "internal": {
-                      "modulationColor": 0,
-                      "modulationControlsExpanded": true,
-                      "modulationsExpanded": true
-                    },
-                    "parameters": {
-                      "label": "Modulation"
-                    },
-                    "children": {},
-                    "modulators": [],
-                    "modulations": [],
-                    "triggers": []
-                  }
-                },
-                "deviceVersion": -1,
-                "effects": [
-                  {
-                    "id": 70444,
-                    "class": "heronarts.lx.effect.StrobeEffect",
-                    "internal": {
-                      "modulationColor": 0,
-                      "modulationControlsExpanded": true,
-                      "modulationsExpanded": true,
-                      "expanded": true,
-                      "expandedCue": true,
-                      "expandedAux": true,
-                      "modulationExpanded": false
-                    },
-                    "parameters": {
-                      "label": "Strobe",
-                      "midiFilter/enabled": true,
-                      "midiFilter/channel": 16,
-                      "midiFilter/channel/name": "OMNI",
-                      "midiFilter/minNote": 0,
-                      "midiFilter/noteRange": 128,
-                      "midiFilter/minVelocity": 1,
-                      "midiFilter/velocityRange": 127,
-                      "view": 0,
-                      "viewPriority": 0,
-                      "enabled": true,
-                      "locked": false,
-                      "speed": 0.013061223997145287,
-                      "depth": 0.5,
-                      "bias": 0.0,
-                      "waveshape": 0,
-                      "tempoSync": false,
-                      "tempoDivision": 4,
-                      "tempoDivision/name": "QUARTER",
-                      "tempoPhaseOffset": 0.0,
-                      "minFrequency": 0.5,
-                      "maxFrequency": 5.0
-                    },
-                    "children": {
-                      "modulation": {
-                        "id": 70445,
-                        "class": "heronarts.lx.modulation.LXModulationEngine",
-                        "internal": {
-                          "modulationColor": 0,
-                          "modulationControlsExpanded": true,
-                          "modulationsExpanded": true
-                        },
-                        "parameters": {
-                          "label": "Modulation"
-                        },
-                        "children": {},
-                        "modulators": [],
-                        "modulations": [],
-                        "triggers": []
-                      }
-                    },
-                    "deviceVersion": -1
-                  }
-                ]
-              }
-            ],
-            "group": 162786
-          },
-          {
-            "id": 66957,
-            "class": "heronarts.lx.mixer.LXChannel",
-            "internal": {
-              "modulationColor": 0,
-              "modulationControlsExpanded": true,
-              "modulationsExpanded": true,
-              "presetFile": "ConorMars.lxd",
-              "controlsExpandedCue": true,
-              "controlsExpandedAux": true,
-              "modulationExpanded": false,
-              "controlsExpanded": true,
-              "viewPatternLabel": false
-            },
-            "parameters": {
-              "label": "Mars",
-              "fader": 0.0,
-              "arm": false,
-              "selected": false,
-              "stopClips": false,
-              "enabled": false,
-              "cue": false,
-              "aux": false,
-              "crossfadeGroup": 0,
-              "crossfadeGroup/name": "BYPASS",
-              "blendMode": 0,
-              "autoMute": false,
-              "midiSource/index": 0,
-              "midiFilter/enabled": false,
-              "midiFilter/channel": 16,
-              "midiFilter/channel/name": "OMNI",
-              "midiFilter/minNote": 0,
-              "midiFilter/noteRange": 128,
-              "midiFilter/minVelocity": 1,
-              "midiFilter/velocityRange": 127,
-              "view": 26,
-              "compositeMode": 0,
-              "compositeMode/name": "PLAYLIST",
-              "compositeDampingEnabled": true,
-              "compositeDampingTimeSecs": 0.1,
-              "autoCycleEnabled": false,
-              "autoCycleMode": 0,
-              "autoCycleMode/name": "NEXT",
-              "autoCycleTimeSecs": 60.0,
-              "transitionEnabled": false,
-              "transitionTimeSecs": 5.0,
-              "transitionBlendMode": 0,
-              "focusedPattern": 0,
-              "triggerPatternCycle": false,
-              "launchPatternCycle": false
-            },
-            "children": {
-              "modulation": {
-                "id": 66958,
-                "class": "heronarts.lx.modulation.LXModulationEngine",
-                "internal": {
-                  "modulationColor": 0,
-                  "modulationControlsExpanded": true,
-                  "modulationsExpanded": true
-                },
-                "parameters": {
-                  "label": "Modulation"
-                },
-                "children": {},
-                "modulators": [],
-                "modulations": [],
-                "triggers": []
-              }
-            },
-            "effects": [],
-            "clips": [],
-            "patternIndex": 0,
-            "patterns": [
-              {
-                "id": 67067,
-                "class": "heronarts.lx.pattern.strip.ChasePattern",
-                "internal": {
-                  "modulationColor": 0,
-                  "modulationControlsExpanded": true,
-                  "modulationsExpanded": true,
-                  "expanded": true,
-                  "expandedCue": true,
-                  "expandedAux": true,
-                  "modulationExpanded": false
-                },
-                "parameters": {
-                  "label": "Chase",
-                  "midiFilter/enabled": true,
-                  "midiFilter/channel": 16,
-                  "midiFilter/channel/name": "OMNI",
-                  "midiFilter/minNote": 0,
-                  "midiFilter/noteRange": 128,
-                  "midiFilter/minVelocity": 1,
-                  "midiFilter/velocityRange": 127,
-                  "view": 0,
-                  "viewPriority": 0,
-                  "enabled": true,
-                  "recall": false,
-                  "launch": false,
-                  "compositeBlend": 0,
-                  "compositeLevel": 1.0,
-                  "hasCustomCycleTime": false,
-                  "customCycleTimeSecs": 60.0,
-                  "autoMute": false,
-                  "cueActive": false,
-                  "auxActive": false,
-                  "minChunk": 2,
-                  "maxChunk": 100,
-                  "chunkSize": 50.0,
-                  "shift": 0.0,
-                  "shiftRange": 100.0,
-                  "interlace": false,
-                  "alternateChunk": false,
-                  "waveshape": 2,
-                  "skew": 0.0,
-                  "exp": 0.0,
-                  "speed": 50.0,
-                  "speedRange": 1.0,
-                  "tempoSync": false,
-                  "tempoDivision": 4,
-                  "tempoDivision/name": "QUARTER",
-                  "reverse": false,
-                  "wrap": 0,
-                  "wrap/name": "ABS",
-                  "size": 50.0,
-                  "fade": 50.0,
-                  "level": 1.0,
-                  "invert": 0.0,
-                  "swarmOn": false,
-                  "swarmX": 0.5,
-                  "swarmY": 0.5,
-                  "swarmSize": 0.5,
-                  "swarmFade": 50.0,
-                  "swarmBrightness": 50.0,
-                  "compositeMode": 0
-                },
-                "children": {
-                  "modulation": {
-                    "id": 67068,
-                    "class": "heronarts.lx.modulation.LXModulationEngine",
-                    "internal": {
-                      "modulationColor": 0,
-                      "modulationControlsExpanded": true,
-                      "modulationsExpanded": true
-                    },
-                    "parameters": {
-                      "label": "Modulation"
-                    },
-                    "children": {},
-                    "modulators": [],
-                    "modulations": [],
-                    "triggers": []
-                  }
-                },
-                "deviceVersion": -1,
-                "effects": [
-                  {
-                    "id": 67080,
-                    "class": "heronarts.lx.effect.color.ColorizeEffect",
-                    "internal": {
-                      "modulationColor": 0,
-                      "modulationControlsExpanded": true,
-                      "modulationsExpanded": true,
-                      "expanded": true,
-                      "expandedCue": true,
-                      "expandedAux": true,
-                      "modulationExpanded": false
-                    },
-                    "parameters": {
-                      "label": "Colorize",
-                      "midiFilter/enabled": true,
-                      "midiFilter/channel": 16,
-                      "midiFilter/channel/name": "OMNI",
-                      "midiFilter/minNote": 0,
-                      "midiFilter/noteRange": 128,
-                      "midiFilter/minVelocity": 1,
-                      "midiFilter/velocityRange": 127,
-                      "view": 0,
-                      "viewPriority": 0,
-                      "enabled": true,
-                      "locked": false,
-                      "source": 0,
-                      "source/name": "BRIGHTNESS",
-                      "gradientHue": 0.0,
-                      "gradientSaturation": 0.0,
-                      "gradientBrightness": 0.0,
-                      "colorMode": 0,
-                      "colorMode/name": "FIXED",
-                      "blendMode": 0,
-                      "blendMode/name": "RGB",
-                      "color1/brightness": 100.0,
-                      "color1/saturation": 100.0,
-                      "color1/hue": 359.0,
-                      "color2/brightness": 100.0,
-                      "color2/saturation": 60.0,
-                      "color2/hue": 359.0,
-                      "paletteIndex": 1,
-                      "paletteStops": 5,
-                      "paletteInvert": false,
-                      "paletteDepth": 1.0,
-                      "primaryHue": 0.0,
-                      "primarySaturation": 0.0,
-                      "primaryBrightness": 0.0,
-                      "amount": 1.0,
-                      "filterThreshold": 0.0,
-                      "filterMode": 0,
-                      "filterMode/name": "LEAVE"
-                    },
-                    "children": {
-                      "modulation": {
-                        "id": 67081,
-                        "class": "heronarts.lx.modulation.LXModulationEngine",
-                        "internal": {
-                          "modulationColor": 0,
-                          "modulationControlsExpanded": true,
-                          "modulationsExpanded": true
-                        },
-                        "parameters": {
-                          "label": "Modulation"
-                        },
-                        "children": {},
-                        "modulators": [],
-                        "modulations": [],
-                        "triggers": []
-                      }
-                    },
-                    "deviceVersion": -1
-                  }
-                ]
-              }
-            ],
-            "group": 162786
-          },
-          {
-            "id": 70339,
-            "class": "heronarts.lx.mixer.LXChannel",
-            "internal": {
-              "modulationColor": 0,
-              "modulationControlsExpanded": true,
-              "modulationsExpanded": true,
-              "presetFile": "ConorRoofPhone.lxd",
-              "controlsExpandedCue": true,
-              "controlsExpandedAux": true,
-              "modulationExpanded": false,
-              "controlsExpanded": true,
-              "viewPatternLabel": false
-            },
-            "parameters": {
-              "label": "Roof_Phone",
-              "fader": 0.0,
-              "arm": false,
-              "selected": false,
-              "stopClips": false,
-              "enabled": false,
-              "cue": false,
-              "aux": false,
-              "crossfadeGroup": 0,
-              "crossfadeGroup/name": "BYPASS",
-              "blendMode": 0,
-              "autoMute": false,
-              "midiSource/index": 0,
-              "midiFilter/enabled": false,
-              "midiFilter/channel": 16,
-              "midiFilter/channel/name": "OMNI",
-              "midiFilter/minNote": 0,
-              "midiFilter/noteRange": 128,
-              "midiFilter/minVelocity": 1,
-              "midiFilter/velocityRange": 127,
-              "view": 27,
-              "compositeMode": 0,
-              "compositeMode/name": "PLAYLIST",
-              "compositeDampingEnabled": true,
-              "compositeDampingTimeSecs": 0.1,
-              "autoCycleEnabled": false,
-              "autoCycleMode": 0,
-              "autoCycleMode/name": "NEXT",
-              "autoCycleTimeSecs": 60.0,
-              "transitionEnabled": false,
-              "transitionTimeSecs": 5.0,
-              "transitionBlendMode": 0,
-              "focusedPattern": 0,
-              "triggerPatternCycle": false,
-              "launchPatternCycle": false
-            },
-            "children": {
-              "modulation": {
-                "id": 70340,
-                "class": "heronarts.lx.modulation.LXModulationEngine",
-                "internal": {
-                  "modulationColor": 0,
-                  "modulationControlsExpanded": true,
-                  "modulationsExpanded": true
-                },
-                "parameters": {
-                  "label": "Modulation"
-                },
-                "children": {},
-                "modulators": [],
-                "modulations": [],
-                "triggers": []
-              }
-            },
-            "effects": [],
-            "clips": [],
-            "patternIndex": 0,
-            "patterns": [
-              {
-                "id": 70375,
-                "class": "org.projectempire.lx.pattern.ui.pattern.RainbowMeltPattern",
-                "internal": {
-                  "modulationColor": 0,
-                  "modulationControlsExpanded": true,
-                  "modulationsExpanded": true,
-                  "expanded": true,
-                  "expandedCue": true,
-                  "expandedAux": true,
-                  "modulationExpanded": false
-                },
-                "parameters": {
-                  "label": "RainbowMelt",
-                  "midiFilter/enabled": true,
-                  "midiFilter/channel": 16,
-                  "midiFilter/channel/name": "OMNI",
-                  "midiFilter/minNote": 0,
-                  "midiFilter/noteRange": 128,
-                  "midiFilter/minVelocity": 1,
-                  "midiFilter/velocityRange": 127,
-                  "view": 0,
-                  "viewPriority": 0,
-                  "enabled": true,
-                  "recall": false,
-                  "launch": false,
-                  "compositeBlend": 0,
-                  "compositeLevel": 1.0,
-                  "hasCustomCycleTime": false,
-                  "customCycleTimeSecs": 60.0,
-                  "autoMute": false,
-                  "cueActive": false,
-                  "auxActive": false,
-                  "compositeMode": 0
-                },
-                "children": {
-                  "modulation": {
-                    "id": 70376,
-                    "class": "heronarts.lx.modulation.LXModulationEngine",
-                    "internal": {
-                      "modulationColor": 0,
-                      "modulationControlsExpanded": true,
-                      "modulationsExpanded": true
-                    },
-                    "parameters": {
-                      "label": "Modulation"
-                    },
-                    "children": {},
-                    "modulators": [],
-                    "modulations": [],
-                    "triggers": []
-                  }
-                },
-                "deviceVersion": -1,
-                "effects": [
-                  {
-                    "id": 70401,
-                    "class": "heronarts.lx.effect.DynamicsEffect",
-                    "internal": {
-                      "modulationColor": 0,
-                      "modulationControlsExpanded": true,
-                      "modulationsExpanded": true,
-                      "expanded": true,
-                      "expandedCue": true,
-                      "expandedAux": true,
-                      "modulationExpanded": false
-                    },
-                    "parameters": {
-                      "label": "Dynamics",
-                      "midiFilter/enabled": true,
-                      "midiFilter/channel": 16,
-                      "midiFilter/channel/name": "OMNI",
-                      "midiFilter/minNote": 0,
-                      "midiFilter/noteRange": 128,
-                      "midiFilter/minVelocity": 1,
-                      "midiFilter/velocityRange": 127,
-                      "view": 0,
-                      "viewPriority": 0,
-                      "enabled": true,
-                      "locked": false,
-                      "ceiling": 0.721428579185158,
-                      "contrast": -0.5,
-                      "gain": 1.0,
-                      "floor": 0.1357142785564065,
-                      "gate": 0.3785714264959097,
-                      "shape": 1.0,
-                      "red": 1.0,
-                      "green": 1.0,
-                      "blue": 1.0
-                    },
-                    "children": {
-                      "modulation": {
-                        "id": 70402,
-                        "class": "heronarts.lx.modulation.LXModulationEngine",
-                        "internal": {
-                          "modulationColor": 0,
-                          "modulationControlsExpanded": true,
-                          "modulationsExpanded": true
-                        },
-                        "parameters": {
-                          "label": "Modulation"
-                        },
-                        "children": {},
-                        "modulators": [],
-                        "modulations": [],
-                        "triggers": []
-                      }
-                    },
-                    "deviceVersion": -1
-                  }
-                ]
-              }
-            ],
-            "group": 162786
-          },
-          {
-            "id": 70405,
-            "class": "heronarts.lx.mixer.LXChannel",
-            "internal": {
-              "modulationColor": 0,
-              "modulationControlsExpanded": true,
-              "modulationsExpanded": true,
-              "presetFile": "ConorRoofFailure.lxd",
-              "controlsExpandedCue": true,
-              "controlsExpandedAux": true,
-              "modulationExpanded": false,
-              "controlsExpanded": true,
-              "viewPatternLabel": false
-            },
-            "parameters": {
-              "label": "Roof_Failure",
-              "fader": 0.0,
-              "arm": false,
-              "selected": false,
-              "stopClips": false,
-              "enabled": false,
-              "cue": false,
-              "aux": false,
-              "crossfadeGroup": 0,
-              "crossfadeGroup/name": "BYPASS",
-              "blendMode": 0,
-              "autoMute": false,
-              "midiSource/index": 0,
-              "midiFilter/enabled": false,
-              "midiFilter/channel": 16,
-              "midiFilter/channel/name": "OMNI",
-              "midiFilter/minNote": 0,
-              "midiFilter/noteRange": 128,
-              "midiFilter/minVelocity": 1,
-              "midiFilter/velocityRange": 127,
-              "view": 28,
-              "compositeMode": 0,
-              "compositeMode/name": "PLAYLIST",
-              "compositeDampingEnabled": true,
-              "compositeDampingTimeSecs": 0.1,
-              "autoCycleEnabled": false,
-              "autoCycleMode": 0,
-              "autoCycleMode/name": "NEXT",
-              "autoCycleTimeSecs": 60.0,
-              "transitionEnabled": false,
-              "transitionTimeSecs": 5.0,
-              "transitionBlendMode": 0,
-              "focusedPattern": 1,
-              "triggerPatternCycle": false,
-              "launchPatternCycle": false
-            },
-            "children": {
-              "modulation": {
-                "id": 70406,
-                "class": "heronarts.lx.modulation.LXModulationEngine",
-                "internal": {
-                  "modulationColor": 0,
-                  "modulationControlsExpanded": true,
-                  "modulationsExpanded": true
-                },
-                "parameters": {
-                  "label": "Modulation"
-                },
-                "children": {},
-                "modulators": [],
-                "modulations": [],
-                "triggers": []
-              }
-            },
-            "effects": [
-              {
-                "id": 70437,
-                "class": "heronarts.lx.effect.StrobeEffect",
-                "internal": {
-                  "modulationColor": 0,
-                  "modulationControlsExpanded": true,
-                  "modulationsExpanded": true,
-                  "expanded": true,
-                  "expandedCue": true,
-                  "expandedAux": true,
-                  "modulationExpanded": false
-                },
-                "parameters": {
-                  "label": "Strobe",
-                  "midiFilter/enabled": true,
-                  "midiFilter/channel": 16,
-                  "midiFilter/channel/name": "OMNI",
-                  "midiFilter/minNote": 0,
-                  "midiFilter/noteRange": 128,
-                  "midiFilter/minVelocity": 1,
-                  "midiFilter/velocityRange": 127,
-                  "view": 0,
-                  "viewPriority": 0,
-                  "enabled": false,
-                  "locked": false,
-                  "speed": 0.5412224292327643,
-                  "depth": 0.5,
-                  "bias": 0.0,
-                  "waveshape": 0,
-                  "tempoSync": false,
-                  "tempoDivision": 4,
-                  "tempoDivision/name": "QUARTER",
-                  "tempoPhaseOffset": 0.0,
-                  "minFrequency": 0.5,
-                  "maxFrequency": 5.0
-                },
-                "children": {
-                  "modulation": {
-                    "id": 70438,
-                    "class": "heronarts.lx.modulation.LXModulationEngine",
-                    "internal": {
-                      "modulationColor": 0,
-                      "modulationControlsExpanded": true,
-                      "modulationsExpanded": true
-                    },
-                    "parameters": {
-                      "label": "Modulation"
-                    },
-                    "children": {},
-                    "modulators": [],
-                    "modulations": [],
-                    "triggers": []
-                  }
-                },
-                "deviceVersion": -1
-              }
-            ],
-            "clips": [
-              {
-                "id": 71779,
-                "class": "heronarts.lx.clip.LXChannelClip",
-                "internal": {
-                  "modulationColor": 0,
-                  "modulationControlsExpanded": true,
-                  "modulationsExpanded": true,
-                  "clipView": 0,
-                  "clipView/name": "AUTOMATION",
-                  "launchAutomation": false,
-                  "zoom": 1.0
-                },
-                "parameters": {
-                  "label": "No Fail",
-                  "running": false,
-                  "trigger": false,
-                  "reset": false,
-                  "referenceBpm": 120.0,
-                  "timeBase": 1,
-                  "timeBase/name": "TEMPO",
-                  "launch": false,
-                  "stop": false,
-                  "loop": false,
-                  "length/millis": 7082.7423,
-                  "length/beatCount": 14,
-                  "length/beatBasis": 0.16548459999999965,
-                  "loopStart/millis": 0.0,
-                  "loopStart/beatCount": 0,
-                  "loopStart/beatBasis": 0.0,
-                  "loopLength/millis": 1065.9505,
-                  "loopLength/beatCount": 2,
-                  "loopLength/beatBasis": 0.13190100000000002,
-                  "playStart/millis": 0.0,
-                  "playStart/beatCount": 0,
-                  "playStart/beatBasis": 0.0,
-                  "playEnd/millis": 3500.0,
-                  "playEnd/beatCount": 7,
-                  "playEnd/beatBasis": 0.0,
-                  "snapshotEnabled": false,
-                  "snapshotTransitionEnabled": true,
-                  "automationEnabled": true,
-                  "customSnapshotTransition": false
-                },
-                "children": {
-                  "snapshot": {
-                    "id": 71780,
-                    "class": "heronarts.lx.snapshot.LXClipSnapshot",
-                    "internal": {
-                      "modulationColor": 0,
-                      "modulationControlsExpanded": true,
-                      "modulationsExpanded": true
-                    },
-                    "parameters": {
-                      "label": "Snapshot",
-                      "transitionTimeSecs": 1.0,
-                      "recall": false
-                    },
-                    "children": {},
-                    "views": []
-                  }
-                },
-                "index": 0,
-                "parameterLanes": [
-                  {
-                    "id": 71781,
-                    "class": "heronarts.lx.clip.MidiNoteClipLane",
-                    "internal": {
-                      "modulationColor": 0,
-                      "modulationControlsExpanded": true,
-                      "modulationsExpanded": true,
-                      "uiHeight": 0.0,
-                      "uiExpanded": true,
-                      "uiMaximized": false,
-                      "uiZoom ": 4.0,
-                      "uiOffset": 60.0
-                    },
-                    "parameters": {
-                      "label": "MidiNote"
-                    },
-                    "children": {},
-                    "laneType": "midiNote",
-                    "events": []
-                  },
-                  {
-                    "id": 71782,
-                    "class": "heronarts.lx.clip.PatternClipLane",
-                    "internal": {
-                      "modulationColor": 0,
-                      "modulationControlsExpanded": true,
-                      "modulationsExpanded": true,
-                      "uiHeight": 0.0,
-                      "uiExpanded": true,
-                      "uiMaximized": false
-                    },
-                    "parameters": {
-                      "label": "Pattern"
-                    },
-                    "children": {},
-                    "laneType": "pattern",
-                    "events": [
-                      {
-                        "cursor": {
-                          "millis": 0.0,
-                          "beatCount": 0,
-                          "beatBasis": 0.0
-                        },
-                        "patternIndex": 0,
-                        "patternId": 70424
-                      }
-                    ]
-                  },
-                  {
-                    "id": 71791,
-                    "class": "heronarts.lx.clip.ParameterClipLane$Boolean",
-                    "internal": {
-                      "modulationColor": 0,
-                      "modulationControlsExpanded": true,
-                      "modulationsExpanded": true,
-                      "uiHeight": 0.0,
-                      "uiExpanded": true,
-                      "uiMaximized": false
-                    },
-                    "parameters": {
-                      "label": "Boolean"
-                    },
-                    "children": {},
-                    "laneType": "parameter",
-                    "events": [
-                      {
-                        "cursor": {
-                          "millis": 0.0,
-                          "beatCount": 0,
-                          "beatBasis": 0.0
-                        },
-                        "normalized": 1.0
-                      },
-                      {
-                        "cursor": {
-                          "millis": 0.0,
-                          "beatCount": 0,
-                          "beatBasis": 0.0
-                        },
-                        "normalized": 0.0
-                      }
-                    ],
-                    "path": "/effect/1/enabled",
-                    "componentId": 70437,
-                    "parameterPath": "enabled"
-                  }
-                ]
-              },
-              {
-                "id": 71787,
-                "class": "heronarts.lx.clip.LXChannelClip",
-                "internal": {
-                  "modulationColor": 0,
-                  "modulationControlsExpanded": true,
-                  "modulationsExpanded": true,
-                  "clipView": 0,
-                  "clipView/name": "AUTOMATION",
-                  "launchAutomation": false,
-                  "zoom": 1.0
-                },
-                "parameters": {
-                  "label": "Fail",
-                  "running": false,
-                  "trigger": false,
-                  "reset": false,
-                  "referenceBpm": 120.0,
-                  "timeBase": 1,
-                  "timeBase/name": "TEMPO",
-                  "launch": false,
-                  "stop": false,
-                  "loop": false,
-                  "length/millis": 7916.546200000001,
-                  "length/beatCount": 15,
-                  "length/beatBasis": 0.8330924000000008,
-                  "loopStart/millis": 0.0,
-                  "loopStart/beatCount": 0,
-                  "loopStart/beatBasis": 0.0,
-                  "loopLength/millis": 1215.3472000000002,
-                  "loopLength/beatCount": 2,
-                  "loopLength/beatBasis": 0.43069440000000014,
-                  "playStart/millis": 0.0,
-                  "playStart/beatCount": 0,
-                  "playStart/beatBasis": 0.0,
-                  "playEnd/millis": 7916.546200000001,
-                  "playEnd/beatCount": 15,
-                  "playEnd/beatBasis": 0.8330924000000008,
-                  "snapshotEnabled": false,
-                  "snapshotTransitionEnabled": true,
-                  "automationEnabled": true,
-                  "customSnapshotTransition": false
-                },
-                "children": {
-                  "snapshot": {
-                    "id": 71788,
-                    "class": "heronarts.lx.snapshot.LXClipSnapshot",
-                    "internal": {
-                      "modulationColor": 0,
-                      "modulationControlsExpanded": true,
-                      "modulationsExpanded": true
-                    },
-                    "parameters": {
-                      "label": "Snapshot",
-                      "transitionTimeSecs": 1.0,
-                      "recall": false
-                    },
-                    "children": {},
-                    "views": []
-                  }
-                },
-                "index": 1,
-                "parameterLanes": [
-                  {
-                    "id": 71789,
-                    "class": "heronarts.lx.clip.MidiNoteClipLane",
-                    "internal": {
-                      "modulationColor": 0,
-                      "modulationControlsExpanded": true,
-                      "modulationsExpanded": true,
-                      "uiHeight": 0.0,
-                      "uiExpanded": true,
-                      "uiMaximized": false,
-                      "uiZoom ": 4.0,
-                      "uiOffset": 60.0
-                    },
-                    "parameters": {
-                      "label": "MidiNote"
-                    },
-                    "children": {},
-                    "laneType": "midiNote",
-                    "events": []
-                  },
-                  {
-                    "id": 71790,
-                    "class": "heronarts.lx.clip.PatternClipLane",
-                    "internal": {
-                      "modulationColor": 0,
-                      "modulationControlsExpanded": true,
-                      "modulationsExpanded": true,
-                      "uiHeight": 0.0,
-                      "uiExpanded": true,
-                      "uiMaximized": false
-                    },
-                    "parameters": {
-                      "label": "Pattern"
-                    },
-                    "children": {},
-                    "laneType": "pattern",
-                    "events": [
-                      {
-                        "cursor": {
-                          "millis": 0.0,
-                          "beatCount": 0,
-                          "beatBasis": 0.0
-                        },
-                        "patternIndex": 1,
-                        "patternId": 70494
-                      }
-                    ]
-                  },
-                  {
-                    "id": 71792,
-                    "class": "heronarts.lx.clip.ParameterClipLane$Boolean",
-                    "internal": {
-                      "modulationColor": 0,
-                      "modulationControlsExpanded": true,
-                      "modulationsExpanded": true,
-                      "uiHeight": 0.0,
-                      "uiExpanded": true,
-                      "uiMaximized": false
-                    },
-                    "parameters": {
-                      "label": "Boolean"
-                    },
-                    "children": {},
-                    "laneType": "parameter",
-                    "events": [
-                      {
-                        "cursor": {
-                          "millis": 0.0,
-                          "beatCount": 0,
-                          "beatBasis": 0.0
-                        },
-                        "normalized": 0.0
-                      },
-                      {
-                        "cursor": {
-                          "millis": 0.0,
-                          "beatCount": 0,
-                          "beatBasis": 0.0
-                        },
-                        "normalized": 1.0
-                      }
-                    ],
-                    "path": "/effect/1/enabled",
-                    "componentId": 70437,
-                    "parameterPath": "enabled"
-                  }
-                ]
-              }
-            ],
-            "patternIndex": 0,
-            "patterns": [
-              {
-                "id": 70424,
-                "class": "heronarts.lx.pattern.color.SolidPattern",
-                "internal": {
-                  "modulationColor": 0,
-                  "modulationControlsExpanded": true,
-                  "modulationsExpanded": true,
-                  "expanded": true,
-                  "expandedCue": true,
-                  "expandedAux": true,
-                  "modulationExpanded": false
-                },
-                "parameters": {
-                  "label": "Solid",
-                  "midiFilter/enabled": true,
-                  "midiFilter/channel": 16,
-                  "midiFilter/channel/name": "OMNI",
-                  "midiFilter/minNote": 0,
-                  "midiFilter/noteRange": 128,
-                  "midiFilter/minVelocity": 1,
-                  "midiFilter/velocityRange": 127,
-                  "view": 0,
-                  "viewPriority": 0,
-                  "enabled": false,
-                  "recall": false,
-                  "launch": false,
-                  "compositeBlend": 0,
-                  "compositeLevel": 1.0,
-                  "hasCustomCycleTime": false,
-                  "customCycleTimeSecs": 60.0,
-                  "autoMute": false,
-                  "cueActive": false,
-                  "auxActive": false,
-                  "color/brightness": 100.0,
-                  "color/saturation": 100.0,
-                  "color/hue": 103.79251655191183,
-                  "color/mode": 0,
-                  "color/mode/name": "STATIC",
-                  "color/index": 1,
-                  "compositeMode": 0
-                },
-                "children": {
-                  "modulation": {
-                    "id": 70425,
-                    "class": "heronarts.lx.modulation.LXModulationEngine",
-                    "internal": {
-                      "modulationColor": 0,
-                      "modulationControlsExpanded": true,
-                      "modulationsExpanded": true
-                    },
-                    "parameters": {
-                      "label": "Modulation"
-                    },
-                    "children": {},
-                    "modulators": [],
-                    "modulations": [],
-                    "triggers": []
-                  }
-                },
-                "deviceVersion": -1,
-                "effects": []
-              },
-              {
-                "id": 70494,
-                "class": "heronarts.lx.pattern.color.SolidPattern",
-                "internal": {
-                  "modulationColor": 0,
-                  "modulationControlsExpanded": true,
-                  "modulationsExpanded": true,
-                  "expanded": true,
-                  "expandedCue": true,
-                  "expandedAux": true,
-                  "modulationExpanded": false
-                },
-                "parameters": {
-                  "label": "Solid",
-                  "midiFilter/enabled": true,
-                  "midiFilter/channel": 16,
-                  "midiFilter/channel/name": "OMNI",
-                  "midiFilter/minNote": 0,
-                  "midiFilter/noteRange": 128,
-                  "midiFilter/minVelocity": 1,
-                  "midiFilter/velocityRange": 127,
-                  "view": 0,
-                  "viewPriority": 0,
-                  "enabled": false,
-                  "recall": false,
-                  "launch": false,
-                  "compositeBlend": 0,
-                  "compositeLevel": 1.0,
-                  "hasCustomCycleTime": false,
-                  "customCycleTimeSecs": 60.0,
-                  "autoMute": false,
-                  "cueActive": false,
-                  "auxActive": false,
-                  "color/brightness": 100.0,
-                  "color/saturation": 100.0,
-                  "color/hue": 0.0,
-                  "color/mode": 0,
-                  "color/mode/name": "STATIC",
-                  "color/index": 1,
-                  "compositeMode": 0
-                },
-                "children": {
-                  "modulation": {
-                    "id": 70495,
-                    "class": "heronarts.lx.modulation.LXModulationEngine",
-                    "internal": {
-                      "modulationColor": 0,
-                      "modulationControlsExpanded": true,
-                      "modulationsExpanded": true
-                    },
-                    "parameters": {
-                      "label": "Modulation"
-                    },
-                    "children": {},
-                    "modulators": [],
-                    "modulations": [],
-                    "triggers": []
-                  }
-                },
-                "deviceVersion": -1,
-                "effects": []
-              }
-            ],
-            "group": 162786
-          },
-          {
             "id": 84777,
             "class": "heronarts.lx.mixer.LXChannel",
             "internal": {
@@ -22925,7 +20856,7 @@
               "exp": 0.0
             },
             "children": {},
-            "basis": 0.9997087515037338
+            "basis": 0.7396983681037308
           },
           {
             "id": 80775,
@@ -23078,7 +21009,7 @@
             "target": {
               "componentId": 84813,
               "parameterPath": "launch",
-              "path": "/mixer/channel/26/clip/1/launch"
+              "path": "/mixer/channel/19/clip/1/launch"
             },
             "id": 84819,
             "class": "heronarts.lx.modulation.LXTriggerModulation",
@@ -24518,7 +22449,7 @@
             "target": {
               "componentId": 140603,
               "parameterPath": "launch",
-              "path": "/mixer/channel/27/clip/2/launch"
+              "path": "/mixer/channel/20/clip/2/launch"
             },
             "id": 140608,
             "class": "heronarts.lx.modulation.LXTriggerModulation",
@@ -42346,7 +40277,7 @@
                 "scope": "MIXER",
                 "type": "CHANNEL_FADER",
                 "enabled": true,
-                "channelPath": "/lx/mixer/channel/26",
+                "channelPath": "/lx/mixer/channel/19",
                 "channelEnabled": false,
                 "channelFader": 0.0
               },
@@ -42354,7 +40285,7 @@
                 "scope": "MIXER",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/crossfadeGroup",
+                "parameterPath": "/lx/mixer/channel/19/crossfadeGroup",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -42362,7 +40293,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/compositeMode",
+                "parameterPath": "/lx/mixer/channel/19/compositeMode",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -42370,7 +40301,7 @@
                 "scope": "PATTERNS",
                 "type": "ACTIVE_PATTERN",
                 "enabled": true,
-                "channelPath": "/lx/mixer/channel/26",
+                "channelPath": "/lx/mixer/channel/19",
                 "activePatternIndex": 0,
                 "patternId": 84796
               },
@@ -42378,7 +40309,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/view",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/view",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -42386,7 +40317,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/enabled",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/enabled",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -42394,7 +40325,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/compositeBlend",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/compositeBlend",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -42402,7 +40333,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/compositeLevel",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/compositeLevel",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -42410,7 +40341,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/midpoint",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/midpoint",
                 "value": 100.0,
                 "normalizedValue": 1.0
               },
@@ -42418,7 +40349,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/contrast",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/contrast",
                 "value": 500.0,
                 "normalizedValue": 1.0
               },
@@ -42426,7 +40357,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/minLevel",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/minLevel",
                 "value": 0.0,
                 "normalizedValue": 0.0
               },
@@ -42434,7 +40365,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/maxLevel",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/maxLevel",
                 "value": 100.0,
                 "normalizedValue": 1.0
               },
@@ -42442,7 +40373,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/invert",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/invert",
                 "value": 0.0,
                 "normalizedValue": 0.0
               },
@@ -42450,7 +40381,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/xOffset",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/xOffset",
                 "value": 0.0,
                 "normalizedValue": 0.5
               },
@@ -42458,7 +40389,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/yOffset",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/yOffset",
                 "value": 0.0,
                 "normalizedValue": 0.5
               },
@@ -42466,7 +40397,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/zOffset",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/zOffset",
                 "value": 0.0,
                 "normalizedValue": 0.5
               },
@@ -42474,7 +40405,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/scale",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/scale",
                 "value": 0.0,
                 "normalizedValue": 0.0
               },
@@ -42482,7 +40413,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/minScale",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/minScale",
                 "value": 1.0,
                 "normalizedValue": 0.0949157995752499
               },
@@ -42490,7 +40421,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/maxScale",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/maxScale",
                 "value": 10.0,
                 "normalizedValue": 0.0949157995752499
               },
@@ -42498,7 +40429,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/xScale",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/xScale",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -42506,7 +40437,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/yScale",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/yScale",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -42514,7 +40445,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/zScale",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/zScale",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -42522,7 +40453,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/motion",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/motion",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -42530,7 +40461,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/motionSpeed",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/motionSpeed",
                 "value": 0.3062352587003261,
                 "normalizedValue": 0.653117629350163
               },
@@ -42538,7 +40469,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/motionSpeedRange",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/motionSpeedRange",
                 "value": 128.0,
                 "normalizedValue": 0.4980392156862745
               },
@@ -42546,7 +40477,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/xMotion",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/xMotion",
                 "value": 0.0,
                 "normalizedValue": 0.5
               },
@@ -42554,7 +40485,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/yMotion",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/yMotion",
                 "value": 0.0,
                 "normalizedValue": 0.5
               },
@@ -42562,7 +40493,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/zMotion",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/zMotion",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -42570,7 +40501,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/algorithm",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/algorithm",
                 "value": 4,
                 "normalizedValue": 1.0
               },
@@ -42578,7 +40509,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/seed",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/seed",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -42586,7 +40517,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/octaves",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/octaves",
                 "value": 3,
                 "normalizedValue": 0.2857142857142857
               },
@@ -42594,7 +40525,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/lacunarity",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/lacunarity",
                 "value": 2.0,
                 "normalizedValue": 0.5
               },
@@ -42602,7 +40533,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/gain",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/gain",
                 "value": 0.5,
                 "normalizedValue": 0.5
               },
@@ -42610,7 +40541,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/ridgeOffset",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/ridgeOffset",
                 "value": 0.9,
                 "normalizedValue": 0.45
               },
@@ -42618,7 +40549,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/xMode",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/xMode",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -42626,7 +40557,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/yMode",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/yMode",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -42634,7 +40565,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/zMode",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/zMode",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -42642,7 +40573,7 @@
                 "scope": "MIXER",
                 "type": "CHANNEL_FADER",
                 "enabled": true,
-                "channelPath": "/lx/mixer/channel/27",
+                "channelPath": "/lx/mixer/channel/20",
                 "channelEnabled": false,
                 "channelFader": 0.0
               },
@@ -42650,7 +40581,7 @@
                 "scope": "MIXER",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/crossfadeGroup",
+                "parameterPath": "/lx/mixer/channel/20/crossfadeGroup",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -42658,7 +40589,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/compositeMode",
+                "parameterPath": "/lx/mixer/channel/20/compositeMode",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -42666,7 +40597,7 @@
                 "scope": "PATTERNS",
                 "type": "ACTIVE_PATTERN",
                 "enabled": true,
-                "channelPath": "/lx/mixer/channel/27",
+                "channelPath": "/lx/mixer/channel/20",
                 "activePatternIndex": 2,
                 "patternId": 154040
               },
@@ -42674,7 +40605,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/view",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/view",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -42682,7 +40613,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/enabled",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/enabled",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -42690,7 +40621,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/compositeBlend",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/compositeBlend",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -42698,7 +40629,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/compositeLevel",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/compositeLevel",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -42706,7 +40637,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/pattern/1/view",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/pattern/1/view",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -42714,7 +40645,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/pattern/1/enabled",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/pattern/1/enabled",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -42722,7 +40653,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/pattern/1/compositeBlend",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/pattern/1/compositeBlend",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -42730,7 +40661,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/pattern/1/compositeLevel",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/pattern/1/compositeLevel",
                 "value": 0.8528878389042802,
                 "normalizedValue": 0.8528878389042802
               },
@@ -42738,7 +40669,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/pattern/1/swatchIndex",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/pattern/1/swatchIndex",
                 "value": 6,
                 "normalizedValue": 0.20689655172413793
               },
@@ -42746,7 +40677,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/pattern/1/plane",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/pattern/1/plane",
                 "value": 1,
                 "normalizedValue": 0.5
               },
@@ -42754,7 +40685,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/pattern/1/direction",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/pattern/1/direction",
                 "value": 1,
                 "normalizedValue": 1.0
               },
@@ -42762,7 +40693,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/pattern/1/pos",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/pattern/1/pos",
                 "value": 0.0,
                 "normalizedValue": 0.0
               },
@@ -42770,7 +40701,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/pattern/1/seamless",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/pattern/1/seamless",
                 "value": 0.0,
                 "normalizedValue": 0.0
               },
@@ -42778,7 +40709,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/pattern/1/rotation",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/pattern/1/rotation",
                 "value": 0.0,
                 "normalizedValue": 0.0
               },
@@ -42786,7 +40717,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/pattern/1/paletteOffset",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/pattern/1/paletteOffset",
                 "value": 0.0,
                 "normalizedValue": 0.0
               },
@@ -42794,7 +40725,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/pattern/1/paletteScale",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/pattern/1/paletteScale",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -42802,7 +40733,7 @@
                 "scope": "EFFECTS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/effect/1/view",
+                "parameterPath": "/lx/mixer/channel/20/effect/1/view",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -42810,7 +40741,7 @@
                 "scope": "EFFECTS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/effect/1/enabled",
+                "parameterPath": "/lx/mixer/channel/20/effect/1/enabled",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -42818,7 +40749,7 @@
                 "scope": "EFFECTS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/effect/1/locked",
+                "parameterPath": "/lx/mixer/channel/20/effect/1/locked",
                 "value": 0.0,
                 "normalizedValue": 0.0
               },
@@ -42826,7 +40757,7 @@
                 "scope": "EFFECTS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/effect/1/threshold",
+                "parameterPath": "/lx/mixer/channel/20/effect/1/threshold",
                 "value": 0.5587827654671855,
                 "normalizedValue": 0.5587827654671855
               },
@@ -42834,7 +40765,7 @@
                 "scope": "EFFECTS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/effect/1/feather",
+                "parameterPath": "/lx/mixer/channel/20/effect/1/feather",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -42842,7 +40773,7 @@
                 "scope": "EFFECTS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/effect/1/amount",
+                "parameterPath": "/lx/mixer/channel/20/effect/1/amount",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -42850,7 +40781,7 @@
                 "scope": "EFFECTS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/effect/1/source",
+                "parameterPath": "/lx/mixer/channel/20/effect/1/source",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -47575,7 +45506,7 @@
                 "scope": "MIXER",
                 "type": "CHANNEL_FADER",
                 "enabled": true,
-                "channelPath": "/lx/mixer/channel/26",
+                "channelPath": "/lx/mixer/channel/19",
                 "channelEnabled": false,
                 "channelFader": 0.0
               },
@@ -47583,7 +45514,7 @@
                 "scope": "MIXER",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/crossfadeGroup",
+                "parameterPath": "/lx/mixer/channel/19/crossfadeGroup",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -47591,7 +45522,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/compositeMode",
+                "parameterPath": "/lx/mixer/channel/19/compositeMode",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -47599,7 +45530,7 @@
                 "scope": "PATTERNS",
                 "type": "ACTIVE_PATTERN",
                 "enabled": true,
-                "channelPath": "/lx/mixer/channel/26",
+                "channelPath": "/lx/mixer/channel/19",
                 "activePatternIndex": 0,
                 "patternId": 84796
               },
@@ -47607,7 +45538,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/view",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/view",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -47615,7 +45546,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/enabled",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/enabled",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -47623,7 +45554,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/compositeBlend",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/compositeBlend",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -47631,7 +45562,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/compositeLevel",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/compositeLevel",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -47639,7 +45570,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/midpoint",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/midpoint",
                 "value": 100.0,
                 "normalizedValue": 1.0
               },
@@ -47647,7 +45578,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/contrast",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/contrast",
                 "value": 500.0,
                 "normalizedValue": 1.0
               },
@@ -47655,7 +45586,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/minLevel",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/minLevel",
                 "value": 0.0,
                 "normalizedValue": 0.0
               },
@@ -47663,7 +45594,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/maxLevel",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/maxLevel",
                 "value": 100.0,
                 "normalizedValue": 1.0
               },
@@ -47671,7 +45602,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/invert",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/invert",
                 "value": 0.0,
                 "normalizedValue": 0.0
               },
@@ -47679,7 +45610,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/xOffset",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/xOffset",
                 "value": 0.0,
                 "normalizedValue": 0.5
               },
@@ -47687,7 +45618,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/yOffset",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/yOffset",
                 "value": 0.0,
                 "normalizedValue": 0.5
               },
@@ -47695,7 +45626,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/zOffset",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/zOffset",
                 "value": 0.0,
                 "normalizedValue": 0.5
               },
@@ -47703,7 +45634,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/scale",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/scale",
                 "value": 0.0,
                 "normalizedValue": 0.0
               },
@@ -47711,7 +45642,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/minScale",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/minScale",
                 "value": 1.0,
                 "normalizedValue": 0.0949157995752499
               },
@@ -47719,7 +45650,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/maxScale",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/maxScale",
                 "value": 10.0,
                 "normalizedValue": 0.0949157995752499
               },
@@ -47727,7 +45658,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/xScale",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/xScale",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -47735,7 +45666,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/yScale",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/yScale",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -47743,7 +45674,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/zScale",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/zScale",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -47751,7 +45682,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/motion",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/motion",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -47759,7 +45690,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/motionSpeed",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/motionSpeed",
                 "value": 0.3062352587003261,
                 "normalizedValue": 0.653117629350163
               },
@@ -47767,7 +45698,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/motionSpeedRange",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/motionSpeedRange",
                 "value": 128.0,
                 "normalizedValue": 0.4980392156862745
               },
@@ -47775,7 +45706,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/xMotion",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/xMotion",
                 "value": 0.0,
                 "normalizedValue": 0.5
               },
@@ -47783,7 +45714,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/yMotion",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/yMotion",
                 "value": 0.0,
                 "normalizedValue": 0.5
               },
@@ -47791,7 +45722,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/zMotion",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/zMotion",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -47799,7 +45730,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/algorithm",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/algorithm",
                 "value": 4,
                 "normalizedValue": 1.0
               },
@@ -47807,7 +45738,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/seed",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/seed",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -47815,7 +45746,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/octaves",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/octaves",
                 "value": 3,
                 "normalizedValue": 0.2857142857142857
               },
@@ -47823,7 +45754,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/lacunarity",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/lacunarity",
                 "value": 2.0,
                 "normalizedValue": 0.5
               },
@@ -47831,7 +45762,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/gain",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/gain",
                 "value": 0.5,
                 "normalizedValue": 0.5
               },
@@ -47839,7 +45770,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/ridgeOffset",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/ridgeOffset",
                 "value": 0.9,
                 "normalizedValue": 0.45
               },
@@ -47847,7 +45778,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/xMode",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/xMode",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -47855,7 +45786,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/yMode",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/yMode",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -47863,7 +45794,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/zMode",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/zMode",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -47871,7 +45802,7 @@
                 "scope": "MIXER",
                 "type": "CHANNEL_FADER",
                 "enabled": true,
-                "channelPath": "/lx/mixer/channel/27",
+                "channelPath": "/lx/mixer/channel/20",
                 "channelEnabled": false,
                 "channelFader": 0.0
               },
@@ -47879,7 +45810,7 @@
                 "scope": "MIXER",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/crossfadeGroup",
+                "parameterPath": "/lx/mixer/channel/20/crossfadeGroup",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -47887,7 +45818,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/compositeMode",
+                "parameterPath": "/lx/mixer/channel/20/compositeMode",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -47895,7 +45826,7 @@
                 "scope": "PATTERNS",
                 "type": "ACTIVE_PATTERN",
                 "enabled": true,
-                "channelPath": "/lx/mixer/channel/27",
+                "channelPath": "/lx/mixer/channel/20",
                 "activePatternIndex": 2,
                 "patternId": 154040
               },
@@ -47903,7 +45834,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/view",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/view",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -47911,7 +45842,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/enabled",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/enabled",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -47919,7 +45850,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/compositeBlend",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/compositeBlend",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -47927,7 +45858,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/compositeLevel",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/compositeLevel",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -47935,7 +45866,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/pattern/1/view",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/pattern/1/view",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -47943,7 +45874,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/pattern/1/enabled",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/pattern/1/enabled",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -47951,7 +45882,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/pattern/1/compositeBlend",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/pattern/1/compositeBlend",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -47959,7 +45890,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/pattern/1/compositeLevel",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/pattern/1/compositeLevel",
                 "value": 0.8528878389042802,
                 "normalizedValue": 0.8528878389042802
               },
@@ -47967,7 +45898,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/pattern/1/swatchIndex",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/pattern/1/swatchIndex",
                 "value": 6,
                 "normalizedValue": 0.20689655172413793
               },
@@ -47975,7 +45906,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/pattern/1/plane",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/pattern/1/plane",
                 "value": 1,
                 "normalizedValue": 0.5
               },
@@ -47983,7 +45914,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/pattern/1/direction",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/pattern/1/direction",
                 "value": 1,
                 "normalizedValue": 1.0
               },
@@ -47991,7 +45922,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/pattern/1/pos",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/pattern/1/pos",
                 "value": 0.0,
                 "normalizedValue": 0.0
               },
@@ -47999,7 +45930,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/pattern/1/seamless",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/pattern/1/seamless",
                 "value": 0.0,
                 "normalizedValue": 0.0
               },
@@ -48007,7 +45938,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/pattern/1/rotation",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/pattern/1/rotation",
                 "value": 0.0,
                 "normalizedValue": 0.0
               },
@@ -48015,7 +45946,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/pattern/1/paletteOffset",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/pattern/1/paletteOffset",
                 "value": 0.0,
                 "normalizedValue": 0.0
               },
@@ -48023,7 +45954,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/pattern/1/paletteScale",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/pattern/1/paletteScale",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -48031,7 +45962,7 @@
                 "scope": "EFFECTS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/effect/1/view",
+                "parameterPath": "/lx/mixer/channel/20/effect/1/view",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -48039,7 +45970,7 @@
                 "scope": "EFFECTS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/effect/1/enabled",
+                "parameterPath": "/lx/mixer/channel/20/effect/1/enabled",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -48047,7 +45978,7 @@
                 "scope": "EFFECTS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/effect/1/locked",
+                "parameterPath": "/lx/mixer/channel/20/effect/1/locked",
                 "value": 0.0,
                 "normalizedValue": 0.0
               },
@@ -48055,7 +45986,7 @@
                 "scope": "EFFECTS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/effect/1/threshold",
+                "parameterPath": "/lx/mixer/channel/20/effect/1/threshold",
                 "value": 0.5587827654671855,
                 "normalizedValue": 0.5587827654671855
               },
@@ -48063,7 +45994,7 @@
                 "scope": "EFFECTS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/effect/1/feather",
+                "parameterPath": "/lx/mixer/channel/20/effect/1/feather",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -48071,7 +46002,7 @@
                 "scope": "EFFECTS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/effect/1/amount",
+                "parameterPath": "/lx/mixer/channel/20/effect/1/amount",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -48079,7 +46010,7 @@
                 "scope": "EFFECTS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/effect/1/source",
+                "parameterPath": "/lx/mixer/channel/20/effect/1/source",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -54516,7 +52447,7 @@
                 "scope": "MIXER",
                 "type": "CHANNEL_FADER",
                 "enabled": true,
-                "channelPath": "/lx/mixer/channel/26",
+                "channelPath": "/lx/mixer/channel/19",
                 "channelEnabled": false,
                 "channelFader": 0.0
               },
@@ -54524,7 +52455,7 @@
                 "scope": "MIXER",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/crossfadeGroup",
+                "parameterPath": "/lx/mixer/channel/19/crossfadeGroup",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -54532,7 +52463,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/compositeMode",
+                "parameterPath": "/lx/mixer/channel/19/compositeMode",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -54540,7 +52471,7 @@
                 "scope": "PATTERNS",
                 "type": "ACTIVE_PATTERN",
                 "enabled": true,
-                "channelPath": "/lx/mixer/channel/26",
+                "channelPath": "/lx/mixer/channel/19",
                 "activePatternIndex": 0,
                 "patternId": 84796
               },
@@ -54548,7 +52479,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/view",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/view",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -54556,7 +52487,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/enabled",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/enabled",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -54564,7 +52495,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/compositeBlend",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/compositeBlend",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -54572,7 +52503,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/compositeLevel",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/compositeLevel",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -54580,7 +52511,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/midpoint",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/midpoint",
                 "value": 100.0,
                 "normalizedValue": 1.0
               },
@@ -54588,7 +52519,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/contrast",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/contrast",
                 "value": 500.0,
                 "normalizedValue": 1.0
               },
@@ -54596,7 +52527,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/minLevel",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/minLevel",
                 "value": 0.0,
                 "normalizedValue": 0.0
               },
@@ -54604,7 +52535,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/maxLevel",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/maxLevel",
                 "value": 100.0,
                 "normalizedValue": 1.0
               },
@@ -54612,7 +52543,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/invert",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/invert",
                 "value": 0.0,
                 "normalizedValue": 0.0
               },
@@ -54620,7 +52551,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/xOffset",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/xOffset",
                 "value": 0.0,
                 "normalizedValue": 0.5
               },
@@ -54628,7 +52559,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/yOffset",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/yOffset",
                 "value": 0.0,
                 "normalizedValue": 0.5
               },
@@ -54636,7 +52567,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/zOffset",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/zOffset",
                 "value": 0.0,
                 "normalizedValue": 0.5
               },
@@ -54644,7 +52575,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/scale",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/scale",
                 "value": 0.0,
                 "normalizedValue": 0.0
               },
@@ -54652,7 +52583,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/minScale",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/minScale",
                 "value": 1.0,
                 "normalizedValue": 0.0949157995752499
               },
@@ -54660,7 +52591,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/maxScale",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/maxScale",
                 "value": 10.0,
                 "normalizedValue": 0.0949157995752499
               },
@@ -54668,7 +52599,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/xScale",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/xScale",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -54676,7 +52607,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/yScale",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/yScale",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -54684,7 +52615,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/zScale",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/zScale",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -54692,7 +52623,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/motion",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/motion",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -54700,7 +52631,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/motionSpeed",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/motionSpeed",
                 "value": 0.3062352587003261,
                 "normalizedValue": 0.653117629350163
               },
@@ -54708,7 +52639,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/motionSpeedRange",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/motionSpeedRange",
                 "value": 128.0,
                 "normalizedValue": 0.4980392156862745
               },
@@ -54716,7 +52647,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/xMotion",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/xMotion",
                 "value": 0.0,
                 "normalizedValue": 0.5
               },
@@ -54724,7 +52655,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/yMotion",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/yMotion",
                 "value": 0.0,
                 "normalizedValue": 0.5
               },
@@ -54732,7 +52663,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/zMotion",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/zMotion",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -54740,7 +52671,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/algorithm",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/algorithm",
                 "value": 4,
                 "normalizedValue": 1.0
               },
@@ -54748,7 +52679,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/seed",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/seed",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -54756,7 +52687,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/octaves",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/octaves",
                 "value": 3,
                 "normalizedValue": 0.2857142857142857
               },
@@ -54764,7 +52695,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/lacunarity",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/lacunarity",
                 "value": 2.0,
                 "normalizedValue": 0.5
               },
@@ -54772,7 +52703,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/gain",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/gain",
                 "value": 0.5,
                 "normalizedValue": 0.5
               },
@@ -54780,7 +52711,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/ridgeOffset",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/ridgeOffset",
                 "value": 0.9,
                 "normalizedValue": 0.45
               },
@@ -54788,7 +52719,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/xMode",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/xMode",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -54796,7 +52727,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/yMode",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/yMode",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -54804,7 +52735,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/zMode",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/zMode",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -54812,7 +52743,7 @@
                 "scope": "MIXER",
                 "type": "CHANNEL_FADER",
                 "enabled": true,
-                "channelPath": "/lx/mixer/channel/27",
+                "channelPath": "/lx/mixer/channel/20",
                 "channelEnabled": false,
                 "channelFader": 0.0
               },
@@ -54820,7 +52751,7 @@
                 "scope": "MIXER",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/crossfadeGroup",
+                "parameterPath": "/lx/mixer/channel/20/crossfadeGroup",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -54828,7 +52759,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/compositeMode",
+                "parameterPath": "/lx/mixer/channel/20/compositeMode",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -54836,7 +52767,7 @@
                 "scope": "PATTERNS",
                 "type": "ACTIVE_PATTERN",
                 "enabled": true,
-                "channelPath": "/lx/mixer/channel/27",
+                "channelPath": "/lx/mixer/channel/20",
                 "activePatternIndex": 2,
                 "patternId": 154040
               },
@@ -54844,7 +52775,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/view",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/view",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -54852,7 +52783,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/enabled",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/enabled",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -54860,7 +52791,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/compositeBlend",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/compositeBlend",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -54868,7 +52799,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/compositeLevel",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/compositeLevel",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -54876,7 +52807,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/pattern/1/view",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/pattern/1/view",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -54884,7 +52815,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/pattern/1/enabled",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/pattern/1/enabled",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -54892,7 +52823,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/pattern/1/compositeBlend",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/pattern/1/compositeBlend",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -54900,7 +52831,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/pattern/1/compositeLevel",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/pattern/1/compositeLevel",
                 "value": 0.8528878389042802,
                 "normalizedValue": 0.8528878389042802
               },
@@ -54908,7 +52839,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/pattern/1/swatchIndex",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/pattern/1/swatchIndex",
                 "value": 6,
                 "normalizedValue": 0.20689655172413793
               },
@@ -54916,7 +52847,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/pattern/1/plane",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/pattern/1/plane",
                 "value": 1,
                 "normalizedValue": 0.5
               },
@@ -54924,7 +52855,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/pattern/1/direction",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/pattern/1/direction",
                 "value": 1,
                 "normalizedValue": 1.0
               },
@@ -54932,7 +52863,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/pattern/1/pos",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/pattern/1/pos",
                 "value": 0.0,
                 "normalizedValue": 0.0
               },
@@ -54940,7 +52871,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/pattern/1/seamless",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/pattern/1/seamless",
                 "value": 0.0,
                 "normalizedValue": 0.0
               },
@@ -54948,7 +52879,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/pattern/1/rotation",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/pattern/1/rotation",
                 "value": 0.0,
                 "normalizedValue": 0.0
               },
@@ -54956,7 +52887,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/pattern/1/paletteOffset",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/pattern/1/paletteOffset",
                 "value": 0.0,
                 "normalizedValue": 0.0
               },
@@ -54964,7 +52895,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/3/pattern/1/paletteScale",
+                "parameterPath": "/lx/mixer/channel/20/pattern/3/pattern/1/paletteScale",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -54972,7 +52903,7 @@
                 "scope": "EFFECTS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/effect/1/view",
+                "parameterPath": "/lx/mixer/channel/20/effect/1/view",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -54980,7 +52911,7 @@
                 "scope": "EFFECTS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/effect/1/enabled",
+                "parameterPath": "/lx/mixer/channel/20/effect/1/enabled",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -54988,7 +52919,7 @@
                 "scope": "EFFECTS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/effect/1/locked",
+                "parameterPath": "/lx/mixer/channel/20/effect/1/locked",
                 "value": 0.0,
                 "normalizedValue": 0.0
               },
@@ -54996,7 +52927,7 @@
                 "scope": "EFFECTS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/effect/1/threshold",
+                "parameterPath": "/lx/mixer/channel/20/effect/1/threshold",
                 "value": 0.5587827654671855,
                 "normalizedValue": 0.5587827654671855
               },
@@ -55004,7 +52935,7 @@
                 "scope": "EFFECTS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/effect/1/feather",
+                "parameterPath": "/lx/mixer/channel/20/effect/1/feather",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -55012,7 +52943,7 @@
                 "scope": "EFFECTS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/effect/1/amount",
+                "parameterPath": "/lx/mixer/channel/20/effect/1/amount",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -55020,7 +52951,7 @@
                 "scope": "EFFECTS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/effect/1/source",
+                "parameterPath": "/lx/mixer/channel/20/effect/1/source",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -61137,7 +59068,7 @@
                 "scope": "MIXER",
                 "type": "CHANNEL_FADER",
                 "enabled": true,
-                "channelPath": "/lx/mixer/channel/26",
+                "channelPath": "/lx/mixer/channel/19",
                 "channelEnabled": false,
                 "channelFader": 0.0
               },
@@ -61145,7 +59076,7 @@
                 "scope": "MIXER",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/crossfadeGroup",
+                "parameterPath": "/lx/mixer/channel/19/crossfadeGroup",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -61153,7 +59084,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/compositeMode",
+                "parameterPath": "/lx/mixer/channel/19/compositeMode",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -61161,7 +59092,7 @@
                 "scope": "PATTERNS",
                 "type": "ACTIVE_PATTERN",
                 "enabled": true,
-                "channelPath": "/lx/mixer/channel/26",
+                "channelPath": "/lx/mixer/channel/19",
                 "activePatternIndex": 0,
                 "patternId": 84796
               },
@@ -61169,7 +59100,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/view",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/view",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -61177,7 +59108,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/enabled",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/enabled",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -61185,7 +59116,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/compositeBlend",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/compositeBlend",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -61193,7 +59124,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/compositeLevel",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/compositeLevel",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -61201,7 +59132,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/midpoint",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/midpoint",
                 "value": 100.0,
                 "normalizedValue": 1.0
               },
@@ -61209,7 +59140,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/contrast",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/contrast",
                 "value": 500.0,
                 "normalizedValue": 1.0
               },
@@ -61217,7 +59148,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/minLevel",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/minLevel",
                 "value": 0.0,
                 "normalizedValue": 0.0
               },
@@ -61225,7 +59156,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/maxLevel",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/maxLevel",
                 "value": 100.0,
                 "normalizedValue": 1.0
               },
@@ -61233,7 +59164,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/invert",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/invert",
                 "value": 0.0,
                 "normalizedValue": 0.0
               },
@@ -61241,7 +59172,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/xOffset",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/xOffset",
                 "value": 0.0,
                 "normalizedValue": 0.5
               },
@@ -61249,7 +59180,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/yOffset",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/yOffset",
                 "value": 0.0,
                 "normalizedValue": 0.5
               },
@@ -61257,7 +59188,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/zOffset",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/zOffset",
                 "value": 0.0,
                 "normalizedValue": 0.5
               },
@@ -61265,7 +59196,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/scale",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/scale",
                 "value": 0.0,
                 "normalizedValue": 0.0
               },
@@ -61273,7 +59204,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/minScale",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/minScale",
                 "value": 1.0,
                 "normalizedValue": 0.0949157995752499
               },
@@ -61281,7 +59212,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/maxScale",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/maxScale",
                 "value": 10.0,
                 "normalizedValue": 0.0949157995752499
               },
@@ -61289,7 +59220,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/xScale",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/xScale",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -61297,7 +59228,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/yScale",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/yScale",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -61305,7 +59236,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/zScale",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/zScale",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -61313,7 +59244,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/motion",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/motion",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -61321,7 +59252,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/motionSpeed",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/motionSpeed",
                 "value": 0.3062352587003261,
                 "normalizedValue": 0.653117629350163
               },
@@ -61329,7 +59260,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/motionSpeedRange",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/motionSpeedRange",
                 "value": 128.0,
                 "normalizedValue": 0.4980392156862745
               },
@@ -61337,7 +59268,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/xMotion",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/xMotion",
                 "value": 0.0,
                 "normalizedValue": 0.5
               },
@@ -61345,7 +59276,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/yMotion",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/yMotion",
                 "value": 0.0,
                 "normalizedValue": 0.5
               },
@@ -61353,7 +59284,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/zMotion",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/zMotion",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -61361,7 +59292,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/algorithm",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/algorithm",
                 "value": 4,
                 "normalizedValue": 1.0
               },
@@ -61369,7 +59300,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/seed",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/seed",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -61377,7 +59308,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/octaves",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/octaves",
                 "value": 3,
                 "normalizedValue": 0.2857142857142857
               },
@@ -61385,7 +59316,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/lacunarity",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/lacunarity",
                 "value": 2.0,
                 "normalizedValue": 0.5
               },
@@ -61393,7 +59324,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/gain",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/gain",
                 "value": 0.5,
                 "normalizedValue": 0.5
               },
@@ -61401,7 +59332,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/ridgeOffset",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/ridgeOffset",
                 "value": 0.9,
                 "normalizedValue": 0.45
               },
@@ -61409,7 +59340,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/xMode",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/xMode",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -61417,7 +59348,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/yMode",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/yMode",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -61425,7 +59356,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/26/pattern/1/zMode",
+                "parameterPath": "/lx/mixer/channel/19/pattern/1/zMode",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -61433,7 +59364,7 @@
                 "scope": "MIXER",
                 "type": "CHANNEL_FADER",
                 "enabled": true,
-                "channelPath": "/lx/mixer/channel/27",
+                "channelPath": "/lx/mixer/channel/20",
                 "channelEnabled": false,
                 "channelFader": 0.0
               },
@@ -61441,7 +59372,7 @@
                 "scope": "MIXER",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/crossfadeGroup",
+                "parameterPath": "/lx/mixer/channel/20/crossfadeGroup",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -61449,7 +59380,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/compositeMode",
+                "parameterPath": "/lx/mixer/channel/20/compositeMode",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -61457,7 +59388,7 @@
                 "scope": "PATTERNS",
                 "type": "ACTIVE_PATTERN",
                 "enabled": true,
-                "channelPath": "/lx/mixer/channel/27",
+                "channelPath": "/lx/mixer/channel/20",
                 "activePatternIndex": 0,
                 "patternId": 100770
               },
@@ -61465,7 +59396,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/1/view",
+                "parameterPath": "/lx/mixer/channel/20/pattern/1/view",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -61473,7 +59404,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/1/enabled",
+                "parameterPath": "/lx/mixer/channel/20/pattern/1/enabled",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -61481,7 +59412,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/1/compositeBlend",
+                "parameterPath": "/lx/mixer/channel/20/pattern/1/compositeBlend",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -61489,7 +59420,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/1/compositeLevel",
+                "parameterPath": "/lx/mixer/channel/20/pattern/1/compositeLevel",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -61497,7 +59428,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/1/pattern/1/view",
+                "parameterPath": "/lx/mixer/channel/20/pattern/1/pattern/1/view",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -61505,7 +59436,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/1/pattern/1/enabled",
+                "parameterPath": "/lx/mixer/channel/20/pattern/1/pattern/1/enabled",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -61513,7 +59444,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/1/pattern/1/compositeBlend",
+                "parameterPath": "/lx/mixer/channel/20/pattern/1/pattern/1/compositeBlend",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -61521,7 +59452,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/1/pattern/1/compositeLevel",
+                "parameterPath": "/lx/mixer/channel/20/pattern/1/pattern/1/compositeLevel",
                 "value": 0.21927315811626613,
                 "normalizedValue": 0.21927315811626613
               },
@@ -61529,7 +59460,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/1/pattern/1/color/brightness",
+                "parameterPath": "/lx/mixer/channel/20/pattern/1/pattern/1/color/brightness",
                 "value": 43.063600739464164,
                 "normalizedValue": 0.43063600739464164
               },
@@ -61537,7 +59468,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/1/pattern/1/color/saturation",
+                "parameterPath": "/lx/mixer/channel/20/pattern/1/pattern/1/color/saturation",
                 "value": 66.66666412353516,
                 "normalizedValue": 0.6666666412353516
               },
@@ -61545,7 +59476,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/1/pattern/1/color/hue",
+                "parameterPath": "/lx/mixer/channel/20/pattern/1/pattern/1/color/hue",
                 "value": 272.00006103515625,
                 "normalizedValue": 0.757660337145282
               },
@@ -61553,7 +59484,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/1/pattern/1/color/mode",
+                "parameterPath": "/lx/mixer/channel/20/pattern/1/pattern/1/color/mode",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -61561,7 +59492,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/1/pattern/1/color/index",
+                "parameterPath": "/lx/mixer/channel/20/pattern/1/pattern/1/color/index",
                 "value": 1,
                 "normalizedValue": 0.0
               },
@@ -61569,7 +59500,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/1/pattern/2/view",
+                "parameterPath": "/lx/mixer/channel/20/pattern/1/pattern/2/view",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -61577,7 +59508,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/1/pattern/2/enabled",
+                "parameterPath": "/lx/mixer/channel/20/pattern/1/pattern/2/enabled",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -61585,7 +59516,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/1/pattern/2/compositeBlend",
+                "parameterPath": "/lx/mixer/channel/20/pattern/1/pattern/2/compositeBlend",
                 "value": 0,
                 "normalizedValue": 0.0
               },
@@ -61593,7 +59524,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/1/pattern/2/compositeLevel",
+                "parameterPath": "/lx/mixer/channel/20/pattern/1/pattern/2/compositeLevel",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -61601,7 +59532,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/1/pattern/2/swatchIndex",
+                "parameterPath": "/lx/mixer/channel/20/pattern/1/pattern/2/swatchIndex",
                 "value": 4,
                 "normalizedValue": 1.0
               },
@@ -61609,7 +59540,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/1/pattern/2/plane",
+                "parameterPath": "/lx/mixer/channel/20/pattern/1/pattern/2/plane",
                 "value": 1,
                 "normalizedValue": 0.5
               },
@@ -61617,7 +59548,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/1/pattern/2/direction",
+                "parameterPath": "/lx/mixer/channel/20/pattern/1/pattern/2/direction",
                 "value": 1,
                 "normalizedValue": 1.0
               },
@@ -61625,7 +59556,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/1/pattern/2/pos",
+                "parameterPath": "/lx/mixer/channel/20/pattern/1/pattern/2/pos",
                 "value": 0.0,
                 "normalizedValue": 0.0
               },
@@ -61633,7 +59564,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/1/pattern/2/seamless",
+                "parameterPath": "/lx/mixer/channel/20/pattern/1/pattern/2/seamless",
                 "value": 1.0,
                 "normalizedValue": 1.0
               },
@@ -61641,7 +59572,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/1/pattern/2/rotation",
+                "parameterPath": "/lx/mixer/channel/20/pattern/1/pattern/2/rotation",
                 "value": 0.0,
                 "normalizedValue": 0.0
               },
@@ -61649,7 +59580,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/1/pattern/2/paletteOffset",
+                "parameterPath": "/lx/mixer/channel/20/pattern/1/pattern/2/paletteOffset",
                 "value": 0.0,
                 "normalizedValue": 0.0
               },
@@ -61657,7 +59588,7 @@
                 "scope": "PATTERNS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/27/pattern/1/pattern/2/paletteScale",
+                "parameterPath": "/lx/mixer/channel/20/pattern/1/pattern/2/paletteScale",
                 "value": 0.5457421877072193,
                 "normalizedValue": 0.5457421877072193
               },
@@ -62054,18 +59985,18 @@
           "hue": 60.0,
           "saturation": 100.0,
           "brightness": 100.0,
-          "aR": 1.5454204315694238,
-          "aG": 0.8015198092615332,
-          "aB": 0.3197252361997718,
-          "bR": 1.204118642833512,
-          "bG": 0.4428096667060446,
-          "bB": 0.6401860531373988,
-          "cR": 1.102610765046057,
-          "cG": 1.67095672179782,
-          "cB": 1.6050011255825707,
-          "dR": -0.7007475176466431,
-          "dG": 0.0,
-          "dB": 0.5107267623539355
+          "aR": 0.5495541880285542,
+          "aG": 0.015459755696812572,
+          "aB": 2.4401598361253187,
+          "bR": 1.039935201993286,
+          "bG": 1.074927806779728,
+          "bB": 2.2884309755427825,
+          "cR": 1.065246176859902,
+          "cG": -1.5454409231477952,
+          "cB": -2.0560547807188962,
+          "dR": 0.006658405866993622,
+          "dG": -1.155368450325858,
+          "dB": 1.6334608346637127
         },
         "children": {
           "swatch-0": {
@@ -62076,14 +60007,14 @@
             "children": {}
           },
           "swatch-1": {
-            "id": 124580,
+            "id": 107,
             "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
             "internal": {},
             "parameters": {},
             "children": {}
           },
           "swatch-2": {
-            "id": 107,
+            "id": 100683,
             "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
             "internal": {},
             "parameters": {},
@@ -62111,14 +60042,14 @@
             "children": {}
           },
           "swatch-6": {
-            "id": 154074,
+            "id": 104571,
             "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
             "internal": {},
             "parameters": {},
             "children": {}
           },
           "swatch-7": {
-            "id": 158185,
+            "id": 107,
             "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
             "internal": {},
             "parameters": {},
@@ -62181,14 +60112,14 @@
             "children": {}
           },
           "swatch-16": {
-            "id": 158249,
+            "id": 107,
             "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
             "internal": {},
             "parameters": {},
             "children": {}
           },
           "swatch-17": {
-            "id": 124580,
+            "id": 100683,
             "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
             "internal": {},
             "parameters": {},
@@ -62202,272 +60133,13 @@
             "children": {}
           },
           "swatch-19": {
-            "id": 188705,
+            "id": 124580,
             "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
             "internal": {},
             "parameters": {},
             "children": {}
           },
           "swatch-20": {
-            "id": 104571,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-21": {
-            "id": 107,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-22": {
-            "id": 154074,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-23": {
-            "id": 158185,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-24": {
-            "id": 140599,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-25": {
-            "id": 124580,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-26": {
-            "id": 107,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-27": {
-            "id": 100683,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-28": {
-            "id": 104571,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-29": {
-            "id": 140599,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-30": {
-            "id": 154074,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-31": {
-            "id": 158185,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-32": {
-            "id": 158249,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-33": {
-            "id": 124580,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-34": {
-            "id": 107,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-35": {
-            "id": 188705,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-36": {
-            "id": 104571,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-37": {
-            "id": 140599,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-38": {
-            "id": 154074,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-39": {
-            "id": 158185,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-40": {
-            "id": 100683,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-41": {
-            "id": 124580,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-42": {
-            "id": 107,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-43": {
-            "id": 100683,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-44": {
-            "id": 104571,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-45": {
-            "id": 140599,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-46": {
-            "id": 154074,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-47": {
-            "id": 158185,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-48": {
-            "id": 158249,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-49": {
-            "id": 124580,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-50": {
-            "id": 107,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-51": {
-            "id": 100683,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-52": {
-            "id": 104571,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-53": {
-            "id": 140599,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-54": {
-            "id": 154074,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-55": {
-            "id": 158185,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-56": {
-            "id": 158249,
-            "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
-            "internal": {},
-            "parameters": {},
-            "children": {}
-          },
-          "swatch-57": {
             "id": 124580,
             "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
             "internal": {
@@ -62493,7 +60165,7 @@
             },
             "children": {}
           },
-          "swatch-58": {
+          "swatch-21": {
             "id": 107,
             "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
             "internal": {
@@ -62519,7 +60191,7 @@
             },
             "children": {}
           },
-          "swatch-59": {
+          "swatch-22": {
             "id": 100683,
             "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
             "internal": {
@@ -62545,7 +60217,7 @@
             },
             "children": {}
           },
-          "swatch-60": {
+          "swatch-23": {
             "id": 104571,
             "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
             "internal": {
@@ -62571,7 +60243,7 @@
             },
             "children": {}
           },
-          "swatch-61": {
+          "swatch-24": {
             "id": 140599,
             "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
             "internal": {
@@ -62597,7 +60269,7 @@
             },
             "children": {}
           },
-          "swatch-62": {
+          "swatch-25": {
             "id": 154074,
             "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
             "internal": {
@@ -62623,7 +60295,7 @@
             },
             "children": {}
           },
-          "swatch-63": {
+          "swatch-26": {
             "id": 158185,
             "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
             "internal": {
@@ -62632,7 +60304,7 @@
               "modulationsExpanded": true
             },
             "parameters": {
-              "label": "Swatch",
+              "label": "Swatch 7",
               "swatchLabel": "Swatch 7",
               "aR": 0.0,
               "aG": 0.34,
@@ -62649,7 +60321,7 @@
             },
             "children": {}
           },
-          "swatch-64": {
+          "swatch-27": {
             "id": 158249,
             "class": "org.projectempire.lx.color.CosPalette$CosPaletteSwatch",
             "internal": {
@@ -62658,7 +60330,7 @@
               "modulationsExpanded": true
             },
             "parameters": {
-              "label": "Swatch",
+              "label": "Swatch 8",
               "swatchLabel": "Swatch 8",
               "aR": 0.5495541880285542,
               "aG": 0.015459755696812572,
@@ -62842,7 +60514,7 @@
               "modulationsExpanded": true
             },
             "parameters": {
-              "label": "Swatch",
+              "label": "Swatch 7",
               "swatchLabel": "Swatch 7",
               "aR": 0.0,
               "aG": 0.34,
@@ -62868,7 +60540,7 @@
               "modulationsExpanded": true
             },
             "parameters": {
-              "label": "Swatch",
+              "label": "Swatch 8",
               "swatchLabel": "Swatch 8",
               "aR": 0.5495541880285542,
               "aG": 0.015459755696812572,
@@ -62898,7 +60570,7 @@
       "paletteExpanded": true,
       "cameraExpanded": true,
       "mixerCentered": false,
-      "fixtureInspectorExpanded": false,
+      "fixtureInspectorExpanded": true,
       "viewsExpanded": true,
       "soundStageExpanded": false,
       "preview": {
@@ -62917,8 +60589,8 @@
         "camera": {
           "active": false,
           "radius": 300.0096183308062,
-          "theta": 271.1959403816145,
-          "phi": 65.07158979983069,
+          "theta": 256.4353020701092,
+          "phi": 17.002274800324813,
           "x": -0.633880615234375,
           "y": 31.44870376586914,
           "z": 160.99716186523438
