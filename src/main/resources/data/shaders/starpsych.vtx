@@ -1,0 +1,169 @@
+/*{
+	"DESCRIPTION": "starpsych",
+	"CREDIT": "converted to vtx format",
+	"ISFVSN": "2.0",
+	"CATEGORIES": [
+		"VERTEX SDF"
+	],
+	"INPUTS": [
+		{
+			"NAME": "plane",
+			"TYPE": "float",
+			"DEFAULT": 0,
+			"MIN": 0,
+			"MAX": 3
+		},
+		{
+			"NAME": "starSize",
+			"TYPE": "float",
+			"DEFAULT": 0.35,
+			"MIN": 0.0,
+			"MAX": 2.0
+		},
+		{
+			"NAME": "cutoff",
+			"TYPE": "float",
+			"DEFAULT": 0.6,
+			"MIN": 0.0,
+			"MAX": 2.0
+		},
+		{
+			"NAME": "uvScale",
+			"TYPE": "float",
+			"DEFAULT": 9.0,
+			"MIN": 0.1,
+			"MAX": 50.0
+		},
+		{
+			"NAME": "rays",
+			"TYPE": "float",
+			"DEFAULT": 0.0,
+			"MIN": 0.0,
+			"MAX": 5.0
+		},
+		{
+			"NAME": "xoff",
+			"TYPE": "float",
+			"DEFAULT": 0.0,
+			"MIN": -1.0,
+			"MAX": 1.0
+		},
+		{
+			"NAME": "yoff",
+			"TYPE": "float",
+			"DEFAULT": 0.0,
+			"MIN": -1.0,
+			"MAX": 1.0
+		},
+		{
+			"NAME": "palval",
+			"TYPE": "float",
+			"DEFAULT": 0.0,
+			"MIN": 0.0,
+			"MAX": 20.0
+		},
+		{
+			"NAME": "pald",
+			"TYPE": "float",
+			"DEFAULT": 0.0,
+			"MIN": 0.01,
+			"MAX": 10.0
+		},
+		{
+			"NAME": "paloff",
+			"TYPE": "float",
+			"DEFAULT": 0.0,
+			"MIN": 0.0,
+			"MAX": 1.0
+		}
+	]
+}*/
+
+#version 330
+
+uniform float fTime;
+uniform float plane;
+uniform float starSize;
+uniform float cutoff;
+uniform float uvScale;
+uniform float rays;
+uniform float speed;
+uniform float xoff;
+uniform float yoff;
+uniform float palval;
+uniform float pald;
+uniform float paloff;
+
+layout(location = 0) in vec3 position;
+out vec3 outColor;
+
+#include <palettes.vti>
+#include <sdf2d.vti>
+#include <consts.vti>
+#include <planeUV.vti>
+#include <uvwrap.vti>
+
+mat2 Rot(float a) {
+    float s=sin(a), c=cos(a);
+    return mat2(c, -s, s, c);
+}
+
+float Star(vec2 uv, float flare) {
+    float d = length(uv);
+    float m = starSize/d;
+
+    float starRays = max(0., 1.-abs(uv.x*uv.y*1000.));
+    m += starRays*flare;
+    uv *= Rot(3.1415/4.);
+    starRays = max(0., 1.-abs(uv.x*uv.y*1000.));
+    m += starRays*.3*flare;
+    m *= smoothstep(1., cutoff, d);
+    
+    return m;
+}
+
+float Hash21(vec2 p) {
+    p = fract(p*vec2(123.34, 456.21));
+    p += dot(p, p+45.32);
+    return fract(p.x*p.y);
+}
+
+void main() {
+    vec2 uv = getPlaneUV(position, plane);
+    //uv = uv * 2.0 - 1.0;
+	uv -= 0.5;
+    
+    vec2 orig_uv = uv;
+	uv.x += xoff;
+	uv.y += fTime*.1;
+    
+    //uv *= Rot(fTime*speed) * (abs(uv) * 2.);
+    uv *= uvScale;
+	uv.x = abs(uv.x);
+    vec3 col = vec3(0.);
+    
+    vec2 gv = fract(uv)-.5;
+    vec2 id = floor(uv);
+    
+    for (float y=-1.; y <=1.; y++) {
+        for (float x=-1.; x<=1.; x++) {
+            vec2 offs = vec2(x, y);
+            float n = Hash21(id+offs);
+            float size = fract(n*345.32);
+			vec2 randoff = vec2(n, fract(n*10)) + 0.5;
+			randoff = vec2(0., 0.);
+            float star = Star(gv-offs-randoff, rays);
+            
+			// Pick a random color
+			float randnum = fract(n*2345.2);
+            vec3 color = sin(vec3(.2, .3, .9)*fract(n*2345.2)*60.2831)*.5+.5;
+			color = paletteN(randnum*pald + paloff, palval);
+            //color = color*vec3(1., .5, 1.);
+            col += star*size * color;
+        }
+    }
+    
+    col += clamp(Star(uv, 0.0), 0., 2.9)*vec3(.9, .2, .7);
+    
+    outColor = clamp(col, 0.0, 1.0);
+}
